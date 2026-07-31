@@ -53,7 +53,7 @@ export default function Header() {
           </div>
           <div>
             <div className="flex items-center gap-1.5">
-              <span className="font-extrabold text-lg text-slate-900 tracking-tight">Kitchen Repair</span>
+              <span className="font-extrabold text-lg text-slate-900 tracking-tight">Customer Service</span>
               <span className="bg-orange-500 text-white text-[10px] uppercase font-black px-1.5 py-0.5 rounded tracking-wider">Pro</span>
             </div>
             <p className="text-[11px] text-slate-500 font-medium">Independent Doorstep Appliance Service</p>
