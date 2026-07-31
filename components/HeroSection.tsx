@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Phone, MessageSquare, ShieldCheck, Clock, CheckCircle2, Star, Wrench, Sparkles, MapPin } from "lucide-react";
+import { Phone, MessageSquare, ShieldCheck, Clock, CheckCircle2, Star, Wrench, Sparkles, MapPin, PhoneCall } from "lucide-react";
 import LeadForm from "./LeadForm";
 import { companyInfo } from "@/data/companyInfo";
 
@@ -15,8 +15,8 @@ interface HeroSectionProps {
 
 export default function HeroSection({
   h1Title = "Professional Kitchen Appliance Repair & Doorstep Service",
-  heroHeadline = "Same-Day Doorstep Repair for All Kitchen Appliances",
-  heroSubheadline = "Certified Technicians for Kitchen Chimneys, Gas Hobs, Stoves, Built-in Ovens & Ranges. Arrival in 30-45 minutes with 90-Day Written Warranty.",
+  heroHeadline = "Same-Day Doorstep Repair for Kitchen Chimneys, Hobs & Ovens",
+  heroSubheadline = "Certified Technicians for Kaff, Siemens, Faber, Bosch, Elica, Glen & All Major Brands. Arrival in 30-45 minutes with 90-Day Written Warranty.",
   brandName,
   ctaCopy = "Book Service Today"
 }: HeroSectionProps) {
@@ -36,7 +36,7 @@ export default function HeroSection({
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
               </span>
-              <span>24/7 Doorstep Service • Dispatching Technicians Now</span>
+              <span>24/7 Toll-Free Hotline • Dispatching Technicians Now</span>
             </div>
 
             {/* Main H1 Title & Subheadline */}
@@ -69,15 +69,18 @@ export default function HeroSection({
               </div>
             </div>
 
-            {/* Prominent Direct CTAs */}
+            {/* Prominent Direct CTAs - CALL MAXIMIZATION */}
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-2">
-              {/* Call Now Button */}
+              {/* Call Now Button (Primary High-Visibility Action) */}
               <a
                 href={`tel:${companyInfo.phoneRaw}`}
-                className="flex-1 sm:flex-initial flex items-center justify-center gap-2.5 bg-gradient-to-r from-orange-600 to-amber-500 hover:from-orange-700 hover:to-amber-600 text-white font-black text-base px-6 py-4 rounded-xl shadow-xl hover:shadow-2xl transition-all transform hover:-translate-y-0.5"
+                className="flex-1 flex items-center justify-center gap-3 bg-gradient-to-r from-orange-600 to-amber-500 hover:from-orange-700 hover:to-amber-600 text-white font-black text-base py-4 px-6 rounded-xl shadow-xl hover:shadow-2xl transition-all transform hover:-translate-y-0.5"
               >
-                <Phone className="w-5 h-5 fill-current animate-bounce" />
-                <span>Call Now ({companyInfo.phone})</span>
+                <PhoneCall className="w-6 h-6 fill-current animate-bounce flex-shrink-0" />
+                <div className="text-left leading-tight">
+                  <span className="text-[10px] block uppercase font-black text-amber-200 tracking-wider">Toll-Free Call Now</span>
+                  <span className="text-lg font-black">{companyInfo.phone}</span>
+                </div>
               </a>
 
               {/* WhatsApp Button */}

@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import { Phone, MessageSquare, Wrench, ShieldCheck, ChevronDown, Clock, MapPin } from "lucide-react";
+import { Phone, MessageSquare, Wrench, ShieldCheck, ChevronDown, Clock, MapPin, PhoneCall } from "lucide-react";
 import { companyInfo } from "@/data/companyInfo";
 import { brandsData } from "@/data/brands";
 
@@ -32,13 +32,13 @@ export default function Header() {
           </div>
 
           <div className="flex items-center gap-4 text-xs">
-            <span className="text-slate-400 hidden sm:inline">Emergency Help Desk:</span>
+            <span className="text-slate-300 font-semibold hidden sm:inline">24/7 Toll-Free Hotline:</span>
             <a 
               href={`tel:${companyInfo.phoneRaw}`}
-              className="flex items-center gap-1 font-bold text-orange-400 hover:text-orange-300 transition-colors"
+              className="flex items-center gap-1.5 font-black text-amber-400 hover:text-amber-300 text-sm tracking-wide transition-colors bg-orange-950/80 px-2.5 py-0.5 rounded-full border border-orange-500/40"
             >
-              <Phone className="w-3 h-3 fill-current" />
-              {companyInfo.phone}
+              <PhoneCall className="w-3.5 h-3.5 text-orange-400 animate-pulse" />
+              <span>{companyInfo.phone}</span>
             </a>
           </div>
         </div>
@@ -110,7 +110,7 @@ export default function Header() {
           </Link>
         </div>
 
-        {/* Desktop Quick Action Buttons */}
+        {/* Desktop Quick Action Buttons - Extra Call Prominence */}
         <div className="hidden sm:flex items-center gap-3">
           <a
             href={`https://wa.me/${companyInfo.whatsappRaw}?text=${encodeURIComponent("Hi, I need urgent doorstep repair service for my kitchen appliance. Please dispatch a technician.")}`}
@@ -122,12 +122,16 @@ export default function Header() {
             <span>WhatsApp</span>
           </a>
 
+          {/* High Conversion Call Button */}
           <a
             href={`tel:${companyInfo.phoneRaw}`}
-            className="flex items-center gap-1.5 bg-orange-600 hover:bg-orange-700 text-white font-bold text-xs px-4 py-2.5 rounded-xl shadow-md hover:shadow-lg transition-all animate-pulse"
+            className="flex items-center gap-2 bg-gradient-to-r from-orange-600 to-amber-500 hover:from-orange-700 hover:to-amber-600 text-white font-black text-sm px-4 py-2.5 rounded-xl shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-0.5"
           >
-            <Phone className="w-4 h-4 fill-current" />
-            <span>Call Now</span>
+            <PhoneCall className="w-4 h-4 fill-current animate-bounce" />
+            <div className="text-left leading-tight">
+              <span className="text-[10px] block uppercase font-bold text-amber-200">Toll-Free Call</span>
+              <span>{companyInfo.phone}</span>
+            </div>
           </a>
         </div>
       </div>

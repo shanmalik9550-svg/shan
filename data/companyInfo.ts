@@ -1,9 +1,9 @@
 export const companyInfo = {
   name: "Kitchen Appliance Repair Experts",
-  phone: "+91 98765 43210",
-  phoneRaw: "+919876543210",
-  whatsapp: "+91 98765 43210",
-  whatsappRaw: "919876543210",
+  phone: "1800-202-6208",
+  phoneRaw: "18002026208",
+  whatsapp: "+91 95993 39483",
+  whatsappRaw: "919599339483",
   email: "support@kitchenappliancesservice.com",
   workingHours: "24/7 Emergency & Doorstep Service (8:00 AM - 10:00 PM Active Dispatch)",
   responseWaitMinutes: "30-45 Mins",
