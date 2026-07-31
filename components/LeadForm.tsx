@@ -34,6 +34,7 @@ export default function LeadForm({
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [bookingId, setBookingId] = useState("");
   const [error, setError] = useState("");
+  const [waRedirectUrl, setWaRedirectUrl] = useState("");
 
   const brandOptions = [
     "Kaff", "Siemens", "Hafele", "Gilma", "Glen", "Elica", "Kutchina",
@@ -74,6 +75,26 @@ export default function LeadForm({
     setError("");
     setIsSubmitting(true);
 
+    const randomId = "KSR-" + Math.floor(100000 + Math.random() * 900000);
+    setBookingId(randomId);
+
+    // Format rich WhatsApp message containing ALL form details filled by user
+    const formattedWaMsg = `*NEW DOORSTEP REPAIR BOOKING (Ref: ${randomId})*
+
+👤 *Name:* ${formData.name}
+📞 *Phone:* ${formData.phone}
+📍 *City:* ${formData.city}
+📮 *Pincode:* ${formData.pincode}
+🏠 *Address:* ${formData.fullAddress}
+🏷️ *Brand:* ${formData.brand}
+🔧 *Appliance:* ${formData.appliance}
+⚠️ *Problem Details:* ${formData.userMessage || 'Doorstep Repair Requested'}
+
+Please confirm technician arrival ETA.`;
+
+    const whatsappUrl = `https://wa.me/${companyInfo.whatsappRaw}?text=${encodeURIComponent(formattedWaMsg)}`;
+    setWaRedirectUrl(whatsappUrl);
+
     try {
       const web3FormData = new FormData();
       web3FormData.append("access_key", "39b83002-b632-4327-b3c9-bdc5d4508744");
@@ -88,26 +109,19 @@ export default function LeadForm({
       web3FormData.append("subject", `New Doorstep Repair Lead: ${formData.brand} ${formData.appliance} - ${formData.city} (${formData.pincode})`);
       web3FormData.append("from_name", "Kitchen Repair Pro Doorstep System");
 
-      const response = await fetch("https://api.web3forms.com/submit", {
+      await fetch("https://api.web3forms.com/submit", {
         method: "POST",
         body: web3FormData
       });
-
-      const resData = await response.json();
-
-      if (response.ok && resData.success) {
-        const randomId = "KSR-" + Math.floor(100000 + Math.random() * 900000);
-        setBookingId(randomId);
-        setIsSubmitted(true);
-      } else {
-        setError(resData.message || "Unable to send request automatically. Please call us directly.");
-      }
     } catch (err) {
-      const randomId = "KSR-" + Math.floor(100000 + Math.random() * 900000);
-      setBookingId(randomId);
-      setIsSubmitted(true);
+      console.warn("Web3Forms background submit fallback:", err);
     } finally {
       setIsSubmitting(false);
+      setIsSubmitted(true);
+      // Automatically redirect user to WhatsApp with pre-filled message
+      if (typeof window !== "undefined") {
+        window.open(whatsappUrl, "_blank");
+      }
     }
   };
 
@@ -280,19 +294,19 @@ export default function LeadForm({
               {isSubmitting ? (
                 <>
                   <Loader2 className="w-5 h-5 animate-spin" />
-                  <span>Sending Booking Request...</span>
+                  <span>Redirecting to WhatsApp...</span>
                 </>
               ) : (
                 <>
-                  <span>{buttonText}</span>
-                  <Wrench className="w-5 h-5" />
+                  <span>Submit & Connect on WhatsApp</span>
+                  <MessageSquare className="w-5 h-5" />
                 </>
               )}
             </button>
 
             <p className="text-[11px] text-center text-slate-500 flex items-center justify-center gap-2 mt-2">
               <ShieldCheck className="w-4 h-4 text-emerald-600" />
-              <span>100% Doorstep Privacy Protected • Zero Call Spam</span>
+              <span>Redirects automatically with complete lead details to WhatsApp</span>
             </p>
           </form>
         </>
@@ -312,7 +326,7 @@ export default function LeadForm({
           </h3>
 
           <p className="text-sm text-slate-600 mb-6 max-w-sm mx-auto">
-            Thank you, <strong className="text-slate-900">{formData.name}</strong>! Your doorstep service address (<strong className="text-slate-900">{formData.pincode}</strong>) and problem details have been sent to our dispatch team for <strong className="text-slate-900">{formData.brand} {formData.appliance}</strong> repair.
+            Thank you, <strong className="text-slate-900">{formData.name}</strong>! Your complete details have been sent to WhatsApp and emailed to our dispatch team.
           </p>
 
           <div className="bg-slate-50 p-4 rounded-xl text-left border border-slate-200 mb-6 space-y-2 text-xs">
@@ -331,22 +345,24 @@ export default function LeadForm({
           </div>
 
           <div className="space-y-3">
-            <a
-              href={`tel:${companyInfo.phoneRaw}`}
-              className="w-full bg-orange-600 hover:bg-orange-700 text-white font-black text-sm py-3.5 px-4 rounded-xl shadow-lg flex items-center justify-center gap-2 transition-colors"
-            >
-              <Phone className="w-4 h-4 fill-current" />
-              <span>Call Technician Immediately ({companyInfo.phone})</span>
-            </a>
+            {waRedirectUrl && (
+              <a
+                href={waRedirectUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm py-3.5 px-4 rounded-xl flex items-center justify-center gap-2 shadow-lg transition-colors"
+              >
+                <MessageSquare className="w-5 h-5" />
+                <span>Open WhatsApp Chat Now</span>
+              </a>
+            )}
 
             <a
-              href={`https://wa.me/${companyInfo.whatsappRaw}?text=${encodeURIComponent(`Hi, I submitted doorstep booking ref ${bookingId} for my ${formData.brand} ${formData.appliance} at ${formData.fullAddress}, ${formData.city} - ${formData.pincode}. Please confirm technician ETA.`)}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm py-3 px-4 rounded-xl flex items-center justify-center gap-2 transition-colors"
+              href={`tel:${companyInfo.phoneRaw}`}
+              className="w-full bg-orange-600 hover:bg-orange-700 text-white font-black text-sm py-3.5 px-4 rounded-xl flex items-center justify-center gap-2 transition-colors"
             >
-              <MessageSquare className="w-4 h-4" />
-              <span>Track Booking on WhatsApp</span>
+              <Phone className="w-4 h-4 fill-current" />
+              <span>Call Technician Directly ({companyInfo.phone})</span>
             </a>
           </div>
         </div>
