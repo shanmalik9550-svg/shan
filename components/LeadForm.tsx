@@ -107,7 +107,7 @@ Please confirm technician arrival ETA.`;
       web3FormData.append("product_age", formData.productAge);
       web3FormData.append("problem_details", formData.userMessage || "Doorstep Repair Requested");
       web3FormData.append("subject", `New Doorstep Repair Lead: ${formData.appliance} (${formData.productAge}) - ${formData.city} (${formData.pincode})`);
-      web3FormData.append("from_name", "Kitchen Repair Pro Doorstep System");
+      web3FormData.append("from_name", "Kitchen Repair Doorstep System");
 
       await fetch("https://api.web3forms.com/submit", {
         method: "POST",

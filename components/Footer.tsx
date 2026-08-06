@@ -21,8 +21,8 @@ export default function Footer() {
                 <Wrench className="w-6 h-6" />
               </div>
               <div>
-                <span className="font-black text-xl text-white tracking-tight">Kitchen Repair Pro</span>
-                <p className="text-[11px] text-slate-400">Independent Appliance Repair Experts</p>
+                <span className="font-black text-xl text-white tracking-tight">Kitchen Repair Service</span>
+                <p className="text-[11px] text-slate-400">Doorstep Appliance Repair Experts</p>
               </div>
             </Link>
 
