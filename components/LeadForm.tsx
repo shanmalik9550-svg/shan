@@ -26,6 +26,7 @@ export default function LeadForm({
     pincode: "",
     fullAddress: "",
     appliance: defaultAppliance,
+    productAge: "1 - 3 Years",
     userMessage: ""
   });
 
@@ -42,6 +43,14 @@ export default function LeadForm({
     "Auto Ignition Problem",
     "Burner / Gas Leakage Repair",
     "Deep Cleaning & Maintenance"
+  ];
+
+  const productAgeOptions = [
+    "Under 1 Year",
+    "1 - 3 Years",
+    "3 - 5 Years",
+    "5 - 10 Years",
+    "10+ Years"
   ];
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -78,6 +87,7 @@ export default function LeadForm({
 📮 *Pincode:* ${formData.pincode}
 🏠 *Address:* ${formData.fullAddress}
 🔧 *Product:* ${formData.appliance}
+⏳ *Product Age:* ${formData.productAge}
 ⚠️ *Problem Details:* ${formData.userMessage || 'Doorstep Repair Requested'}
 
 Please confirm technician arrival ETA.`;
@@ -94,8 +104,9 @@ Please confirm technician arrival ETA.`;
       web3FormData.append("pincode", formData.pincode);
       web3FormData.append("full_address", formData.fullAddress);
       web3FormData.append("product", formData.appliance);
+      web3FormData.append("product_age", formData.productAge);
       web3FormData.append("problem_details", formData.userMessage || "Doorstep Repair Requested");
-      web3FormData.append("subject", `New Doorstep Repair Lead: ${formData.appliance} - ${formData.city} (${formData.pincode})`);
+      web3FormData.append("subject", `New Doorstep Repair Lead: ${formData.appliance} (${formData.productAge}) - ${formData.city} (${formData.pincode})`);
       web3FormData.append("from_name", "Kitchen Repair Pro Doorstep System");
 
       await fetch("https://api.web3forms.com/submit", {
@@ -222,22 +233,41 @@ Please confirm technician arrival ETA.`;
               />
             </div>
 
-            {/* Product Selection Input */}
-            <div>
-              <label className="block text-xs font-bold text-slate-700 mb-1">
-                Product <span className="text-red-500">*</span>
-              </label>
-              <select
-                value={formData.appliance}
-                onChange={(e) => setFormData({ ...formData, appliance: e.target.value })}
-                className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-xs sm:text-sm text-slate-900 font-semibold focus:bg-white focus:border-blue-600 outline-none"
-              >
-                {applianceOptions.map((app) => (
-                  <option key={app} value={app}>
-                    {app}
-                  </option>
-                ))}
-              </select>
+            {/* Product & Product Age Grid */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div>
+                <label className="block text-xs font-bold text-slate-700 mb-1">
+                  Product <span className="text-red-500">*</span>
+                </label>
+                <select
+                  value={formData.appliance}
+                  onChange={(e) => setFormData({ ...formData, appliance: e.target.value })}
+                  className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-xs text-slate-900 font-semibold focus:bg-white focus:border-blue-600 outline-none"
+                >
+                  {applianceOptions.map((app) => (
+                    <option key={app} value={app}>
+                      {app}
+                    </option>
+                  ))}
+                </select>
+              </div>
+
+              <div>
+                <label className="block text-xs font-bold text-slate-700 mb-1">
+                  Product Age <span className="text-red-500">*</span>
+                </label>
+                <select
+                  value={formData.productAge}
+                  onChange={(e) => setFormData({ ...formData, productAge: e.target.value })}
+                  className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-xs text-slate-900 font-semibold focus:bg-white focus:border-blue-600 outline-none"
+                >
+                  {productAgeOptions.map((age) => (
+                    <option key={age} value={age}>
+                      {age}
+                    </option>
+                  ))}
+                </select>
+              </div>
             </div>
 
             {/* Type Message & Problem Details */}
@@ -247,7 +277,7 @@ Please confirm technician arrival ETA.`;
               </label>
               <textarea
                 rows={2}
-                placeholder="Describe the issue (e.g. Gas leakage sound, auto-ignition not clicking, low suction, glass broken, oven not heating...)"
+                placeholder="Describe the issue (e.g. Gas leakage sound, auto-ignition not clicking, low suction...)"
                 value={formData.userMessage}
                 onChange={(e) => setFormData({ ...formData, userMessage: e.target.value })}
                 className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2 text-xs text-slate-900 focus:bg-white focus:border-blue-600 focus:ring-2 focus:ring-blue-100 transition-all outline-none"
