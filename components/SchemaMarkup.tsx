@@ -14,7 +14,7 @@ export default function SchemaMarkup({ brandName, pageTitle, pageDescription }: 
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": brandName ? `${companyInfo.name} - ${brandName} Specialist` : companyInfo.name,
-    "description": pageDescription || "Same-day doorstep kitchen appliance repair service for kitchen chimneys, gas hobs, stoves, built-in ovens and cooking ranges.",
+    "description": pageDescription || "Same-day doorstep kitchen appliance repair service for kitchen chimneys, gas hobs, and stoves.",
     "telephone": companyInfo.phone,
     "areaServed": companyInfo.serviceAreas.map(city => ({
       "@type": "City",
@@ -67,13 +67,6 @@ export default function SchemaMarkup({ brandName, pageTitle, pageDescription }: 
           "itemOffered": {
             "@type": "Service",
             "name": "Gas Stove Leakage & Nozzle Cleaning"
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Built-in Oven Thermostat & Heating Element Repair"
           }
         }
       ]

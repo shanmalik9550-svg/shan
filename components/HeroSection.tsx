@@ -15,8 +15,8 @@ interface HeroSectionProps {
 
 export default function HeroSection({
   h1Title = "Professional Kitchen Appliance Repair & Doorstep Service",
-  heroHeadline = "Same-Day Doorstep Repair for Kitchen Chimneys, Hobs & Ovens",
-  heroSubheadline = "Certified Technicians for Kaff, Siemens, Faber, Bosch, Elica, Glen & All Major Brands. Arrival in 30-45 minutes with 90-Day Written Warranty.",
+  heroHeadline = "Same-Day Doorstep Repair for Kitchen Chimneys, Hobs & Gas Stoves",
+  heroSubheadline = "Certified Technicians for Kitchen Chimneys, Hobs & Gas Stoves. Arrival in 30-45 minutes with 90-Day Written Warranty.",
   brandName,
   ctaCopy = "Book Service Today"
 }: HeroSectionProps) {

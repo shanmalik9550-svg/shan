@@ -27,8 +27,8 @@ export const servicesData: ServiceItem[] = [
   {
     id: "kitchen-hob",
     title: "Kitchen Hob Repair",
-    shortDesc: "Toughened glass hob burner repair, auto-ignition wire replacement & gas valve calibration.",
-    fullDesc: "Specialized doorstep repair for 2, 3, 4, and 5 burner built-in glass and stainless steel hobs. Resolves yellow flame, gas leaks, spark igniter failure, stuck knobs, and shattered glass top replacement.",
+    shortDesc: "Built-in hob burner repair, auto-ignition wire replacement & gas valve calibration.",
+    fullDesc: "Specialized doorstep repair for 2, 3, 4, and 5 burner built-in glass and stainless steel hobs. Resolves yellow flame, gas leaks, spark igniter failure, stuck knobs, and gas valve issues.",
     iconName: "Flame",
     popular: true,
     features: [
@@ -36,14 +36,14 @@ export const servicesData: ServiceItem[] = [
       "Brass & Alloy Burner Nozzle Cleaning",
       "Gas Leakage Pressure Testing",
       "Brass Valve & Regulator Servicing",
-      "Original Toughened Glass Top Replacement"
+      "Same-Day Doorstep Technician Visit"
     ]
   },
   {
     id: "gas-stove",
     title: "Gas Stove Repair",
     shortDesc: "Fast fix for stainless steel & glass gas stoves, low flame, clogged jets, and loose valves.",
-    fullDesc: "Comprehensive doorstep gas stove repair and servicing. We fix low flame intensity, carbon deposit clogging, faulty knobs, leaking gas hoses, and cracked glass tops with 90-day service warranty.",
+    fullDesc: "Comprehensive doorstep gas stove repair and servicing. We fix low flame intensity, carbon deposit clogging, faulty knobs, and leaking gas hoses with 90-day service warranty.",
     iconName: "Burner",
     popular: true,
     features: [
@@ -52,50 +52,6 @@ export const servicesData: ServiceItem[] = [
       "High-Pressure Rubber Hose Pipe Replacement",
       "Knob & Spindle Lubrication",
       "Safety Leak Detection Check"
-    ]
-  },
-  {
-    id: "cooktop",
-    title: "Cooktop Repair",
-    shortDesc: "Induction and ceramic cooktop PCB replacement, glass top repair, and heating coil fixes.",
-    fullDesc: "Certified technician repair for portable induction cooktops, ceramic electric cooktops, and smart touch burners. We resolve error codes (E0, E1, E2, E6), motherboard burnouts, coil replacement, and power supply failures.",
-    iconName: "Zap",
-    features: [
-      "IGBT Power Transistor Replacement",
-      "Main Control Board PCB Repair",
-      "Crystal Glass Top Replacement",
-      "Thermal Sensor & Fan Repair",
-      "Voltage Regulator Calibration"
-    ]
-  },
-  {
-    id: "cooking-range",
-    title: "Cooking Range Repair",
-    shortDesc: "Freestanding cooking range burner, oven thermostat, grill element & rotisserie repair.",
-    fullDesc: "Professional repair services for heavy-duty multi-burner freestanding cooking ranges with integrated ovens and grills. Solves uneven baking, gas oven ignition failures, door gasket leaks, and thermostat calibration.",
-    iconName: "Grid",
-    popular: true,
-    features: [
-      "Oven Heating Element & Grill Replacement",
-      "Thermostat & Temperature Sensor Fix",
-      "Ignition Valve & Pilot Burner Repair",
-      "Heavy Glass Door & Spring Hinge Fix",
-      "Internal Gas Piping Pressure Seal"
-    ]
-  },
-  {
-    id: "builtin-oven",
-    title: "Built-in Oven Repair",
-    shortDesc: "Convection & steam oven fan motor repair, heating element, digital display & PCB fixing.",
-    fullDesc: "Expert technician service for modern built-in microwave, convection, and steam ovens. Solves non-heating, oven tripping power, burnt heating elements, faulty touch panels, door seal damage, and cooling fan failures.",
-    iconName: "Box",
-    popular: true,
-    features: [
-      "Top & Bottom Heating Element Fix",
-      "Convection Blower Fan Replacement",
-      "Digital Thermostat & Timer Repair",
-      "PCB Control Board Transistor Fix",
-      "Door Gasket Seal & Latch Replacement"
     ]
   },
   {
@@ -142,24 +98,10 @@ export const servicesData: ServiceItem[] = [
     ]
   },
   {
-    id: "glass-replacement",
-    title: "Glass Replacement",
-    shortDesc: "8mm toughened shattered glass top replacement for all hob and stove brands.",
-    fullDesc: "Accidentally cracked or shattered your gas stove or built-in hob glass top? We provide high-thermal-resistance 8mm toughened glass replacement tailored to exact dimensions for all major brands.",
-    iconName: "ShieldAlert",
-    features: [
-      "8mm Heavy-Duty Toughened Thermal Glass",
-      "Custom Fit Cutouts for Burners & Controls",
-      "High-Temperature Silicone Heat Sealant",
-      "Brand-Specific Dimensions & Color Matches",
-      "Impact & Shock Resistance Guaranteed"
-    ]
-  },
-  {
     id: "pcb-repair",
     title: "PCB Board Repair",
     shortDesc: "Microprocessor motherboard repair, IC replacement, touch sensor & relay board fixing.",
-    fullDesc: "Fix dead control panels, error codes, and power surge burnt PCB motherboards for chimneys, hobs, and built-in ovens without expensive full assembly replacements.",
+    fullDesc: "Fix dead control panels, error codes, and power surge burnt PCB motherboards for chimneys and hobs without expensive full assembly replacements.",
     iconName: "Cpu",
     features: [
       "Microcontroller IC & Relay Replacement",
@@ -172,8 +114,8 @@ export const servicesData: ServiceItem[] = [
   {
     id: "installation",
     title: "Appliance Installation",
-    shortDesc: "Precision countertop cutting, duct hole drilling, gas pipe connection & safety testing.",
-    fullDesc: "Get your new kitchen chimney, built-in hob, or oven installed seamlessly by experienced technicians. Includes wall mounting, duct pipe installation, granite cutting guidance, and gas safety testing.",
+    shortDesc: "Precision wall mounting, duct hole drilling, gas pipe connection & safety testing.",
+    fullDesc: "Get your new kitchen chimney or built-in hob installed seamlessly by experienced technicians. Includes wall mounting, duct pipe installation, and gas safety testing.",
     iconName: "CheckSquare",
     features: [
       "Precision Wall Drilling & Heavy Bracket Mounting",
@@ -186,7 +128,7 @@ export const servicesData: ServiceItem[] = [
   {
     id: "uninstallation",
     title: "Appliance Uninstallation",
-    shortDesc: "Safe removal of old chimneys, hobs, and built-in ovens without damaging kitchen cabinets.",
+    shortDesc: "Safe removal of old chimneys and hobs without damaging kitchen cabinets.",
     fullDesc: "Relocating or upgrading your kitchen? Our technicians safely uninstall and package your existing appliances, capping off gas connections securely to prevent leaks.",
     iconName: "Trash2",
     features: [
@@ -200,7 +142,7 @@ export const servicesData: ServiceItem[] = [
   {
     id: "deep-cleaning",
     title: "Deep Cleaning & Degreasing",
-    shortDesc: "Chemical degreasing of chimney blowers, oil collectors, hob burners & oven interiors.",
+    shortDesc: "Chemical degreasing of chimney blowers, oil collectors, and hob burners.",
     fullDesc: "Eliminate stubborn grease, burnt oil sludge, and heavy carbon buildup. We dismantle oil collectors, baffle filters, internal blowers, and stove burners for thorough eco-friendly chemical ultrasonic cleaning.",
     iconName: "Sparkles",
     popular: true,
@@ -209,14 +151,14 @@ export const servicesData: ServiceItem[] = [
       "Internal Blower & Motor Housing Cleaning",
       "Baffle & Mesh Filter Ultrasonic Soak",
       "Burner Chamber Carbon Scraping",
-      "Oven Cavity & Rack Grease Scraping"
+      "Stove & Hob Deep Cleaning"
     ]
   },
   {
     id: "annual-maintenance",
     title: "Annual Maintenance (AMC)",
     shortDesc: "33-point quarterly preventive maintenance, free spare replacement & priority 24/7 support.",
-    fullDesc: "Protect your expensive kitchen appliances all year round. Includes 3 scheduled deep cleans per year, unlimited emergency repair visits, free minor spare parts, and priority technician dispatch.",
+    fullDesc: "Protect your kitchen appliances all year round. Includes 3 scheduled deep cleans per year, unlimited emergency repair visits, free minor spare parts, and priority technician dispatch.",
     iconName: "Calendar",
     features: [
       "3 Scheduled Preventive Maintenance Visits/Yr",

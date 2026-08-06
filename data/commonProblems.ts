@@ -62,32 +62,5 @@ export const commonProblemsData: ProblemItem[] = [
     solution: "Motor bearing replacement, fan balancing, duct dampening & shaft alignment.",
     urgency: "Medium",
     iconName: "Volume2"
-  },
-  {
-    id: "oven-heating-issue",
-    title: "Oven Not Heating / Uneven Baking",
-    symptoms: "Oven turns on but stays cold, or food burns on top while undercooked at bottom.",
-    cause: "Burnt upper/lower heating element, faulty thermostat sensor, blown PCB relay.",
-    solution: "Heating element replacement, thermostat recalibration & PCB relay soldering.",
-    urgency: "High",
-    iconName: "Thermometer"
-  },
-  {
-    id: "glass-broken",
-    title: "Shattered or Cracked Toughened Glass Top",
-    symptoms: "Cracks on hob surface, glass spiderwebbing, loose burner seals.",
-    cause: "Thermal shock from cold water on hot hob, heavy pan impact, manufacturing stress.",
-    solution: "Full 8mm heat-resistant toughened glass panel replacement & silicone sealing.",
-    urgency: "Critical",
-    iconName: "ShieldAlert"
-  },
-  {
-    id: "cooktop-failure",
-    title: "Induction / Electric Cooktop Error Codes (E0, E1, E6)",
-    symptoms: "Cooktop beeps repeatedly, won't detect cookware, or trips household circuit breaker.",
-    cause: "Short-circuited IGBT power transistor, faulty pan sensor coil, motherboard failure.",
-    solution: "IGBT chip replacement, coil re-soldering & power board surge repair.",
-    urgency: "High",
-    iconName: "Cpu"
   }
 ];

@@ -25,7 +25,6 @@ export default function LeadForm({
     city: companyInfo.serviceAreas[0],
     pincode: "",
     fullAddress: "",
-    brand: defaultBrand,
     appliance: defaultAppliance,
     userMessage: ""
   });
@@ -36,18 +35,10 @@ export default function LeadForm({
   const [error, setError] = useState("");
   const [waRedirectUrl, setWaRedirectUrl] = useState("");
 
-  const brandOptions = [
-    "Kaff", "Siemens", "Hafele", "Gilma", "Glen", "Elica", "Kutchina",
-    "Faber", "Bosch", "Blowhot", "Sunflame", "Crompton", "Cata", "Asko", "Miele", "Other Brand"
-  ];
-
   const applianceOptions = [
     "Kitchen Chimney",
     "Kitchen Hob",
     "Gas Stove",
-    "Cooktop",
-    "Cooking Range",
-    "Built-in Oven",
     "Auto Ignition Problem",
     "Burner / Gas Leakage Repair",
     "Deep Cleaning & Maintenance"
@@ -86,8 +77,7 @@ export default function LeadForm({
 📍 *City:* ${formData.city}
 📮 *Pincode:* ${formData.pincode}
 🏠 *Address:* ${formData.fullAddress}
-🏷️ *Brand:* ${formData.brand}
-🔧 *Appliance:* ${formData.appliance}
+🔧 *Product:* ${formData.appliance}
 ⚠️ *Problem Details:* ${formData.userMessage || 'Doorstep Repair Requested'}
 
 Please confirm technician arrival ETA.`;
@@ -103,10 +93,9 @@ Please confirm technician arrival ETA.`;
       web3FormData.append("city", formData.city);
       web3FormData.append("pincode", formData.pincode);
       web3FormData.append("full_address", formData.fullAddress);
-      web3FormData.append("brand", formData.brand);
-      web3FormData.append("appliance", formData.appliance);
+      web3FormData.append("product", formData.appliance);
       web3FormData.append("problem_details", formData.userMessage || "Doorstep Repair Requested");
-      web3FormData.append("subject", `New Doorstep Repair Lead: ${formData.brand} ${formData.appliance} - ${formData.city} (${formData.pincode})`);
+      web3FormData.append("subject", `New Doorstep Repair Lead: ${formData.appliance} - ${formData.city} (${formData.pincode})`);
       web3FormData.append("from_name", "Kitchen Repair Pro Doorstep System");
 
       await fetch("https://api.web3forms.com/submit", {
@@ -233,42 +222,22 @@ Please confirm technician arrival ETA.`;
               />
             </div>
 
-            {/* Brand & Appliance Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-              <div>
-                <label className="block text-xs font-bold text-slate-700 mb-1">
-                  Appliance Brand
-                </label>
-                <select
-                  value={formData.brand}
-                  onChange={(e) => setFormData({ ...formData, brand: e.target.value })}
-                  className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-xs text-slate-900 font-semibold focus:bg-white focus:border-blue-600 outline-none"
-                >
-                  <option value="Select Brand">Select Brand</option>
-                  {brandOptions.map((b) => (
-                    <option key={b} value={b}>
-                      {b}
-                    </option>
-                  ))}
-                </select>
-              </div>
-
-              <div>
-                <label className="block text-xs font-bold text-slate-700 mb-1">
-                  Appliance Type
-                </label>
-                <select
-                  value={formData.appliance}
-                  onChange={(e) => setFormData({ ...formData, appliance: e.target.value })}
-                  className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-xs text-slate-900 font-semibold focus:bg-white focus:border-blue-600 outline-none"
-                >
-                  {applianceOptions.map((app) => (
-                    <option key={app} value={app}>
-                      {app}
-                    </option>
-                  ))}
-                </select>
-              </div>
+            {/* Product Selection Input */}
+            <div>
+              <label className="block text-xs font-bold text-slate-700 mb-1">
+                Product <span className="text-red-500">*</span>
+              </label>
+              <select
+                value={formData.appliance}
+                onChange={(e) => setFormData({ ...formData, appliance: e.target.value })}
+                className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-xs sm:text-sm text-slate-900 font-semibold focus:bg-white focus:border-blue-600 outline-none"
+              >
+                {applianceOptions.map((app) => (
+                  <option key={app} value={app}>
+                    {app}
+                  </option>
+                ))}
+              </select>
             </div>
 
             {/* Type Message & Problem Details */}
