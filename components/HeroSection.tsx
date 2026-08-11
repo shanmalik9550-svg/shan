@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import { Phone, MessageSquare, ShieldCheck, Clock, CheckCircle2, Star, Wrench, Sparkles, MapPin, PhoneCall } from "lucide-react";
 import LeadForm from "./LeadForm";
 import { companyInfo } from "@/data/companyInfo";
@@ -10,23 +11,38 @@ interface HeroSectionProps {
   heroHeadline?: string;
   heroSubheadline?: string;
   brandName?: string;
+  brandLogo?: string;
   ctaCopy?: string;
 }
 
 export default function HeroSection({
   h1Title = "Professional Kitchen Appliance Repair & Doorstep Service",
   heroHeadline = "Same-Day Doorstep Repair for Kitchen Chimneys, Hobs & Gas Stoves",
-  heroSubheadline = "Certified Technicians for Kitchen Chimneys, Hobs & Gas Stoves. Arrival in 30-45 minutes with 90-Day Written Warranty.",
+  heroSubheadline = "Certified Technicians for Kitchen Chimneys, Hobs & Gas Stoves. Arrival in 30-45 minutes with 1-Year Written Warranty.",
   brandName,
+  brandLogo,
   ctaCopy = "Book Service Today"
 }: HeroSectionProps) {
   return (
-    <section className="relative bg-slate-900 text-white overflow-hidden pt-8 pb-12 sm:pt-12 sm:pb-16 border-b border-slate-800">
+    <section className="relative bg-slate-900 text-white overflow-hidden pt-6 pb-12 sm:pt-10 sm:pb-16 border-b border-slate-800">
       {/* Background Gradient Orbs */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-blue-600/20 rounded-full blur-3xl pointer-events-none"></div>
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-orange-600/15 rounded-full blur-3xl pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto px-4 relative z-10">
+        {/* Brand Logo Display (Image Only) */}
+        {brandLogo && (
+          <div className="mb-6 flex justify-center sm:justify-start">
+            <div className="bg-white p-2 sm:p-2.5 rounded-2xl shadow-2xl border-2 border-white/90 flex items-center justify-center h-20 sm:h-24 w-56 sm:w-72 shrink-0 overflow-hidden">
+              <img
+                src={brandLogo}
+                alt={`${brandName || 'Brand'} Logo`}
+                className="max-h-full max-w-full object-contain transform scale-125 sm:scale-135 transition-transform"
+              />
+            </div>
+          </div>
+        )}
+
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           {/* Left Column: Headlines, Trust Bullets, CTAs */}
           <div className="lg:col-span-7 space-y-6">
@@ -65,7 +81,7 @@ export default function HeroSection({
               </div>
               <div className="flex items-center gap-2 bg-slate-800/60 p-2.5 rounded-xl border border-slate-700/50">
                 <CheckCircle2 className="w-5 h-5 text-orange-400 flex-shrink-0" />
-                <span className="text-xs sm:text-sm font-bold text-slate-100">90-Day Warranty</span>
+                <span className="text-xs sm:text-sm font-bold text-slate-100">1-Year Warranty</span>
               </div>
             </div>
 
@@ -131,3 +147,4 @@ export default function HeroSection({
     </section>
   );
 }
+

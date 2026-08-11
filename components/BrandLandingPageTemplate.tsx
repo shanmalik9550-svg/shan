@@ -34,6 +34,7 @@ export default function BrandLandingPageTemplate({ brand }: BrandLandingPageTemp
         heroHeadline={brand.heroHeadline}
         heroSubheadline={brand.heroSubheadline}
         brandName={brand.name}
+        brandLogo={brand.logoUrl}
         ctaCopy={brand.ctaCopy}
       />
 
@@ -43,9 +44,20 @@ export default function BrandLandingPageTemplate({ brand }: BrandLandingPageTemp
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             {/* Left Content Column */}
             <div className="lg:col-span-7 space-y-4">
-              <span className="bg-blue-100 text-blue-800 text-xs font-black uppercase tracking-wider px-3 py-1 rounded-full">
-                {brand.name} Repair Experts
-              </span>
+              <div className="flex flex-wrap sm:flex-nowrap items-center justify-center sm:justify-start gap-3 text-center sm:text-left">
+                {brand.logoUrl && (
+                  <div className="bg-white p-1.5 rounded-xl border border-slate-300 shadow-sm w-36 h-12 flex items-center justify-center shrink-0 overflow-hidden">
+                    <img
+                      src={brand.logoUrl}
+                      alt={`${brand.name} Logo`}
+                      className="max-h-full max-w-full object-contain transform scale-120"
+                    />
+                  </div>
+                )}
+                <span className="bg-blue-100 text-blue-800 text-xs font-black uppercase tracking-wider px-3 py-1 rounded-full">
+                  {brand.name} Repair Experts
+                </span>
+              </div>
 
               <h2 className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">
                 {brand.brandTagline}

@@ -18,7 +18,7 @@ export default function FAQSection({ faqs, brandName }: FAQSectionProps) {
     },
     {
       question: "Do you provide a written warranty on repairs and spare parts?",
-      answer: "Yes, every doorstep repair service and replaced component comes with an official written 90-day service warranty."
+      answer: "Yes, every doorstep repair service and replaced component comes with an official written 1-year service warranty."
     },
     {
       question: "What should I do immediately if I smell gas near my hob or stove?",
@@ -89,7 +89,7 @@ export default function FAQSection({ faqs, brandName }: FAQSectionProps) {
             {brandName ? `${brandName} Repair FAQs` : "Frequently Asked Questions"}
           </h2>
           <p className="text-slate-600 text-sm sm:text-base mt-2">
-            Clear, honest answers regarding our doorstep repair service, 90-day warranty, and spare part guarantees.
+            Clear, honest answers regarding our doorstep repair service, 1-year warranty, and spare part guarantees.
           </p>
         </div>
 

@@ -16,6 +16,7 @@ export interface ReviewItem {
 export interface BrandData {
   slug: string;
   name: string;
+  logoUrl?: string;
   h1Title: string;
   heroHeadline: string;
   heroSubheadline: string;
@@ -34,17 +35,18 @@ export const brandsData: Record<string, BrandData> = {
   "kaff-repair": {
     slug: "kaff-repair",
     name: "Kaff",
+    logoUrl: "/logos/kaff.jpg",
     h1Title: "Kaff Kitchen Appliance Repair & Doorstep Service",
     heroHeadline: "Same-Day Kaff Chimney, Hob & Gas Stove Repair at Doorstep",
-    heroSubheadline: "Certified Technicians for Kaff Built-in Hobs, Gas Stoves & Auto-Clean Chimneys. 90-Day Warranty with Genuine Kaff Spare Parts.",
+    heroSubheadline: "Certified Technicians for Kaff Built-in Hobs, Gas Stoves & Auto-Clean Chimneys. 1-Year Warranty with Genuine Kaff Spare Parts.",
     metaTitle: "Kaff Appliance Repair Service | Kaff Chimney & Hob Repair Near Me",
-    metaDescription: "Fast doorstep Kaff chimney repair, Kaff hob burner fix, auto-ignition & gas leakage servicing. Experienced technicians, 90-day warranty. Call now!",
+    metaDescription: "Fast doorstep Kaff chimney repair, Kaff hob burner fix, auto-ignition & gas leakage servicing. Experienced technicians, 1-year warranty. Call now!",
     ctaCopy: "Book Kaff Expert Repair in 30 Mins",
     brandTagline: "Specialized Doorstep Care for Kaff Kitchen Appliances",
     descriptionCopy: [
       "Kaff kitchen appliances are renowned for sleek European aesthetics and high-suction auto-clean chimneys. However, heavy Indian cooking with high oil and spice content often causes oil collectors, touch switches, and forged brass burners to degrade over time.",
       "Our specialized Kaff repair service brings certified master technicians directly to your doorstep within 30 to 45 minutes. Whether your Kaff chimney suction power has dropped, the touch control panel is unresponsive, or your Kaff 4-burner gas hob is experiencing auto-ignition clicking, we diagnose and resolve it on-site.",
-      "We strictly utilize 100% original Kaff compatible replacement parts including heat coils, pulse generators, high-efficiency blowers, and brass burners. Backed by an official 90-day service warranty."
+      "We strictly utilize 100% original Kaff compatible replacement parts including heat coils, pulse generators, high-efficiency blowers, and brass burners. Backed by an official 1-year service warranty."
     ],
     specialties: [
       "Kaff Auto-Clean Heat & Dry Chimneys",
@@ -61,7 +63,7 @@ export const brandsData: Record<string, BrandData> = {
     faqs: [
       { question: "How quickly can a technician visit for Kaff chimney repair?", answer: "We offer immediate doorstep dispatch. A technician will arrive at your home within 30 to 45 minutes of booking anywhere in our coverage cities." },
       { question: "Do you use original spare parts for Kaff hobs and chimneys?", answer: "Yes, we use 100% genuine and high-grade Kaff compatible spare parts, including original heating coils, pulse igniters, and motors." },
-      { question: "What is covered under your 90-day Kaff service warranty?", answer: "Our 90-day warranty covers all replaced spare parts and workmanship. If the same issue reoccurs within 90 days, we fix it completely free of charge." },
+      { question: "What is covered under your 1-year Kaff service warranty?", answer: "Our 1-year warranty covers all replaced spare parts and workmanship. If the same issue reoccurs within 1 year, we fix it completely free of charge." },
       { question: "Why is my Kaff chimney auto-clean feature not melting grease?", answer: "This is usually caused by a blown heating element coil or a faulty thermal relay on the Kaff PCB board. Our technician can replace the heater coil on-site." },
       { question: "How does the doorstep Kaff gas leakage inspection work?", answer: "Our technician performs digital manometer pressure testing and soap-bubble checks to isolate leaks and seal valves safely." },
       { question: "Do you provide Kaff chimney deep chemical cleaning?", answer: "Yes, we perform complete teardown chemical degreasing of Kaff blowers, oil collectors, and baffle filters to restore 100% original suction power." },
@@ -78,7 +80,7 @@ export const brandsData: Record<string, BrandData> = {
     name: "Siemens",
     h1Title: "Siemens Kitchen Appliance Repair & Service Center Support",
     heroHeadline: "Precision German Engineering Repair for Siemens Appliances",
-    heroSubheadline: "Expert Doorstep Repair for Siemens iQ700 Hobs, Gas Stoves & Chimneys. 90-Day Warranty.",
+    heroSubheadline: "Expert Doorstep Repair for Siemens iQ700 Hobs, Gas Stoves & Chimneys. 1-Year Warranty.",
     metaTitle: "Siemens Appliance Repair | Siemens Hob & Chimney Service Near Me",
     metaDescription: "Doorstep Siemens hob repair, gas leakage fixing & Siemens chimney repair. German engineering specialists. Call now!",
     ctaCopy: "Request Siemens Specialist Technician",
@@ -86,7 +88,7 @@ export const brandsData: Record<string, BrandData> = {
     descriptionCopy: [
       "Siemens kitchen appliances represent peak German innovation, featuring stepFlame gas control and high-efficiency extraction hoods. Fixing Siemens appliances requires technical knowledge and precise calibration.",
       "Our specialized Siemens repair engineers are equipped with advanced diagnostic tools to resolve gas solenoid valve issues, burner jet clogging, and chimney motor faults right at your home.",
-      "We provide prompt doorstep visits within 30-45 minutes, transparent upfront quotes before starting work, and a 90-day guarantee on all Siemens genuine component replacements."
+      "We provide prompt doorstep visits within 30-45 minutes, transparent upfront quotes before starting work, and a 1-year guarantee on all Siemens genuine component replacements."
     ],
     specialties: [
       "Siemens iQ300 / iQ500 / iQ700 Built-in Gas Hobs",
@@ -100,7 +102,7 @@ export const brandsData: Record<string, BrandData> = {
     faqs: [
       { question: "Do you specialize in Siemens iQ700 series built-in appliances?", answer: "Yes, our senior engineers are specifically trained in Siemens iQ300, iQ500, and iQ700 series gas hobs and chimneys." },
       { question: "How long does a Siemens hob burner repair take?", answer: "Most Siemens hob repairs, including valve servicing and spark generator replacement, are completed in under 45 minutes at your doorstep." },
-      { question: "Do you use original Siemens replacement parts?", answer: "Yes, we use 100% high-grade, original Siemens compatible components backed by a written 90-day warranty." },
+      { question: "Do you use original Siemens replacement parts?", answer: "Yes, we use 100% high-grade, original Siemens compatible components backed by a written 1-year warranty." },
       { question: "Is doorstep service available on weekends for Siemens appliances?", answer: "Yes, our emergency technician team operates 7 days a week, including Sundays and public holidays." },
       { question: "What should I do if my Siemens gas hob is leaking gas?", answer: "Turn off the main gas valve immediately and call our emergency hotline. A certified gas safety engineer will reach your home in 30 minutes." }
     ],
@@ -113,17 +115,18 @@ export const brandsData: Record<string, BrandData> = {
   "hafele-repair": {
     slug: "hafele-repair",
     name: "Hafele",
+    logoUrl: "/logos/hafele.jpg",
     h1Title: "Hafele Premium Kitchen Appliance Repair & Servicing",
     heroHeadline: "Expert Doorstep Care for Hafele Hobs & Chimneys",
-    heroSubheadline: "Luxury Kitchen Appliance Technicians for Hafele Hobs & Chimneys. Fast 30-Minute Doorstep Response & 90-Day Warranty.",
+    heroSubheadline: "Luxury Kitchen Appliance Technicians for Hafele Hobs & Chimneys. Fast 30-Minute Doorstep Response & 1-Year Warranty.",
     metaTitle: "Hafele Appliance Repair Service | Hafele Hob & Chimney Repair",
-    metaDescription: "Professional doorstep Hafele hob repair, Hafele chimney suction fix & gas leak fixing. 90-day warranty. Book today!",
+    metaDescription: "Professional doorstep Hafele hob repair, Hafele chimney suction fix & gas leak fixing. 1-year warranty. Book today!",
     ctaCopy: "Book Hafele Appliance Repair",
     brandTagline: "Architectural Quality Repair for Hafele Luxury Appliances",
     descriptionCopy: [
       "Hafele is synonymous with high-end architectural kitchen solutions, engineered for seamless aesthetic integration and heavy daily performance. When Hafele hobs or chimneys experience technical snags, they demand specialized technical handling.",
       "Our technicians specialize in Hafele's unique product architecture—including Nagold series hobs and smart auto-clean chimneys. We arrive fully equipped with genuine Hafele compatible spare parts and diagnostic meters.",
-      "Enjoy transparent pricing, zero hidden fees, same-day doorstep completion, and the peace of mind of a written 90-day service warranty."
+      "Enjoy transparent pricing, zero hidden fees, same-day doorstep completion, and the peace of mind of a written 1-year service warranty."
     ],
     specialties: [
       "Hafele Nagold & Classic Built-in Gas Hobs",
@@ -149,17 +152,18 @@ export const brandsData: Record<string, BrandData> = {
   "gilma-repair": {
     slug: "gilma-repair",
     name: "Gilma",
+    logoUrl: "/logos/gilma.jpg",
     h1Title: "Gilma Kitchen Appliance Repair & Service Center",
     heroHeadline: "Same-Day Gilma Stove, Hob & Chimney Repair Service",
-    heroSubheadline: "Fast Doorstep Technicians for Gilma Gas Stoves, Auto-Clean Chimneys & Hobs. 90-Day Warranty.",
+    heroSubheadline: "Fast Doorstep Technicians for Gilma Gas Stoves, Auto-Clean Chimneys & Hobs. 1-Year Warranty.",
     metaTitle: "Gilma Appliance Repair Service | Gilma Stove & Chimney Repair Near Me",
-    metaDescription: "Reliable doorstep Gilma gas stove repair, Gilma chimney suction fix, hob burner cleaning & gas leak detection. 90-day warranty. Call now!",
+    metaDescription: "Reliable doorstep Gilma gas stove repair, Gilma chimney suction fix, hob burner cleaning & gas leak detection. 1-year warranty. Call now!",
     ctaCopy: "Get Instant Gilma Repair Quote",
     brandTagline: "Trusted Doorstep Repair for Household Gilma Kitchen Appliances",
     descriptionCopy: [
       "Gilma appliances are a staple in thousands of modern kitchens across India, known for reliable everyday performance. However, regular heavy cooking leads to carbon buildup in burner jets, motor wear in chimneys, and loose gas control knobs.",
       "Our certified Gilma repair team delivers rapid doorstep service within 30-45 minutes. We specialize in resolving Gilma gas stove low flame issues, auto-ignition spark failure, chimney motor noise, and oil collector leaks.",
-      "All repairs use authentic Gilma compatible brass components, igniter boxes, and heavy-duty wiring, backed by our 90-day peace-of-mind warranty."
+      "All repairs use authentic Gilma compatible brass components, igniter boxes, and heavy-duty wiring, backed by our 1-year peace-of-mind warranty."
     ],
     specialties: [
       "Gilma Stainless Steel & Glass Top Gas Stoves",
@@ -188,17 +192,18 @@ export const brandsData: Record<string, BrandData> = {
   "glen-repair": {
     slug: "glen-repair",
     name: "Glen",
+    logoUrl: "/logos/glen.jpg",
     h1Title: "Glen Kitchen Appliance Repair & Doorstep Servicing",
     heroHeadline: "Same-Day Glen Chimney, Hob & Gas Stove Repair",
-    heroSubheadline: "Certified Technicians for Glen Filterless Chimneys, Brass Hob Burners & Gas Stoves. 90-Day Warranty.",
+    heroSubheadline: "Certified Technicians for Glen Filterless Chimneys, Brass Hob Burners & Gas Stoves. 1-Year Warranty.",
     metaTitle: "Glen Appliance Repair Service | Glen Chimney, Hob & Stove Repair",
-    metaDescription: "Expert doorstep Glen chimney repair, Glen hob burner fix, auto-ignition repair & gas leak resolution. 90-day warranty. Call now!",
+    metaDescription: "Expert doorstep Glen chimney repair, Glen hob burner fix, auto-ignition repair & gas leak resolution. 1-year warranty. Call now!",
     ctaCopy: "Book Glen Technician Now",
     brandTagline: "Expert Technicians for Glen Innovative Kitchen Appliances",
     descriptionCopy: [
       "Glen kitchen appliances are celebrated for practical ergonomics, Italian forged brass burners, and high-efficiency motor blowers. When performance drops due to grease buildup or electrical faults, fast expert intervention is essential.",
       "Our specialized Glen service engineers handle everything from Glen chimney motion-sensor PCB failures to Glen gas hob burner jet unclogging.",
-      "We guarantee 30-45 minute doorstep technician arrival, transparent fixed pricing, original Glen compatible spares, and a 90-day service warranty."
+      "We guarantee 30-45 minute doorstep technician arrival, transparent fixed pricing, original Glen compatible spares, and a 1-year service warranty."
     ],
     specialties: [
       "Glen Motion-Sensor Filterless Auto-Clean Chimneys",
@@ -227,15 +232,15 @@ export const brandsData: Record<string, BrandData> = {
     name: "Elica",
     h1Title: "Elica Kitchen Appliance Repair & Service Support",
     heroHeadline: "Same-Day Elica Chimney & Hob Repair at Doorstep",
-    heroSubheadline: "Certified Italian Technology Specialists for Elica Deep Silence Chimneys & Glass Hobs. 90-Day Warranty.",
+    heroSubheadline: "Certified Italian Technology Specialists for Elica Deep Silence Chimneys & Glass Hobs. 1-Year Warranty.",
     metaTitle: "Elica Appliance Repair Service | Elica Chimney & Hob Repair Near Me",
-    metaDescription: "Fast doorstep Elica chimney suction fix, Elica hob burner repair, touch panel PCB fix & gas leak detection. 90-day warranty. Call now!",
+    metaDescription: "Fast doorstep Elica chimney suction fix, Elica hob burner repair, touch panel PCB fix & gas leak detection. 1-year warranty. Call now!",
     ctaCopy: "Book Elica Specialist Technician",
     brandTagline: "Italian Design Precision Repair for Elica Kitchen Hoods & Hobs",
     descriptionCopy: [
       "Elica is world-famous for revolutionary kitchen hood designs, EDS (Elica Deep Silence) technology, and high-performance glass hobs. These high-suction, low-noise systems require skilled technical hands when servicing.",
       "Our certified Elica repair specialists possess extensive experience fixing Elica filterless auto-clean chimneys, touch-control sensors, EDS sound insulation blowers, and brass hob igniters.",
-      "We deliver 30-45 minute doorstep response, transparent fixed pricing, original Elica compatible replacement components, and a 90-day written guarantee."
+      "We deliver 30-45 minute doorstep response, transparent fixed pricing, original Elica compatible replacement components, and a 1-year written guarantee."
     ],
     specialties: [
       "Elica EDS (Deep Silence) & Filterless Hoods",
@@ -266,15 +271,15 @@ export const brandsData: Record<string, BrandData> = {
     name: "Kutchina",
     h1Title: "Kutchina Appliance Repair & Auto-Clean Chimney Service",
     heroHeadline: "Same-Day Kutchina Chimney & Hob Repair at Doorstep",
-    heroSubheadline: "Pioneers of Auto-Clean Technology Repair. Certified Engineers for Kutchina Chimneys, Hobs & Stoves. 90-Day Warranty.",
+    heroSubheadline: "Pioneers of Auto-Clean Technology Repair. Certified Engineers for Kutchina Chimneys, Hobs & Stoves. 1-Year Warranty.",
     metaTitle: "Kutchina Appliance Repair Service | Kutchina Chimney & Hob Repair",
-    metaDescription: "Expert doorstep Kutchina auto-clean chimney repair, Kutchina hob burner fix, touch PCB repair & gas leak detection. 90-day warranty. Call now!",
+    metaDescription: "Expert doorstep Kutchina auto-clean chimney repair, Kutchina hob burner fix, touch PCB repair & gas leak detection. 1-year warranty. Call now!",
     ctaCopy: "Book Kutchina Repair Expert",
     brandTagline: "Auto-Clean Specialists for Kutchina Appliances",
     descriptionCopy: [
       "Kutchina revolutionized Indian kitchens with pathbreaking auto-clean chimney technology designed specifically for heavy spice and mustard oil cooking. Maintaining Kutchina's high-torque blowers and heat-clean coils requires specialist expertise.",
       "Our doorstep Kutchina technicians specialize in diagnosing auto-clean heating element burnouts, touch PCB sensor glitches, hob burner yellow flames, and gas leakage issues.",
-      "We guarantee 30-45 minute technician response, genuine Kutchina compatible replacement components, transparent upfront quotes, and a 90-day warranty."
+      "We guarantee 30-45 minute technician response, genuine Kutchina compatible replacement components, transparent upfront quotes, and a 1-year warranty."
     ],
     specialties: [
       "Kutchina Auto-Clean & i-Clean Technology Chimneys",
@@ -302,17 +307,18 @@ export const brandsData: Record<string, BrandData> = {
   "faber-repair": {
     slug: "faber-repair",
     name: "Faber",
+    logoUrl: "/logos/faber.jpg",
     h1Title: "Faber Kitchen Appliance Repair & Service Support",
     heroHeadline: "Same-Day Faber Chimney & Hob Repair",
-    heroSubheadline: "Certified Technicians for Faber 3D Suction Hoods & Italian Brass Hobs. 30-Min Doorstep Dispatch & 90-Day Warranty.",
+    heroSubheadline: "Certified Technicians for Faber 3D Suction Hoods & Italian Brass Hobs. 30-Min Doorstep Dispatch & 1-Year Warranty.",
     metaTitle: "Faber Appliance Repair Service | Faber Chimney & Hob Repair Near Me",
-    metaDescription: "Fast doorstep Faber chimney repair, Faber hob burner fix, 3D suction tuning & auto-ignition repair. 90-day warranty. Call now!",
+    metaDescription: "Fast doorstep Faber chimney repair, Faber hob burner fix, 3D suction tuning & auto-ignition repair. 1-year warranty. Call now!",
     ctaCopy: "Book Faber Technician Now",
     brandTagline: "Pioneering Hood Engineering Repair for Faber Kitchen Systems",
     descriptionCopy: [
       "Faber is the inventor of the modern domestic cooker hood, renowned for powerful 3D triple-suction technology, heavy-gauge steel construction, and high-efficiency brass hobs. Servicing Faber appliances demands accurate technical calibration.",
       "Our certified Faber technicians handle all Faber chimney motor repairs, touch sensor PCB board fixes, auto-clean heat coil replacements, and glass hob ignition glitches right at your home.",
-      "Benefit from 30-45 minute doorstep arrival, transparent upfront estimates, 100% original Faber compatible spare parts, and a 90-day written guarantee."
+      "Benefit from 30-45 minute doorstep arrival, transparent upfront estimates, 100% original Faber compatible spare parts, and a 1-year written guarantee."
     ],
     specialties: [
       "Faber 3D / 6-Way Suction Auto-Clean Chimneys",
@@ -341,15 +347,15 @@ export const brandsData: Record<string, BrandData> = {
     name: "Bosch",
     h1Title: "Bosch Kitchen Appliance Repair & Service Center Support",
     heroHeadline: "Certified German Bosch Appliance Repair at Doorstep",
-    heroSubheadline: "Doorstep Repair for Bosch Built-in Gas Hobs & Hoods. 90-Day Warranty.",
+    heroSubheadline: "Doorstep Repair for Bosch Built-in Gas Hobs & Hoods. 1-Year Warranty.",
     metaTitle: "Bosch Appliance Repair Service | Bosch Hob & Hood Repair Near Me",
-    metaDescription: "Professional doorstep Bosch hob repair, FlameSelect gas valve fix & Bosch hood repair. 90-day warranty. Call now!",
+    metaDescription: "Professional doorstep Bosch hob repair, FlameSelect gas valve fix & Bosch hood repair. 1-year warranty. Call now!",
     ctaCopy: "Request Bosch Specialist Engineer",
     brandTagline: "German Quality Engineering Repair for Bosch Appliances",
     descriptionCopy: [
       "Bosch kitchen appliances are built to exact German engineering standards, featuring FlameSelect gas controls and EcoSilence Drive motors. Standard repair methods can damage these sensitive systems.",
       "Our certified Bosch repair engineers carry advanced diagnostic equipment to service Bosch FlameSelect gas valves and EcoSilence chimney blowers.",
-      "We guarantee 30-45 minute doorstep technician arrival, original Bosch compatible replacement parts, fixed transparent quotes, and a 90-day warranty."
+      "We guarantee 30-45 minute doorstep technician arrival, original Bosch compatible replacement parts, fixed transparent quotes, and a 1-year warranty."
     ],
     specialties: [
       "Bosch Series 4 / 6 / 8 FlameSelect Gas Hobs",
@@ -366,7 +372,7 @@ export const brandsData: Record<string, BrandData> = {
     ],
     reviews: [
       { id: "r-bosch-1", name: "Dr. Vikramaditya", location: "Bengaluru", rating: 5, date: "1 day ago", appliance: "Bosch Gas Hob", text: "Bosch technician arrived in 35 mins. Diagnosed gas valve failure and fixed it on-site. Truly professional!" },
-      { id: "r-bosch-3", name: "Anand Ranganathan", location: "Chennai", rating: 5, date: "1 week ago", appliance: "Bosch Extraction Hood", text: "Great experience with Bosch chimney motor repair. Clean work and 90-day written warranty." }
+      { id: "r-bosch-3", name: "Anand Ranganathan", location: "Chennai", rating: 5, date: "1 week ago", appliance: "Bosch Extraction Hood", text: "Great experience with Bosch chimney motor repair. Clean work and 1-year written warranty." }
     ]
   },
 
@@ -375,15 +381,15 @@ export const brandsData: Record<string, BrandData> = {
     name: "Blowhot",
     h1Title: "Blowhot Kitchen Appliance Repair & Service Support",
     heroHeadline: "Same-Day Blowhot Gas Stove, Hob & Chimney Repair",
-    heroSubheadline: "Doorstep Technicians for Blowhot Heavy Brass Gas Stoves, Auto-Clean Chimneys & Hobs. 90-Day Warranty.",
+    heroSubheadline: "Doorstep Technicians for Blowhot Heavy Brass Gas Stoves, Auto-Clean Chimneys & Hobs. 1-Year Warranty.",
     metaTitle: "Blowhot Appliance Repair Service | Blowhot Stove & Chimney Repair",
-    metaDescription: "Fast doorstep Blowhot gas stove repair, Blowhot chimney suction fix, auto-ignition repair & gas leak detection. 90-day warranty. Call now!",
+    metaDescription: "Fast doorstep Blowhot gas stove repair, Blowhot chimney suction fix, auto-ignition repair & gas leak detection. 1-year warranty. Call now!",
     ctaCopy: "Book Blowhot Repair Service",
     brandTagline: "Heavy-Duty Repair Support for Blowhot Kitchen Appliances",
     descriptionCopy: [
       "Blowhot kitchen appliances are known for robust heavy-gauge stainless steel gas stoves, high-suction chimneys, and built-in hobs. Heavy daily cooking can cause nozzle clogging, motor capacitor decline, and ignition switches to stick.",
       "Our doorstep Blowhot technicians specialize in clearing clogged brass burner jets, replacing worn chimney capacitors, and fixing auto-ignition spark wiring.",
-      "We guarantee 30-45 minute doorstep technician arrival, transparent fixed pricing, original Blowhot compatible spares, and a 90-day service warranty."
+      "We guarantee 30-45 minute doorstep technician arrival, transparent fixed pricing, original Blowhot compatible spares, and a 1-year service warranty."
     ],
     specialties: [
       "Blowhot Tornado & Heavy-Duty Gas Stoves",
@@ -412,15 +418,15 @@ export const brandsData: Record<string, BrandData> = {
     name: "Sunflame",
     h1Title: "Sunflame Kitchen Appliance Repair & Service Support",
     heroHeadline: "Same-Day Sunflame Gas Stove, Hob & Chimney Repair",
-    heroSubheadline: "Doorstep Technicians for Sunflame Gas Stoves, Auto-Clean Chimneys & Hobs. 90-Day Warranty.",
+    heroSubheadline: "Doorstep Technicians for Sunflame Gas Stoves, Auto-Clean Chimneys & Hobs. 1-Year Warranty.",
     metaTitle: "Sunflame Appliance Repair Service | Sunflame Stove & Chimney Repair",
-    metaDescription: "Fast doorstep Sunflame gas stove repair, Sunflame chimney suction fix, auto-ignition repair & gas leak resolution. 90-day warranty. Call now!",
+    metaDescription: "Fast doorstep Sunflame gas stove repair, Sunflame chimney suction fix, auto-ignition repair & gas leak resolution. 1-year warranty. Call now!",
     ctaCopy: "Book Sunflame Technician",
     brandTagline: "Decades of Reliability Repair Support for Sunflame Appliances",
     descriptionCopy: [
       "Sunflame is one of India's most trusted household appliance brands, present in millions of kitchens. Constant daily cooking can lead to brass burner carbon clogging, loose valve spindles, and chimney motor capacitor wear.",
       "Our doorstep Sunflame repair team specializes in restoring Sunflame gas stoves, glass top hobs, and auto-clean chimneys to peak operating efficiency.",
-      "We guarantee 30-45 minute doorstep technician arrival, original Sunflame compatible replacement spares, transparent pricing, and a 90-day written guarantee."
+      "We guarantee 30-45 minute doorstep technician arrival, original Sunflame compatible replacement spares, transparent pricing, and a 1-year written guarantee."
     ],
     specialties: [
       "Sunflame Stainless Steel & Toughened Glass Stoves",
@@ -449,15 +455,15 @@ export const brandsData: Record<string, BrandData> = {
     name: "Crompton",
     h1Title: "Crompton Appliance Repair & Service Center Support",
     heroHeadline: "Same-Day Crompton Chimney & Appliance Repair",
-    heroSubheadline: "Doorstep Technicians for Crompton QuietPro Chimneys, Smart Auto-Clean Hoods & Hobs. 90-Day Warranty.",
+    heroSubheadline: "Doorstep Technicians for Crompton QuietPro Chimneys, Smart Auto-Clean Hoods & Hobs. 1-Year Warranty.",
     metaTitle: "Crompton Appliance Repair Service | Crompton Chimney & Hob Repair",
-    metaDescription: "Fast doorstep Crompton chimney suction repair, QuietPro motor servicing, touch PCB repair & gas hob fixing. 90-day warranty. Call now!",
+    metaDescription: "Fast doorstep Crompton chimney suction repair, QuietPro motor servicing, touch PCB repair & gas hob fixing. 1-year warranty. Call now!",
     ctaCopy: "Book Crompton Specialist Technician",
     brandTagline: "Smart Engineering Repair Support for Crompton Appliances",
     descriptionCopy: [
       "Crompton is renowned for QuietPro silent motor technology, smart gesture-control chimneys, and durable kitchen appliances. Servicing Crompton appliances requires expertise in quiet motor assemblies and electronic PCB modules.",
       "Our doorstep Crompton technicians specialize in resolving QuietPro chimney motor noise, touch PCB sensor faults, low suction power, and hob ignition issues right at your home.",
-      "We guarantee 30-45 minute doorstep technician arrival, original Crompton compatible replacement components, transparent pricing, and a 90-day service warranty."
+      "We guarantee 30-45 minute doorstep technician arrival, original Crompton compatible replacement components, transparent pricing, and a 1-year service warranty."
     ],
     specialties: [
       "Crompton QuietPro Silent Motor Chimneys",
@@ -488,15 +494,15 @@ export const brandsData: Record<string, BrandData> = {
     name: "Cata",
     h1Title: "Cata Kitchen Appliance Repair & Service Support",
     heroHeadline: "Same-Day Cata Chimney & Hob Repair",
-    heroSubheadline: "Spanish Built-in Appliance Technicians for Cata Hoods & Glass Hobs. 30-Min Doorstep Dispatch & 90-Day Warranty.",
+    heroSubheadline: "Spanish Built-in Appliance Technicians for Cata Hoods & Glass Hobs. 30-Min Doorstep Dispatch & 1-Year Warranty.",
     metaTitle: "Cata Appliance Repair Service | Cata Chimney & Hob Repair",
-    metaDescription: "Professional doorstep Cata chimney repair, Cata hob burner fix & touch PCB repair. 90-day warranty. Call now!",
+    metaDescription: "Professional doorstep Cata chimney repair, Cata hob burner fix & touch PCB repair. 1-year warranty. Call now!",
     ctaCopy: "Book Cata Specialist Technician",
     brandTagline: "Spanish Excellence Repair for Cata Built-in Kitchen Appliances",
     descriptionCopy: [
       "Cata is a premium Spanish brand world-famous for silent extraction hoods and sleek gas hobs. Servicing Cata's specialized European components requires trained technical expertise.",
       "Our doorstep Cata technicians specialize in resolving Cata chimney extraction loss, touch PCB lockups, and gas valve leaks right at your home.",
-      "We guarantee 30-45 minute doorstep arrival, transparent upfront estimates, 100% original Cata compatible spare parts, and a 90-day written warranty."
+      "We guarantee 30-45 minute doorstep arrival, transparent upfront estimates, 100% original Cata compatible spare parts, and a 1-year written warranty."
     ],
     specialties: [
       "Cata Silent Extraction Hoods & Canopies",
@@ -510,7 +516,7 @@ export const brandsData: Record<string, BrandData> = {
     faqs: [
       { question: "Do you specialize in Spanish Cata built-in appliances?", answer: "Yes, our engineers are trained specifically on Cata European specifications, touch control boards, and silent fan blowers." },
       { question: "Can you fix touch control problems on Cata hobs?", answer: "Yes, we carry replacement touch sensor PCB cards for Cata hobs and fix them on-site." },
-      { question: "Do you supply genuine spare parts for Cata appliances?", answer: "Yes, we use 100% genuine Cata compatible replacement spares backed by a 90-day warranty." }
+      { question: "Do you supply genuine spare parts for Cata appliances?", answer: "Yes, we use 100% genuine Cata compatible replacement spares backed by a 1-year warranty." }
     ],
     reviews: [
       { id: "r-cata-1", name: "Fernando D'Souza", location: "Goa", rating: 5, date: "2 days ago", appliance: "Cata Silent Extraction Hood", text: "Cata chimney suction power restored! Technician cleaned blowers and replaced capacitor. Great service." },
@@ -523,15 +529,15 @@ export const brandsData: Record<string, BrandData> = {
     name: "Asko",
     h1Title: "Asko Luxury Kitchen Appliance Repair & Service",
     heroHeadline: "Premium Scandinavian Asko Appliance Repair at Doorstep",
-    heroSubheadline: "Certified Doorstep Technicians for Asko Luxury Hobs & Hoods. 90-Day Warranty.",
+    heroSubheadline: "Certified Doorstep Technicians for Asko Luxury Hobs & Hoods. 1-Year Warranty.",
     metaTitle: "Asko Appliance Repair Service | Asko Hob & Hood Repair",
-    metaDescription: "Expert doorstep Asko hob repair & hood servicing. 90-day warranty. Call now!",
+    metaDescription: "Expert doorstep Asko hob repair & hood servicing. 1-year warranty. Call now!",
     ctaCopy: "Request Asko Specialist Technician",
     brandTagline: "Scandinavian Minimalist Craftsmanship Repair for Asko Luxury Appliances",
     descriptionCopy: [
       "Asko represents ultra-premium Scandinavian design, precision craftsmanship, and heavy stainless steel durability. Repairing luxury Asko kitchen appliances requires white-glove service standards and microscopic diagnostic accuracy.",
       "Our senior luxury appliance specialists are trained on Asko gas-on-glass hobs and high-cubic-meter extraction hoods.",
-      "Enjoy 30-45 minute doorstep engineer arrival, white-glove cleanliness, genuine Asko compatible spares, and a 90-day written guarantee."
+      "Enjoy 30-45 minute doorstep engineer arrival, white-glove cleanliness, genuine Asko compatible spares, and a 1-year written guarantee."
     ],
     specialties: [
       "Asko Craft & Elements Built-in Gas Hobs",
@@ -544,7 +550,7 @@ export const brandsData: Record<string, BrandData> = {
     faqs: [
       { question: "Do you specialize in ultra-premium Asko Scandinavian appliances?", answer: "Yes, our senior engineers are specifically trained on luxury Asko series appliances." },
       { question: "How fast can an Asko technician reach my location?", answer: "We dispatch senior luxury specialists who arrive at your home within 30 to 45 minutes of booking." },
-      { question: "Do you use genuine Asko replacement components?", answer: "Yes, we use 100% genuine Asko compatible parts backed by a written 90-day guarantee." },
+      { question: "Do you use genuine Asko replacement components?", answer: "Yes, we use 100% genuine Asko compatible parts backed by a written 1-year guarantee." },
       { question: "Can you fix gas leaks on Asko gas-on-glass hobs?", answer: "Yes, gas leaks are treated as priority emergency visits dispatched within 30 minutes." }
     ],
     reviews: [
@@ -558,15 +564,15 @@ export const brandsData: Record<string, BrandData> = {
     name: "Miele",
     h1Title: "Miele Luxury Kitchen Appliance Repair & Servicing",
     heroHeadline: "Certified German Miele Appliance Repair at Doorstep",
-    heroSubheadline: "White-Glove Doorstep Repair for Miele Gas Hobs & Hoods. 90-Day Warranty.",
+    heroSubheadline: "White-Glove Doorstep Repair for Miele Gas Hobs & Hoods. 1-Year Warranty.",
     metaTitle: "Miele Appliance Repair Service | Miele Hob & Hood Repair",
-    metaDescription: "White-glove doorstep Miele hob repair & hood servicing. 90-day warranty. Call now!",
+    metaDescription: "White-glove doorstep Miele hob repair & hood servicing. 1-year warranty. Call now!",
     ctaCopy: "Request Miele Master Technician",
     brandTagline: "Immer Besser (Forever Better) Repair Excellence for Miele Luxury Appliances",
     descriptionCopy: [
       "Miele is the pinnacle of luxury German home appliances, engineered with legendary 'Immer Besser' quality to last decades. Servicing Miele appliances requires master-level technician training, specialized diagnostic tools, and precise calibration.",
       "Our certified Miele master engineers specialize in Miele Dual FlexZone gas burners and silent Connoisseur hood extraction systems.",
-      "Enjoy 30-45 minute doorstep master engineer arrival, white-glove care, genuine Miele compatible replacement spares, and a 90-day written guarantee."
+      "Enjoy 30-45 minute doorstep master engineer arrival, white-glove care, genuine Miele compatible replacement spares, and a 1-year written guarantee."
     ],
     specialties: [
       "Miele Gas-on-Glass Hobs with Dual Wok Burners",
@@ -579,7 +585,7 @@ export const brandsData: Record<string, BrandData> = {
     faqs: [
       { question: "Do you specialize in luxury Miele appliances?", answer: "Yes, our master engineers are certified and specifically trained on Miele luxury series electronics." },
       { question: "How fast can a Miele master technician visit my home?", answer: "We dispatch senior luxury master technicians who arrive within 30 to 45 minutes of booking." },
-      { question: "Do you use original Miele replacement components?", answer: "Yes, we use 100% genuine Miele compatible spare parts backed by a written 90-day service guarantee." },
+      { question: "Do you use original Miele replacement components?", answer: "Yes, we use 100% genuine Miele compatible spare parts backed by a written 1-year service guarantee." },
       { question: "Can you fix gas leaks on Miele dual-wok gas hobs?", answer: "Yes, gas leak calls are dispatched as priority 30-minute emergency visits." }
     ],
     reviews: [

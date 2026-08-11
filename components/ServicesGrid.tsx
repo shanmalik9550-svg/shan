@@ -33,7 +33,7 @@ export default function ServicesGrid() {
             Kitchen Appliance Repair & Servicing
           </h2>
           <p className="text-slate-600 text-sm sm:text-base mt-2">
-            Specialized doorstep repair services for all major brands and models with 90-day written warranty.
+            Specialized doorstep repair services for all major brands and models with 1-year written warranty.
           </p>
         </div>
 
@@ -78,7 +78,7 @@ export default function ServicesGrid() {
                 <div className="pt-4 border-t border-slate-100 flex items-center justify-between gap-2">
                   <div className="flex items-center gap-1 text-xs text-emerald-700 font-bold">
                     <ShieldCheck className="w-4 h-4" />
-                    <span>90-Day Warranty</span>
+                    <span>1-Year Warranty</span>
                   </div>
 
                   <div className="flex items-center gap-2">

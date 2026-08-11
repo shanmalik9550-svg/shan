@@ -7,7 +7,7 @@ export const companyInfo = {
   email: "support@kitchenappliancesservice.com",
   workingHours: "24/7 Emergency & Doorstep Service (8:00 AM - 10:00 PM Active Dispatch)",
   responseWaitMinutes: "30-45 Mins",
-  warrantyDays: 90,
+  warrantyDays: 365,
   referenceWebsite: "https://kitchenappliancesservice.com/",
   serviceAreas: [
     "Mumbai", "Delhi NCR", "Bengaluru", "Hyderabad", "Chennai", 
@@ -16,7 +16,7 @@ export const companyInfo = {
   stats: {
     happyCustomers: "50,000+",
     expertTechnicians: "120+",
-    warrantyGiven: "90 Days",
+    warrantyGiven: "1 Year",
     averageRating: "4.9/5"
   }
 };

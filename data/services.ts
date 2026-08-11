@@ -43,7 +43,7 @@ export const servicesData: ServiceItem[] = [
     id: "gas-stove",
     title: "Gas Stove Repair",
     shortDesc: "Fast fix for stainless steel & glass gas stoves, low flame, clogged jets, and loose valves.",
-    fullDesc: "Comprehensive doorstep gas stove repair and servicing. We fix low flame intensity, carbon deposit clogging, faulty knobs, and leaking gas hoses with 90-day service warranty.",
+    fullDesc: "Comprehensive doorstep gas stove repair and servicing. We fix low flame intensity, carbon deposit clogging, faulty knobs, and leaking gas hoses with 1-year service warranty.",
     iconName: "Burner",
     popular: true,
     features: [

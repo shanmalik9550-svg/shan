@@ -27,7 +27,7 @@ export default function Header() {
             </span>
             <span className="hidden lg:flex items-center gap-1">
               <ShieldCheck className="w-3.5 h-3.5 text-blue-400" />
-              90-Day Written Warranty
+              1-Year Written Warranty
             </span>
           </div>
 

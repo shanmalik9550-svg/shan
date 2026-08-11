@@ -7,12 +7,12 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Kitchen Appliance Repair Experts | Same Day Doorstep Service",
-  description: "Fast doorstep repair for Kitchen Chimneys, Gas Hobs & Stoves. 30-Min technician arrival & 90-Day Written Warranty. Call now!",
+  description: "Fast doorstep repair for Kitchen Chimneys, Gas Hobs & Stoves. 30-Min technician arrival & 1-Year Written Warranty. Call now!",
   keywords: ["kitchen appliance repair", "chimney repair", "gas hob repair", "gas stove repair", "doorstep repair service"],
   metadataBase: new URL("https://kitchenappliancesservice.com"),
   openGraph: {
     title: "High-Converting Doorstep Kitchen Appliance Repair",
-    description: "Same-Day Doorstep Technician Dispatch within 30 Mins. 90-Day Written Warranty. Book Now!",
+    description: "Same-Day Doorstep Technician Dispatch within 30 Mins. 1-Year Written Warranty. Book Now!",
     type: "website",
     locale: "en_IN",
   },

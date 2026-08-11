@@ -34,10 +34,20 @@ export default function BrandGrid() {
             >
               <div>
                 <div className="flex items-center justify-between mb-3">
-                  <div className="w-8 h-8 rounded-lg bg-slate-700 text-orange-400 flex items-center justify-center font-black text-sm group-hover:bg-orange-500 group-hover:text-white transition-colors">
-                    {brand.name.charAt(0)}
-                  </div>
-                  <span className="text-[10px] text-emerald-400 font-bold bg-emerald-950/80 px-2 py-0.5 rounded">
+                  {brand.logoUrl ? (
+                    <div className="w-24 h-9 rounded-lg bg-white p-1 border border-slate-200 flex items-center justify-center overflow-hidden shrink-0 shadow-sm">
+                      <img
+                        src={brand.logoUrl}
+                        alt={`${brand.name} Logo`}
+                        className="max-h-full max-w-full object-contain"
+                      />
+                    </div>
+                  ) : (
+                    <div className="w-8 h-8 rounded-lg bg-slate-700 text-orange-400 flex items-center justify-center font-black text-sm group-hover:bg-orange-500 group-hover:text-white transition-colors">
+                      {brand.name.charAt(0)}
+                    </div>
+                  )}
+                  <span className="text-[10px] text-emerald-400 font-bold bg-emerald-950/80 px-2 py-0.5 rounded border border-emerald-800/60">
                     30-Min Visit
                   </span>
                 </div>

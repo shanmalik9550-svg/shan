@@ -13,8 +13,8 @@ export default function WhyChooseUs() {
     },
     {
       icon: ShieldCheck,
-      title: "90-Day Service & Spare Warranty",
-      desc: "Complete peace of mind with a written 90-day warranty on all repairs and replaced components."
+      title: "1-Year Service & Spare Warranty",
+      desc: "Complete peace of mind with a written 1-year warranty on all repairs and replaced components."
     },
     {
       icon: Wrench,

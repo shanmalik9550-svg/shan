@@ -37,7 +37,7 @@ export default function CustomerReviews({ reviews, brandName }: CustomerReviewsP
       rating: 5,
       date: "5 days ago",
       appliance: "Built-in Convection Oven",
-      text: "Oven was tripping my main circuit breaker whenever heating turned on. Technician diagnosed burnt heating element insulation and replaced it. Written 90-day warranty provided."
+      text: "Oven was tripping my main circuit breaker whenever heating turned on. Technician diagnosed burnt heating element insulation and replaced it. Written 1-year warranty provided."
     },
     {
       id: "gen-4",

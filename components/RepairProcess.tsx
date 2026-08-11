@@ -38,8 +38,8 @@ export default function RepairProcess() {
     },
     {
       num: "06",
-      title: "Payment & 90-Day Warranty",
-      desc: "Pay easily via UPI/Cash & receive official 90-day service warranty card.",
+      title: "Payment & 1-Year Warranty",
+      desc: "Pay easily via UPI/Cash & receive official 1-year service warranty card.",
       icon: CreditCard
     }
   ];

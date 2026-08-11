@@ -16,7 +16,7 @@ export default function LeadForm({
   defaultBrand = "Select Brand",
   defaultAppliance = "Kitchen Chimney",
   title = "Book Doorstep Service Now",
-  subtitle = "30-Min Response • Upfront Quote • 90-Day Warranty",
+  subtitle = "30-Min Response • Upfront Quote • 1-Year Warranty",
   buttonText = "Get Free Doorstep Quote"
 }: LeadFormProps) {
   const [formData, setFormData] = useState({
@@ -339,7 +339,7 @@ Please confirm technician arrival ETA.`;
             </div>
             <div className="flex justify-between">
               <span className="text-slate-500">Service Warranty:</span>
-              <span className="font-bold text-blue-700">90 Days Full Protection</span>
+              <span className="font-bold text-blue-700">1 Year Full Protection</span>
             </div>
           </div>
 
