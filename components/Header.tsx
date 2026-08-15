@@ -2,12 +2,18 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Phone, MessageSquare, Wrench, ShieldCheck, ChevronDown, Clock, MapPin, PhoneCall } from "lucide-react";
 import { companyInfo } from "@/data/companyInfo";
 import { brandsData } from "@/data/brands";
 
 export default function Header() {
+  const pathname = usePathname();
   const [dropdownOpen, setDropdownOpen] = useState(false);
+
+  const slug = pathname ? pathname.replace(/^\//, "") : "";
+  const currentBrand = brandsData[slug];
+  const activeLogo = currentBrand?.logoUrl;
 
   const brandList = Object.values(brandsData);
 
@@ -46,17 +52,21 @@ export default function Header() {
 
       {/* Main Navbar */}
       <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between gap-4">
-        {/* Brand Logo / Name */}
-        <Link href="/" className="flex items-center gap-2 group">
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-700 to-slate-900 flex items-center justify-center text-white shadow-md group-hover:scale-105 transition-transform">
-            <Wrench className="w-6 h-6 text-orange-400" />
-          </div>
-          <div>
-            <div className="flex items-center gap-1.5">
-              <span className="font-extrabold text-lg text-slate-900 tracking-tight">Customer Service</span>
+        {/* Brand Logo */}
+        <Link href="/" className="flex items-center group">
+          {activeLogo ? (
+            <div className="h-[70px] px-3.5 py-1 rounded-xl bg-white border border-slate-200 shadow-sm flex items-center justify-center overflow-hidden shrink-0 group-hover:scale-105 transition-transform">
+              <img
+                src={activeLogo}
+                alt={`${currentBrand?.name || "Brand"} Logo`}
+                className="h-[62px] w-auto max-w-[200px] object-contain"
+              />
             </div>
-            <p className="text-[11px] text-slate-500 font-medium">Doorstep Appliance Service</p>
-          </div>
+          ) : (
+            <div className="w-[70px] h-[70px] rounded-xl bg-gradient-to-br from-blue-700 to-slate-900 flex items-center justify-center text-white shadow-md group-hover:scale-105 transition-transform">
+              <Wrench className="w-9 h-9 text-orange-400" />
+            </div>
+          )}
         </Link>
 
         {/* Brand Selector Dropdown & Quick Links */}

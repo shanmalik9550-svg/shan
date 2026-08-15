@@ -30,19 +30,6 @@ export default function HeroSection({
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-orange-600/15 rounded-full blur-3xl pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto px-4 relative z-10">
-        {/* Brand Logo Display (Image Only) */}
-        {brandLogo && (
-          <div className="mb-6 flex justify-center sm:justify-start">
-            <div className="bg-white p-2 sm:p-2.5 rounded-2xl shadow-2xl border-2 border-white/90 flex items-center justify-center h-20 sm:h-24 w-56 sm:w-72 shrink-0 overflow-hidden">
-              <img
-                src={brandLogo}
-                alt={`${brandName || 'Brand'} Logo`}
-                className="max-h-full max-w-full object-contain transform scale-125 sm:scale-135 transition-transform"
-              />
-            </div>
-          </div>
-        )}
-
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           {/* Left Column: Headlines, Trust Bullets, CTAs */}
           <div className="lg:col-span-7 space-y-6">

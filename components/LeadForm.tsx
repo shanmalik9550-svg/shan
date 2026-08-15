@@ -14,7 +14,7 @@ interface LeadFormProps {
 
 export default function LeadForm({
   defaultBrand = "Select Brand",
-  defaultAppliance = "Kitchen Chimney",
+  defaultAppliance = "Select Product",
   title = "Book Doorstep Service Now",
   subtitle = "30-Min Response • Upfront Quote • 1-Year Warranty",
   buttonText = "Get Free Doorstep Quote"
@@ -26,7 +26,7 @@ export default function LeadForm({
     pincode: "",
     fullAddress: "",
     appliance: defaultAppliance,
-    productAge: "1 - 3 Years",
+    productAge: "Product Age",
     userMessage: ""
   });
 
@@ -37,12 +37,11 @@ export default function LeadForm({
   const [waRedirectUrl, setWaRedirectUrl] = useState("");
 
   const applianceOptions = [
-    "Kitchen Chimney",
-    "Kitchen Hob",
-    "Gas Stove",
-    "Auto Ignition Problem",
-    "Burner / Gas Leakage Repair",
-    "Deep Cleaning & Maintenance"
+    "Gas Stove Repair",
+    "Hob Repair",
+    "Cooking Range Repair",
+    "Chimney Service Repair",
+    "Gas Stove 4,3 Burner Repair"
   ];
 
   const productAgeOptions = [
@@ -69,6 +68,14 @@ export default function LeadForm({
     }
     if (!formData.fullAddress.trim()) {
       setError("Please enter your full address so our technician can visit your home.");
+      return;
+    }
+    if (formData.appliance === "Select Product") {
+      setError("Please select a product from the list.");
+      return;
+    }
+    if (formData.productAge === "Product Age") {
+      setError("Please select the product age.");
       return;
     }
 
@@ -244,6 +251,7 @@ Please confirm technician arrival ETA.`;
                   onChange={(e) => setFormData({ ...formData, appliance: e.target.value })}
                   className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-xs text-slate-900 font-semibold focus:bg-white focus:border-blue-600 outline-none"
                 >
+                  <option value="Select Product">Select Product</option>
                   {applianceOptions.map((app) => (
                     <option key={app} value={app}>
                       {app}
@@ -261,6 +269,7 @@ Please confirm technician arrival ETA.`;
                   onChange={(e) => setFormData({ ...formData, productAge: e.target.value })}
                   className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-xs text-slate-900 font-semibold focus:bg-white focus:border-blue-600 outline-none"
                 >
+                  <option value="Product Age">Product Age</option>
                   {productAgeOptions.map((age) => (
                     <option key={age} value={age}>
                       {age}
