@@ -17,8 +17,8 @@ interface HeroSectionProps {
 
 export default function HeroSection({
   h1Title = "Professional Kitchen Appliance Repair & Doorstep Service",
-  heroHeadline = "Same-Day Doorstep Repair for Kitchen Chimneys, Hobs & Gas Stoves",
-  heroSubheadline = "Certified Technicians for Kitchen Chimneys, Hobs & Gas Stoves. Arrival in 30-45 minutes with 1-Year Written Warranty.",
+  heroHeadline = "Same-Day Doorstep Repair for Kitchen Hobs, Gas Stoves & Cooking Ranges",
+  heroSubheadline = "Certified Technicians for Kitchen Hobs, Gas Stoves & Cooking Ranges. Arrival in 30-45 minutes with 1-Year Written Warranty.",
   brandName,
   brandLogo,
   ctaCopy = "Book Service Today"

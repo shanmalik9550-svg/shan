@@ -27,7 +27,7 @@ export default function Footer() {
             </Link>
 
             <p className="text-xs text-slate-400 leading-relaxed max-w-sm">
-              Premier doorstep repair and maintenance services for kitchen chimneys, gas hobs, stoves, built-in ovens, and cooking ranges across all major metropolitan cities.
+              Premier doorstep repair and maintenance services for gas hobs, stoves, and cooking ranges across all major metropolitan cities.
             </p>
 
             <div className="space-y-2 pt-2 text-xs">

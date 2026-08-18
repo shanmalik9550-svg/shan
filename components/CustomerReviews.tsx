@@ -18,8 +18,8 @@ export default function CustomerReviews({ reviews, brandName }: CustomerReviewsP
       location: "Bengaluru",
       rating: 5,
       date: "Yesterday",
-      appliance: "Auto-Clean Kitchen Chimney",
-      text: "Chimney suction had stopped completely and motor was humming loudly. Technician reached my home in 25 mins, replaced capacitor & serviced blower. Exceptional doorstep service!"
+      appliance: "4-Burner Gas Stove Repair",
+      text: "Gas stove low flame was fixed in 20 mins. Technician cleaned nozzle jets, adjusted burner air-gas ratio and checked hose pipe. Exceptional doorstep service!"
     },
     {
       id: "gen-2",
@@ -36,8 +36,8 @@ export default function CustomerReviews({ reviews, brandName }: CustomerReviewsP
       location: "Kolkata",
       rating: 5,
       date: "5 days ago",
-      appliance: "Built-in Convection Oven",
-      text: "Oven was tripping my main circuit breaker whenever heating turned on. Technician diagnosed burnt heating element insulation and replaced it. Written 1-year warranty provided."
+      appliance: "Built-in Gas Hob Repair",
+      text: "Gas hob burner flame was flickering yellow and auto-ignition failed. Technician diagnosed brass valve clogging and replaced spark generator box. Written 1-year warranty provided."
     },
     {
       id: "gen-4",

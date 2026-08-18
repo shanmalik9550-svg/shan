@@ -14,7 +14,7 @@ export default function SchemaMarkup({ brandName, pageTitle, pageDescription }: 
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": brandName ? `${companyInfo.name} - ${brandName} Specialist` : companyInfo.name,
-    "description": pageDescription || "Same-day doorstep kitchen appliance repair service for kitchen chimneys, gas hobs, and stoves.",
+    "description": pageDescription || "Same-day doorstep kitchen appliance repair service for gas hobs, stoves, and cooking ranges.",
     "telephone": companyInfo.phone,
     "areaServed": companyInfo.serviceAreas.map(city => ({
       "@type": "City",
@@ -52,7 +52,7 @@ export default function SchemaMarkup({ brandName, pageTitle, pageDescription }: 
           "@type": "Offer",
           "itemOffered": {
             "@type": "Service",
-            "name": "Kitchen Chimney Repair & Motor Service"
+            "name": "Gas Hob & Cooking Range Repair"
           }
         },
         {

@@ -10,17 +10,17 @@ export interface ServiceItem {
 
 export const servicesData: ServiceItem[] = [
   {
-    id: "kitchen-chimney",
-    title: "Kitchen Chimney Repair",
-    shortDesc: "Complete chimney motor repair, filterless suction tuning, auto-clean repairs & deep degreasing.",
-    fullDesc: "Expert doorstep repair for all types of kitchen chimneys including baffle filter, mesh, ductless, island, and filterless auto-clean models. We fix low suction, loud noise, motor burning, touch sensor failure, and PCB faults using genuine replacement parts.",
-    iconName: "Wind",
+    id: "cooking-range",
+    title: "Cooking Range Repair",
+    shortDesc: "Complete cooking range repair, gas stove burner ignition & thermostat tuning.",
+    fullDesc: "Expert doorstep repair for all types of freestanding cooking ranges and heavy-duty gas stoves. We fix burner jet clogs, spark igniter failure, flame sputtering, and control valve faults using genuine replacement parts.",
+    iconName: "Flame",
     popular: true,
     features: [
-      "Motor & Blower Repair / Replacement",
-      "Auto-Clean Heater Coil Repair",
-      "Touch Control Panel & PCB Board Fix",
-      "Oil Collector & Baffle Degreasing",
+      "Cooking Range Burner & Ignition Repair",
+      "Gas Burner Orifice Jet Cleaning",
+      "Gas Valve & Pressure Regulator Calibration",
+      "Heavy Stainless Steel Body Servicing",
       "Same-Day 30-Min Doorstep Service"
     ]
   },
@@ -86,7 +86,7 @@ export const servicesData: ServiceItem[] = [
     id: "gas-leakage",
     title: "Gas Leakage Fixing",
     shortDesc: "Emergency gas leak detection, commercial-grade hose replacement, valve sealing & safety test.",
-    fullDesc: "Urgent doorstep response for smelling LPG or PNG gas around your hob, stove, or chimney manifold. We perform digital manometer pressure testing, replace faulty copper/rubber tubing, and seal leaking brass valves.",
+    fullDesc: "Urgent doorstep response for smelling LPG or PNG gas around your hob, stove, or cooking range manifold. We perform digital manometer pressure testing, replace faulty copper/rubber tubing, and seal leaking brass valves.",
     iconName: "AlertTriangle",
     popular: true,
     features: [
@@ -101,7 +101,7 @@ export const servicesData: ServiceItem[] = [
     id: "pcb-repair",
     title: "PCB Board Repair",
     shortDesc: "Microprocessor motherboard repair, IC replacement, touch sensor & relay board fixing.",
-    fullDesc: "Fix dead control panels, error codes, and power surge burnt PCB motherboards for chimneys and hobs without expensive full assembly replacements.",
+    fullDesc: "Fix dead control panels, error codes, and power surge burnt PCB motherboards for hobs, gas stoves, and kitchen appliances without expensive full assembly replacements.",
     iconName: "Cpu",
     features: [
       "Microcontroller IC & Relay Replacement",
@@ -114,25 +114,25 @@ export const servicesData: ServiceItem[] = [
   {
     id: "installation",
     title: "Appliance Installation",
-    shortDesc: "Precision wall mounting, duct hole drilling, gas pipe connection & safety testing.",
-    fullDesc: "Get your new kitchen chimney or built-in hob installed seamlessly by experienced technicians. Includes wall mounting, duct pipe installation, and gas safety testing.",
+    shortDesc: "Precision countertop fitting, gas pipe connection & safety testing.",
+    fullDesc: "Get your new built-in hob or cooking appliance installed seamlessly by experienced technicians. Includes granite cutout fitting, gas line installation, and safety testing.",
     iconName: "CheckSquare",
     features: [
-      "Precision Wall Drilling & Heavy Bracket Mounting",
-      "6-inch Flexible Aluminum Duct Hose Fitting",
       "Granite Countertop Cutout Alignment Check",
+      "Built-in Hob & Appliance Sealing",
       "Gas Supply Hose Connection & Leak Testing",
+      "Burner Calibration & Flame Testing",
       "Initial Operation & User Guidance Demo"
     ]
   },
   {
     id: "uninstallation",
     title: "Appliance Uninstallation",
-    shortDesc: "Safe removal of old chimneys and hobs without damaging kitchen cabinets.",
-    fullDesc: "Relocating or upgrading your kitchen? Our technicians safely uninstall and package your existing appliances, capping off gas connections securely to prevent leaks.",
+    shortDesc: "Safe removal of old hobs and stoves without damaging kitchen cabinets.",
+    fullDesc: "Relocating or upgrading your kitchen? Our technicians safely uninstall your existing gas hobs and stoves, capping off gas connections securely to prevent leaks.",
     iconName: "Trash2",
     features: [
-      "Safe Wall & Cabinet Demounting",
+      "Safe Countertop Demounting",
       "Gas Line Seal & Safety Cap Fitting",
       "Electrical Isolation & Hose Retrieval",
       "Damage-Free Removal from Granite Tops",
@@ -142,14 +142,14 @@ export const servicesData: ServiceItem[] = [
   {
     id: "deep-cleaning",
     title: "Deep Cleaning & Degreasing",
-    shortDesc: "Chemical degreasing of chimney blowers, oil collectors, and hob burners.",
-    fullDesc: "Eliminate stubborn grease, burnt oil sludge, and heavy carbon buildup. We dismantle oil collectors, baffle filters, internal blowers, and stove burners for thorough eco-friendly chemical ultrasonic cleaning.",
+    shortDesc: "Chemical degreasing of gas hob burners, trivets, and stove assemblies.",
+    fullDesc: "Eliminate stubborn grease, burnt oil sludge, and heavy carbon buildup. We dismantle burner tops, brass jets, trivets, and stove bodies for thorough eco-friendly chemical ultrasonic cleaning.",
     iconName: "Sparkles",
     popular: true,
     features: [
       "Eco-Friendly Chemical Sludge Dissolution",
-      "Internal Blower & Motor Housing Cleaning",
-      "Baffle & Mesh Filter Ultrasonic Soak",
+      "Brass Burner & Jet Ultrasonic Soak",
+      "Stove Body & Glass Top Polish",
       "Burner Chamber Carbon Scraping",
       "Stove & Hob Deep Cleaning"
     ]

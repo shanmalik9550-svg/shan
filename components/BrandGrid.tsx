@@ -56,7 +56,7 @@ export default function BrandGrid() {
                   {brand.name}
                 </h3>
                 <p className="text-[11px] text-slate-400 font-medium line-clamp-1 mt-0.5">
-                  Hob, Chimney & Oven Repair
+                  Hob, Gas Stove & Cooking Range Repair
                 </p>
               </div>
 

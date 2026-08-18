@@ -14,14 +14,14 @@ export default function HomePage() {
     <>
       <SchemaMarkup
         pageTitle="Doorstep Kitchen Appliance Repair Services"
-        pageDescription="Same-day doorstep repair for Kitchen Chimneys, Gas Hobs & Stoves with 1-Year Warranty."
+        pageDescription="Same-day doorstep repair for Gas Hobs, Gas Stoves & Cooking Appliances with 1-Year Warranty."
       />
 
       {/* Hero Section */}
       <HeroSection
         h1Title="Doorstep Kitchen Appliance Repair & Service"
-        heroHeadline="Same-Day Doorstep Repair for Kitchen Chimneys, Hobs & Gas Stoves"
-        heroSubheadline="Certified Technicians for Kitchen Chimneys, Hobs & Gas Stoves. Arrival in 30-45 Mins with 1-Year Written Warranty."
+        heroHeadline="Same-Day Doorstep Repair for Kitchen Hobs, Gas Stoves & Cooking Ranges"
+        heroSubheadline="Certified Technicians for Kitchen Hobs, Gas Stoves & Cooking Ranges. Arrival in 30-45 Mins with 1-Year Written Warranty."
         ctaCopy="Book Doorstep Service Today"
       />
 

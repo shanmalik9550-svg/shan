@@ -46,20 +46,20 @@ export const commonProblemsData: ProblemItem[] = [
     iconName: "TrendingDown"
   },
   {
-    id: "chimney-smoke",
-    title: "Chimney Not Sucking Smoke / Low Suction",
-    symptoms: "Kitchen fills with oil smoke while frying, suction feels extremely weak.",
-    cause: "Choked oil collector, clogged baffle filter, worn motor capacitor, fan blade grease.",
-    solution: "Filter chemical degreasing, motor capacitor boost & blower impeller clean.",
-    urgency: "High",
-    iconName: "Wind"
+    id: "stuck-knobs",
+    title: "Stuck or Hard to Turn Gas Control Knobs",
+    symptoms: "Knob won't depress, turns with extreme difficulty, or fails to release gas flame.",
+    cause: "Cooking oil residue and carbonized grease jammed inside micro-spindle valve mechanism.",
+    solution: "Spindle dismantling, degreasing, high-temp silicone lubrication & gas valve overhaul.",
+    urgency: "Medium",
+    iconName: "Wrench"
   },
   {
-    id: "chimney-noise",
-    title: "Loud Noise & Vibration in Chimney",
-    symptoms: "Rattling, screeching, or heavy humming sound when chimney motor is turned on.",
-    cause: "Loose blower fan nut, worn motor ball bearings, bent duct pipe, unbalanced fan.",
-    solution: "Motor bearing replacement, fan balancing, duct dampening & shaft alignment.",
+    id: "uneven-flame",
+    title: "Uneven Flame Distribution Across Burners",
+    symptoms: "One side of burner ring has high blue flame while other side stays dim or unlit.",
+    cause: "Partially blocked brass gas ports, carbon deposits, or misaligned burner cap.",
+    solution: "Burner cap alignment, port unblocking, venturi air adjustment & pressure check.",
     urgency: "Medium",
     iconName: "Volume2"
   }

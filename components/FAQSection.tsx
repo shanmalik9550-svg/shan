@@ -37,12 +37,12 @@ export default function FAQSection({ faqs, brandName }: FAQSectionProps) {
       answer: "Yes! We stock custom-fit 8mm thermal shock-resistant toughened glass top panels for all 2, 3, 4, and 5 burner hobs and stoves."
     },
     {
-      question: "Why is my kitchen chimney making loud humming or screeching noise?",
-      answer: "Loud noise is usually caused by unaligned blower fans, worn motor bearings, or heavy grease sludge imbalance. We service and balance the motor on-site."
+      question: "Why is my gas hob auto-ignition clicking continuously?",
+      answer: "Continuous clicking is caused by moisture trapped in the micro-switch, worn spark plugs, or pulse generator failure. We inspect and fix ignition systems on-site."
     },
     {
-      question: "Do you repair built-in convection ovens that trip the home MCB circuit breaker?",
-      answer: "Yes, breaker tripping is caused by insulation breakdown in heating elements or fan motors. We test for earth leakage and replace faulty parts right in your kitchen."
+      question: "Can you fix gas leaks on 4-burner glass hobs and stoves?",
+      answer: "Yes! Gas leakage is treated as a priority emergency. We perform digital pressure tests and seal or replace gas valves immediately."
     },
     {
       question: "What payment methods do you accept upon repair completion?",

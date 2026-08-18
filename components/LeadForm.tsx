@@ -40,7 +40,7 @@ export default function LeadForm({
     "Gas Stove Repair",
     "Hob Repair",
     "Cooking Range Repair",
-    "Chimney Service Repair",
+    "Auto-Ignition Repair",
     "Gas Stove 4,3 Burner Repair"
   ];
 
@@ -286,7 +286,7 @@ Please confirm technician arrival ETA.`;
               </label>
               <textarea
                 rows={2}
-                placeholder="Describe the issue (e.g. Gas leakage sound, auto-ignition not clicking, low suction...)"
+                placeholder="Describe the issue (e.g. Gas leakage sound, auto-ignition not clicking, low flame...)"
                 value={formData.userMessage}
                 onChange={(e) => setFormData({ ...formData, userMessage: e.target.value })}
                 className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2 text-xs text-slate-900 focus:bg-white focus:border-blue-600 focus:ring-2 focus:ring-blue-100 transition-all outline-none"

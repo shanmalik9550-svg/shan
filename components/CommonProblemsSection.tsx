@@ -18,7 +18,7 @@ export default function CommonProblemsSection() {
             Common Kitchen Appliance Failures We Fix
           </h2>
           <p className="text-slate-600 text-sm sm:text-base mt-2">
-            Is your chimney, gas hob, or built-in oven experiencing any of these symptoms? Our doorstep technicians diagnose and resolve them on-site.
+            Is your gas hob, stove, or cooking range experiencing any of these symptoms? Our doorstep technicians diagnose and resolve them on-site.
           </p>
         </div>
 
