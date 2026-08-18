@@ -2,7 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
-import { Phone, MessageSquare, Mail, MapPin, Wrench, ShieldCheck, Clock } from "lucide-react";
+import { Phone, MessageSquare, Mail, MapPin, Wrench, ShieldCheck, Clock, User } from "lucide-react";
 import { companyInfo } from "@/data/companyInfo";
 import { brandsData } from "@/data/brands";
 import LegalDisclaimer from "./LegalDisclaimer";
@@ -30,10 +30,20 @@ export default function Footer() {
               Premier doorstep repair and maintenance services for gas hobs, stoves, and cooking ranges across all major metropolitan cities.
             </p>
 
-            <div className="space-y-2 pt-2 text-xs">
+            <div className="space-y-2.5 pt-2 text-xs">
+              <div className="flex items-start gap-2 text-slate-300">
+                <User className="w-4 h-4 text-orange-400 flex-shrink-0 mt-0.5" />
+                <span><strong className="text-white font-semibold">Owner:</strong> {companyInfo.owner}</span>
+              </div>
+
+              <div className="flex items-start gap-2 text-slate-300 max-w-sm">
+                <MapPin className="w-4 h-4 text-orange-400 flex-shrink-0 mt-0.5" />
+                <span><strong className="text-white font-semibold">Address:</strong> {companyInfo.address}</span>
+              </div>
+
               <a
                 href={`tel:${companyInfo.phoneRaw}`}
-                className="flex items-center gap-2 text-orange-400 hover:text-orange-300 font-bold"
+                className="flex items-center gap-2 text-orange-400 hover:text-orange-300 font-bold pt-1"
               >
                 <Phone className="w-4 h-4 fill-current" />
                 <span>Call Helpline: {companyInfo.phone}</span>

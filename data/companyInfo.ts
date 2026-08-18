@@ -1,5 +1,7 @@
 export const companyInfo = {
   name: "Kitchen Appliance Repair Experts",
+  owner: "Harender Sharma",
+  address: "Omkar Nagar, Nadigada Tanda, Miyapur, Hyderabad, Telangana 500049",
   phone: "1800-202-6208",
   phoneRaw: "18002026208",
   whatsapp: "+91 95993 39483",
