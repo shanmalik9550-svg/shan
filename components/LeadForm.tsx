@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { Phone, MessageSquare, CheckCircle, Clock, ShieldCheck, User, Wrench, MapPin, AlertCircle, Loader2 } from "lucide-react";
+import { Phone, PhoneCall, MessageSquare, CheckCircle, Clock, ShieldCheck, User, Wrench, MapPin, AlertCircle, Loader2 } from "lucide-react";
 import { companyInfo } from "@/data/companyInfo";
 
 interface LeadFormProps {
@@ -85,7 +85,6 @@ export default function LeadForm({
     const randomId = "KSR-" + Math.floor(100000 + Math.random() * 900000);
     setBookingId(randomId);
 
-    // Format rich WhatsApp message containing ALL form details filled by user
     const formattedWaMsg = `*NEW DOORSTEP REPAIR BOOKING (Ref: ${randomId})*
 
 👤 *Name:* ${formData.name}
@@ -125,7 +124,6 @@ Please confirm technician arrival ETA.`;
     } finally {
       setIsSubmitting(false);
       setIsSubmitted(true);
-      // Automatically redirect user to WhatsApp with pre-filled message
       if (typeof window !== "undefined") {
         window.open(whatsappUrl, "_blank");
       }
@@ -306,8 +304,8 @@ Please confirm technician arrival ETA.`;
                 </>
               ) : (
                 <>
-                  <span>Submit & Connect on WhatsApp</span>
-                  <MessageSquare className="w-5 h-5" />
+                  <span>{buttonText}</span>
+                  <PhoneCall className="w-5 h-5" />
                 </>
               )}
             </button>
@@ -367,10 +365,10 @@ Please confirm technician arrival ETA.`;
 
             <a
               href={`tel:${companyInfo.phoneRaw}`}
-              className="w-full bg-orange-600 hover:bg-orange-700 text-white font-black text-sm py-3.5 px-4 rounded-xl flex items-center justify-center gap-2 transition-colors"
+              className="w-full bg-gradient-to-r from-orange-600 to-amber-500 hover:from-orange-700 hover:to-amber-600 text-white font-black text-sm py-3.5 px-4 rounded-xl flex items-center justify-center gap-2 shadow-lg transition-colors"
             >
-              <Phone className="w-4 h-4 fill-current" />
-              <span>Call Technician Directly ({companyInfo.phone})</span>
+              <PhoneCall className="w-4 h-4 fill-current animate-bounce" />
+              <span>Call Toll-Free Helpline Now ({companyInfo.phone})</span>
             </a>
           </div>
         </div>

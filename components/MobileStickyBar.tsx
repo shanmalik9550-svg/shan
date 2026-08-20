@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Phone, MessageSquare, PhoneCall } from "lucide-react";
+import { PhoneCall } from "lucide-react";
 import { companyInfo } from "@/data/companyInfo";
 
 interface MobileStickyBarProps {
@@ -10,39 +10,45 @@ interface MobileStickyBarProps {
 }
 
 export default function MobileStickyBar({ brandName, applianceName }: MobileStickyBarProps) {
-  const whatsappMsg = brandName 
-    ? `Hi, I need urgent doorstep repair for my ${brandName} kitchen appliance. Please send a technician.`
-    : `Hi, I need urgent doorstep kitchen appliance repair service. Please dispatch a technician.`;
-
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-50 md:hidden bg-slate-950/95 backdrop-blur-md p-2 rounded-t-2xl shadow-[0_-8px_30px_rgba(0,0,0,0.4)] border-t border-slate-700/60">
-      <div className="grid grid-cols-2 gap-2 max-w-md mx-auto">
-        {/* LEFT BUTTON: CALL TOLL FREE (ORANGE - PULSE ANIMATED) */}
+    <div className="fixed bottom-0 left-0 right-0 z-50 md:hidden bg-slate-950/95 backdrop-blur-lg px-3 py-2.5 rounded-t-3xl border-t-2 border-orange-500/60 shadow-[0_-10px_35px_rgba(0,0,0,0.6)]">
+      <div className="w-full max-w-md mx-auto">
+        {/* BIG HIGH-CONVERSION TOLL-FREE CALL BUTTON */}
         <a
           href={`tel:${companyInfo.phoneRaw}`}
-          className="flex items-center justify-center gap-2 bg-gradient-to-r from-orange-600 to-amber-500 hover:from-orange-700 hover:to-amber-600 text-white font-black text-xs sm:text-sm py-3.5 px-2 rounded-xl shadow-xl active:scale-95 transition-all text-center tracking-tight"
+          aria-label={`Call Toll Free Hotline ${companyInfo.phone}`}
+          className="relative flex items-center justify-between gap-3 bg-gradient-to-r from-orange-600 via-amber-500 to-orange-600 hover:from-orange-700 hover:to-amber-600 text-white py-3.5 px-4 rounded-2xl shadow-[0_4px_25px_rgba(234,88,12,0.55)] active:scale-98 transition-all w-full border border-amber-300/40"
         >
-          <PhoneCall className="w-4 h-4 fill-current animate-bounce flex-shrink-0" />
-          <div className="leading-tight">
-            <span className="block text-[9px] uppercase font-extrabold text-amber-200">Toll-Free Call</span>
-            <span className="text-xs font-black">{companyInfo.phone}</span>
+          {/* Left Pulsing Call Badge */}
+          <div className="w-11 h-11 rounded-xl bg-white/25 backdrop-blur-sm flex items-center justify-center text-white shrink-0 shadow-inner">
+            <PhoneCall className="w-6 h-6 fill-current animate-bounce text-white" />
           </div>
-        </a>
 
-        {/* RIGHT BUTTON: WHATSAPP (GREEN) */}
-        <a
-          href={`https://wa.me/${companyInfo.whatsappRaw}?text=${encodeURIComponent(whatsappMsg)}`}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center justify-center gap-2 bg-gradient-to-r from-emerald-600 to-teal-500 hover:from-emerald-700 hover:to-teal-600 text-white font-black text-xs sm:text-sm py-3.5 px-2 rounded-xl shadow-xl active:scale-95 transition-all text-center tracking-tight"
-        >
-          <MessageSquare className="w-4 h-4 fill-current flex-shrink-0" />
-          <div className="leading-tight">
-            <span className="block text-[9px] uppercase font-extrabold text-emerald-200">WhatsApp Chat</span>
-            <span className="text-xs font-black">Click to Chat</span>
+          {/* Center Call Info */}
+          <div className="flex-1 leading-tight text-left">
+            <div className="flex items-center gap-1.5 mb-0.5">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-300 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-400"></span>
+              </span>
+              <span className="text-[10px] uppercase font-black tracking-wider text-amber-100">
+                24/7 Toll-Free • 30-Min Arrival
+              </span>
+            </div>
+            <span className="text-lg sm:text-xl font-black text-white tracking-tight drop-shadow-sm block">
+              Call {companyInfo.phone}
+            </span>
+          </div>
+
+          {/* Right Action Badge */}
+          <div className="shrink-0 bg-white/20 backdrop-blur-md px-3 py-1.5 rounded-xl border border-white/30 text-center">
+            <span className="block text-[9px] uppercase font-extrabold text-amber-100">Tap To</span>
+            <span className="block text-xs font-black text-white uppercase tracking-wider">Call</span>
           </div>
         </a>
       </div>
     </div>
   );
 }
+
+

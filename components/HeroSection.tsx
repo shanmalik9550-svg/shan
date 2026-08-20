@@ -2,7 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
-import { Phone, MessageSquare, ShieldCheck, Clock, CheckCircle2, Star, Wrench, Sparkles, MapPin, PhoneCall } from "lucide-react";
+import { Phone, ShieldCheck, Clock, CheckCircle2, Star, Wrench, Sparkles, MapPin, PhoneCall } from "lucide-react";
 import LeadForm from "./LeadForm";
 import { companyInfo } from "@/data/companyInfo";
 
@@ -72,29 +72,17 @@ export default function HeroSection({
               </div>
             </div>
 
-            {/* Prominent Direct CTAs - CALL MAXIMIZATION */}
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-2">
-              {/* Call Now Button (Primary High-Visibility Action) */}
+            {/* Prominent Direct CTA - CALL ONLY */}
+            <div className="pt-2">
               <a
                 href={`tel:${companyInfo.phoneRaw}`}
-                className="flex-1 flex items-center justify-center gap-3 bg-gradient-to-r from-orange-600 to-amber-500 hover:from-orange-700 hover:to-amber-600 text-white font-black text-base py-4 px-6 rounded-xl shadow-xl hover:shadow-2xl transition-all transform hover:-translate-y-0.5"
+                className="w-full flex items-center justify-center gap-3 bg-gradient-to-r from-orange-600 to-amber-500 hover:from-orange-700 hover:to-amber-600 text-white font-black text-base py-4 px-6 rounded-xl shadow-xl hover:shadow-2xl transition-all transform hover:-translate-y-0.5"
               >
                 <PhoneCall className="w-6 h-6 fill-current animate-bounce flex-shrink-0" />
                 <div className="text-left leading-tight">
                   <span className="text-[10px] block uppercase font-black text-amber-200 tracking-wider">Toll-Free Call Now</span>
-                  <span className="text-lg font-black">{companyInfo.phone}</span>
+                  <span className="text-lg sm:text-xl font-black">{companyInfo.phone}</span>
                 </div>
-              </a>
-
-              {/* WhatsApp Button */}
-              <a
-                href={`https://wa.me/${companyInfo.whatsappRaw}?text=${encodeURIComponent(`Hi, I need urgent doorstep repair for my ${brandName || 'kitchen'} appliance.`)}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex-1 sm:flex-initial flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-base px-6 py-4 rounded-xl shadow-lg transition-all"
-              >
-                <MessageSquare className="w-5 h-5" />
-                <span>WhatsApp Us</span>
               </a>
             </div>
 

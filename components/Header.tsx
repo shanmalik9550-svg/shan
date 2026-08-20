@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Phone, MessageSquare, Wrench, ShieldCheck, ChevronDown, Clock, MapPin, PhoneCall } from "lucide-react";
+import { Phone, Wrench, ShieldCheck, ChevronDown, Clock, MapPin, PhoneCall } from "lucide-react";
 import { companyInfo } from "@/data/companyInfo";
 import { brandsData } from "@/data/brands";
 
@@ -121,16 +121,6 @@ export default function Header() {
 
         {/* Desktop Quick Action Buttons - Extra Call Prominence */}
         <div className="hidden sm:flex items-center gap-3">
-          <a
-            href={`https://wa.me/${companyInfo.whatsappRaw}?text=${encodeURIComponent("Hi, I need urgent doorstep repair service for my kitchen appliance. Please dispatch a technician.")}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-1.5 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs px-3.5 py-2.5 rounded-xl shadow-sm hover:shadow transition-all"
-          >
-            <MessageSquare className="w-4 h-4" />
-            <span>WhatsApp</span>
-          </a>
-
           {/* High Conversion Call Button */}
           <a
             href={`tel:${companyInfo.phoneRaw}`}

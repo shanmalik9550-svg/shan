@@ -11,7 +11,7 @@ import CustomerReviews from "@/components/CustomerReviews";
 import FAQSection from "@/components/FAQSection";
 import SchemaMarkup from "@/components/SchemaMarkup";
 import MobileStickyBar from "@/components/MobileStickyBar";
-import { CheckCircle2, Wrench, ShieldCheck, Clock, Phone, MessageSquare, AlertCircle } from "lucide-react";
+import { CheckCircle2, Wrench, ShieldCheck, Clock, Phone, AlertCircle } from "lucide-react";
 import { companyInfo } from "@/data/companyInfo";
 import Link from "next/link";
 

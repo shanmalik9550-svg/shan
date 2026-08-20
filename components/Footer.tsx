@@ -2,7 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
-import { Phone, MessageSquare, Mail, MapPin, Wrench, ShieldCheck, Clock, User } from "lucide-react";
+import { Phone, Mail, MapPin, Wrench, ShieldCheck, Clock, User } from "lucide-react";
 import { companyInfo } from "@/data/companyInfo";
 import { brandsData } from "@/data/brands";
 import LegalDisclaimer from "./LegalDisclaimer";
@@ -47,16 +47,6 @@ export default function Footer() {
               >
                 <Phone className="w-4 h-4 fill-current" />
                 <span>Call Helpline: {companyInfo.phone}</span>
-              </a>
-
-              <a
-                href={`https://wa.me/${companyInfo.whatsappRaw}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 text-emerald-400 hover:text-emerald-300 font-bold"
-              >
-                <MessageSquare className="w-4 h-4" />
-                <span>WhatsApp: {companyInfo.whatsapp}</span>
               </a>
 
               <div className="flex items-center gap-2 text-slate-400">

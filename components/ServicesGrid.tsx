@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { servicesData, ServiceItem } from "@/data/services";
-import { Wrench, CheckCircle, Phone, MessageSquare, Flame, Wind, Cpu, ShieldAlert, Sparkles, Box, Grid, Zap, Calendar, Trash2, CheckSquare, AlertTriangle, ShieldCheck } from "lucide-react";
+import { Wrench, CheckCircle, Phone, Flame, Wind, Cpu, ShieldAlert, Sparkles, Box, Grid, Zap, Calendar, Trash2, CheckSquare, AlertTriangle, ShieldCheck } from "lucide-react";
 import { companyInfo } from "@/data/companyInfo";
 
 const iconMap: Record<string, any> = {
