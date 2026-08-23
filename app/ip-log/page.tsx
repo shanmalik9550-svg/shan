@@ -26,7 +26,7 @@ export default function IpLogPage() {
 
       if (res.ok) {
         const data = await res.json();
-        if (Array.isArray(data)) {
+        if (Array.isArray(data) && data.length > 0) {
           const mappedLogs: GlobalIpLogEntry[] = data.map((item: any) => ({
             id: item.id || Math.random().toString(36).substring(2, 9),
             ip: item.ip || "Unknown",
