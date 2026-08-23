@@ -1,43 +1,44 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { Copy, Check, RefreshCw, ShieldAlert, Search, ExternalLink, Filter } from "lucide-react";
-
-interface IpLogEntry {
-  id: string;
-  ip: string;
-  timestamp: string;
-  path: string;
-  referrer: string;
-  userAgent: string;
-  isAdClick: boolean;
-}
+import { Copy, Check, RefreshCw, Search, Filter, ShieldCheck, Trash2 } from "lucide-react";
+import { ClientIpLogEntry } from "@/components/IpTracker";
 
 export default function IpLogPage() {
-  const [logs, setLogs] = useState<IpLogEntry[]>([]);
+  const [logs, setLogs] = useState<ClientIpLogEntry[]>([]);
   const [loading, setLoading] = useState(true);
   const [copiedIp, setCopiedIp] = useState<string | null>(null);
   const [searchQuery, setSearchQuery] = useState("");
   const [filterAdClicksOnly, setFilterAdClicksOnly] = useState(false);
 
-  const fetchLogs = async () => {
+  const loadLogs = () => {
     setLoading(true);
     try {
-      const res = await fetch("/api/log-ip");
-      const data = await res.json();
-      if (data.success) {
-        setLogs(data.logs || []);
+      if (typeof window !== "undefined") {
+        const storedLogs = localStorage.getItem("visitor_ip_logs");
+        if (storedLogs) {
+          setLogs(JSON.parse(storedLogs));
+        } else {
+          setLogs([]);
+        }
       }
     } catch (err) {
-      console.error("Failed to fetch IP logs:", err);
+      console.error("Failed to load logs:", err);
     } finally {
       setLoading(false);
     }
   };
 
   useEffect(() => {
-    fetchLogs();
+    loadLogs();
   }, []);
+
+  const clearLogs = () => {
+    if (typeof window !== "undefined") {
+      localStorage.removeItem("visitor_ip_logs");
+      setLogs([]);
+    }
+  };
 
   const copyToClipboard = (ip: string) => {
     navigator.clipboard.writeText(ip);
@@ -61,7 +62,6 @@ export default function IpLogPage() {
     return matchesSearch && matchesAdFilter;
   });
 
-  // Calculate stats
   const totalVisits = logs.length;
   const uniqueIpsCount = new Set(logs.map((l) => l.ip)).size;
   const adClicksCount = logs.filter((l) => l.isAdClick).length;
@@ -73,7 +73,8 @@ export default function IpLogPage() {
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border-b border-slate-800 pb-6">
           <div>
             <div className="flex items-center gap-2 mb-1">
-              <span className="bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 text-xs font-black px-2.5 py-0.5 rounded-full uppercase tracking-wider">
+              <span className="bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 text-xs font-black px-2.5 py-0.5 rounded-full uppercase tracking-wider flex items-center gap-1">
+                <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
                 Live Security Tracker
               </span>
               <span className="text-xs text-slate-400 font-mono">/ip-log</span>
@@ -86,9 +87,9 @@ export default function IpLogPage() {
             </p>
           </div>
 
-          <div className="flex items-center gap-3">
+          <div className="flex flex-wrap items-center gap-3">
             <button
-              onClick={fetchLogs}
+              onClick={loadLogs}
               disabled={loading}
               className="bg-slate-900 hover:bg-slate-800 text-slate-200 text-xs font-bold px-4 py-2.5 rounded-xl border border-slate-700 flex items-center gap-2 transition-all active:scale-95"
             >
@@ -96,9 +97,20 @@ export default function IpLogPage() {
               <span>Refresh Logs</span>
             </button>
 
+            {logs.length > 0 && (
+              <button
+                onClick={clearLogs}
+                className="bg-red-950/60 hover:bg-red-900 text-red-300 border border-red-800/40 text-xs font-bold px-3 py-2.5 rounded-xl flex items-center gap-1.5 transition-all"
+              >
+                <Trash2 className="w-3.5 h-3.5" />
+                <span>Clear</span>
+              </button>
+            )}
+
             <button
               onClick={copyAllUniqueIps}
-              className="bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-black px-4 py-2.5 rounded-xl shadow-lg shadow-emerald-600/30 flex items-center gap-2 transition-all active:scale-95"
+              disabled={filteredLogs.length === 0}
+              className="bg-emerald-600 hover:bg-emerald-500 disabled:opacity-50 text-white text-xs font-black px-4 py-2.5 rounded-xl shadow-lg shadow-emerald-600/30 flex items-center gap-2 transition-all active:scale-95"
             >
               {copiedIp === "ALL" ? <Check className="w-4 h-4" /> : <Copy className="w-4 h-4" />}
               <span>{copiedIp === "ALL" ? "Copied All IPs!" : "Copy Unique IPs for Google Ads"}</span>
@@ -157,7 +169,7 @@ export default function IpLogPage() {
             <table className="w-full text-left text-xs text-slate-300">
               <thead className="bg-slate-950 text-slate-400 uppercase text-[10px] font-black tracking-wider border-b border-slate-800">
                 <tr>
-                  <th className="py-3.5 px-4">Exact IP Address</th>
+                  <th className="py-3.5 px-4">Exact Public IP Address</th>
                   <th className="py-3.5 px-4">Timestamp (IST)</th>
                   <th className="py-3.5 px-4">Page Visited</th>
                   <th className="py-3.5 px-4">Referrer / Ad Source</th>
@@ -208,7 +220,7 @@ export default function IpLogPage() {
                 ) : (
                   <tr>
                     <td colSpan={5} className="py-8 text-center text-slate-500 font-sans text-xs">
-                      {loading ? "Loading visitor logs..." : "No visitor IP logs recorded yet. Visit the website to see your IP logged here."}
+                      {loading ? "Loading visitor logs..." : "No visitor IP logs recorded yet. Visit any page on the website to see your IP logged here live!"}
                     </td>
                   </tr>
                 )}

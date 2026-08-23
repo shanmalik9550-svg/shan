@@ -1,8 +1,8 @@
 import { NextResponse, NextRequest } from "next/server";
-import fs from "fs";
-import path from "path";
 
-interface IpLogEntry {
+export const dynamic = "force-dynamic";
+
+export interface IpLogEntry {
   id: string;
   ip: string;
   timestamp: string;
@@ -13,43 +13,32 @@ interface IpLogEntry {
 }
 
 const MAX_LOGS = 300;
-// In-memory fallback
-let memoryLogs: IpLogEntry[] = [];
 
-// Helper to load logs
-function getLogs(): IpLogEntry[] {
-  try {
-    const filePath = path.join(process.cwd(), "scratch", "ip_logs.json");
-    if (fs.existsSync(filePath)) {
-      const data = fs.readFileSync(filePath, "utf-8");
-      return JSON.parse(data);
-    }
-  } catch (err) {
-    // fallback to memory
-  }
-  return memoryLogs;
+// Global in-memory storage across hot reloads & requests
+const globalForLogs = globalThis as unknown as {
+  _ipLogsStore?: IpLogEntry[];
+};
+
+if (!globalForLogs._ipLogsStore) {
+  globalForLogs._ipLogsStore = [];
 }
 
-// Helper to save logs
-function saveLogs(logs: IpLogEntry[]) {
-  memoryLogs = logs;
-  try {
-    const dirPath = path.join(process.cwd(), "scratch");
-    if (!fs.existsSync(dirPath)) {
-      fs.mkdirSync(dirPath, { recursive: true });
-    }
-    const filePath = path.join(dirPath, "ip_logs.json");
-    fs.writeFileSync(filePath, JSON.stringify(logs.slice(0, MAX_LOGS), null, 2), "utf-8");
-  } catch (err) {
-    // silent fallback
+function getLogs(): IpLogEntry[] {
+  return globalForLogs._ipLogsStore || [];
+}
+
+function addLog(newLog: IpLogEntry) {
+  if (!globalForLogs._ipLogsStore) {
+    globalForLogs._ipLogsStore = [];
   }
+  globalForLogs._ipLogsStore = [newLog, ...globalForLogs._ipLogsStore].slice(0, MAX_LOGS);
 }
 
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json().catch(() => ({}));
     
-    // Extract IP address from standard proxies / headers
+    // Extract IP address from standard headers / proxies
     const rawIp =
       request.headers.get("cf-connecting-ip") ||
       request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ||
@@ -71,18 +60,19 @@ export async function POST(request: NextRequest) {
       isAdClick: isAdClick
     };
 
-    const currentLogs = getLogs();
-    // Prepend new log
-    const updatedLogs = [newLog, ...currentLogs].slice(0, MAX_LOGS);
-    saveLogs(updatedLogs);
+    addLog(newLog);
 
     return NextResponse.json({ success: true, ip: rawIp });
   } catch (error) {
-    return NextResponse.json({ success: false, error: "Logging failed" }, { status: 500 });
+    return NextResponse.json({ success: false, error: "Logging error" }, { status: 200 });
   }
 }
 
 export async function GET() {
-  const logs = getLogs();
-  return NextResponse.json({ success: true, count: logs.length, logs });
+  try {
+    const logs = getLogs();
+    return NextResponse.json({ success: true, count: logs.length, logs: logs });
+  } catch (error) {
+    return NextResponse.json({ success: true, count: 0, logs: [] });
+  }
 }
