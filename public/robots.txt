@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /ip-log
 
 Sitemap: https://kitchenappliancesservice.com/sitemap.xml
+
