@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, Suspense } from "react";
 import { usePathname, useSearchParams } from "next/navigation";
 
 export interface ClientIpLogEntry {
@@ -12,7 +12,7 @@ export interface ClientIpLogEntry {
   isAdClick: boolean;
 }
 
-export default function IpTracker() {
+function IpTrackerInner() {
   const pathname = usePathname();
   const searchParams = useSearchParams();
 
@@ -59,4 +59,12 @@ export default function IpTracker() {
   }, [pathname, searchParams]);
 
   return null;
+}
+
+export default function IpTracker() {
+  return (
+    <Suspense fallback={null}>
+      <IpTrackerInner />
+    </Suspense>
+  );
 }
