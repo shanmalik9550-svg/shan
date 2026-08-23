@@ -4,7 +4,7 @@ import { useEffect, Suspense } from "react";
 import { usePathname, useSearchParams } from "next/navigation";
 
 export interface GlobalIpLogEntry {
-  id: string;
+  id?: string;
   ip: string;
   timestamp: string;
   path: string;
@@ -12,8 +12,8 @@ export interface GlobalIpLogEntry {
   isAdClick: boolean;
 }
 
-// Global CORS-enabled Central Storage Endpoints (Primary & Fallback)
-export const PRIMARY_CLOUD_ENDPOINT = "https://keyvalue.xyz/g/ksr_visitor_ips_v1";
+export const SUPABASE_URL = "https://srrcumjdmhccslkolwlv.supabase.co";
+export const SUPABASE_KEY = "sb_publishable_NYH2JMS6LwtOtrTvxnWgNg_3HkQQ_IO";
 
 // Helper to fetch IP from multiple fast services (IPify, My-IP, IPAPI)
 export async function getPublicIp(): Promise<string> {
@@ -44,14 +44,13 @@ export async function getPublicIp(): Promise<string> {
   return "Unknown";
 }
 
-// Helper to log a visitor IP globally to central cloud database
+// Helper to log a visitor IP globally to Supabase Database
 export async function logVisitorGlobally(path: string, referrer: string, gclid: string | null): Promise<GlobalIpLogEntry | null> {
   try {
     const visitorIp = await getPublicIp();
     const isAdClick = Boolean(gclid || path.includes("gclid") || referrer.includes("google"));
 
     const newEntry: GlobalIpLogEntry = {
-      id: Math.random().toString(36).substring(2, 9),
       ip: visitorIp,
       timestamp: new Date().toLocaleString("en-IN", { timeZone: "Asia/Kolkata" }),
       path: path || "/",
@@ -59,34 +58,32 @@ export async function logVisitorGlobally(path: string, referrer: string, gclid: 
       isAdClick: isAdClick,
     };
 
-    // 1. Fetch current central cloud logs
-    let currentLogs: GlobalIpLogEntry[] = [];
+    // 1. Post to Supabase REST API
     try {
-      const res = await fetch(PRIMARY_CLOUD_ENDPOINT, { cache: "no-store" });
-      if (res.ok) {
-        const data = await res.json();
-        if (Array.isArray(data)) {
-          currentLogs = data;
-        }
-      }
+      await fetch(`${SUPABASE_URL}/rest/v1/visitor_ips`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "apikey": SUPABASE_KEY,
+          "Authorization": `Bearer ${SUPABASE_KEY}`,
+          "Prefer": "return=minimal"
+        },
+        body: JSON.stringify({
+          ip: newEntry.ip,
+          timestamp: newEntry.timestamp,
+          path: newEntry.path,
+          referrer: newEntry.referrer,
+          is_ad_click: newEntry.isAdClick
+        })
+      });
     } catch (e) {}
 
-    // Avoid exact duplicate within 10s on same path
-    const lastEntry = currentLogs[0];
-    if (!lastEntry || lastEntry.ip !== visitorIp || lastEntry.path !== path) {
-      const updatedLogs = [newEntry, ...currentLogs].slice(0, 300);
-
-      // 2. Push updated logs back to Central Cloud Database
-      await fetch(PRIMARY_CLOUD_ENDPOINT, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(updatedLogs),
-      });
-
-      // 3. Backup locally
-      if (typeof window !== "undefined") {
-        localStorage.setItem("visitor_ip_logs", JSON.stringify(updatedLogs));
-      }
+    // 2. Local storage backup
+    if (typeof window !== "undefined") {
+      const storedRaw = localStorage.getItem("visitor_ip_logs");
+      let logs: GlobalIpLogEntry[] = storedRaw ? JSON.parse(storedRaw) : [];
+      logs = [newEntry, ...logs].slice(0, 300);
+      localStorage.setItem("visitor_ip_logs", JSON.stringify(logs));
     }
 
     return newEntry;

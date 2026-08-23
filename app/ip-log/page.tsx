@@ -1,8 +1,8 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { Copy, Check, RefreshCw, Search, Filter, ShieldCheck, Trash2, Globe, Send } from "lucide-react";
-import { GlobalIpLogEntry, PRIMARY_CLOUD_ENDPOINT, logVisitorGlobally } from "@/components/IpTracker";
+import { Copy, Check, RefreshCw, Search, Filter, ShieldCheck, Trash2, Globe, Send, Database } from "lucide-react";
+import { GlobalIpLogEntry, SUPABASE_URL, SUPABASE_KEY, logVisitorGlobally } from "@/components/IpTracker";
 
 export default function IpLogPage() {
   const [logs, setLogs] = useState<GlobalIpLogEntry[]>([]);
@@ -12,24 +12,40 @@ export default function IpLogPage() {
   const [searchQuery, setSearchQuery] = useState("");
   const [filterAdClicksOnly, setFilterAdClicksOnly] = useState(false);
 
-  const fetchCentralLogs = async () => {
+  const fetchSupabaseLogs = async () => {
     setLoading(true);
     try {
-      // 1. Fetch live logs from Central Cloud Storage
-      const res = await fetch(PRIMARY_CLOUD_ENDPOINT, { cache: "no-store" });
+      // 1. Fetch live logs from Supabase Database
+      const res = await fetch(`${SUPABASE_URL}/rest/v1/visitor_ips?select=*&order=created_at.desc&limit=300`, {
+        headers: {
+          "apikey": SUPABASE_KEY,
+          "Authorization": `Bearer ${SUPABASE_KEY}`
+        },
+        cache: "no-store"
+      });
+
       if (res.ok) {
         const data = await res.json();
         if (Array.isArray(data)) {
-          setLogs(data);
+          const mappedLogs: GlobalIpLogEntry[] = data.map((item: any) => ({
+            id: item.id || Math.random().toString(36).substring(2, 9),
+            ip: item.ip || "Unknown",
+            timestamp: item.timestamp || new Date(item.created_at || Date.now()).toLocaleString("en-IN", { timeZone: "Asia/Kolkata" }),
+            path: item.path || "/",
+            referrer: item.referrer || "Direct / None",
+            isAdClick: Boolean(item.is_ad_click || item.isAdClick)
+          }));
+
+          setLogs(mappedLogs);
           if (typeof window !== "undefined") {
-            localStorage.setItem("visitor_ip_logs", JSON.stringify(data));
+            localStorage.setItem("visitor_ip_logs", JSON.stringify(mappedLogs));
           }
           setLoading(false);
           return;
         }
       }
     } catch (err) {
-      console.warn("Central cloud fetch fallback:", err);
+      console.warn("Supabase fetch fallback:", err);
     }
 
     // 2. Fallback to localStorage
@@ -45,12 +61,12 @@ export default function IpLogPage() {
   };
 
   useEffect(() => {
-    fetchCentralLogs();
+    fetchSupabaseLogs();
 
-    // Auto refresh logs every 10 seconds
+    // Auto refresh logs every 8 seconds
     const timer = setInterval(() => {
-      fetchCentralLogs();
-    }, 10000);
+      fetchSupabaseLogs();
+    }, 8000);
 
     return () => clearInterval(timer);
   }, []);
@@ -58,18 +74,20 @@ export default function IpLogPage() {
   const handleTestMyIpNow = async () => {
     setTestingIp(true);
     await logVisitorGlobally("/ip-log (Manual Test)", "Manual Test Button", null);
-    await fetchCentralLogs();
+    await fetchSupabaseLogs();
     setTestingIp(false);
   };
 
-  const clearGlobalLogs = async () => {
-    if (!confirm("Are you sure you want to clear all central visitor IP logs?")) return;
+  const clearSupabaseLogs = async () => {
+    if (!confirm("Are you sure you want to clear all Supabase visitor IP logs?")) return;
     setLoading(true);
     try {
-      await fetch(PRIMARY_CLOUD_ENDPOINT, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify([]),
+      await fetch(`${SUPABASE_URL}/rest/v1/visitor_ips`, {
+        method: "DELETE",
+        headers: {
+          "apikey": SUPABASE_KEY,
+          "Authorization": `Bearer ${SUPABASE_KEY}`
+        }
       });
       if (typeof window !== "undefined") {
         localStorage.removeItem("visitor_ip_logs");
@@ -116,8 +134,8 @@ export default function IpLogPage() {
           <div>
             <div className="flex items-center gap-2 mb-1">
               <span className="bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 text-xs font-black px-2.5 py-0.5 rounded-full uppercase tracking-wider flex items-center gap-1">
-                <Globe className="w-3.5 h-3.5 text-emerald-400 animate-pulse" />
-                Global Central Cloud Syncing Live
+                <Database className="w-3.5 h-3.5 text-emerald-400 animate-pulse" />
+                Supabase Database Connected
               </span>
               <span className="text-xs text-slate-400 font-mono">/ip-log</span>
             </div>
@@ -125,7 +143,7 @@ export default function IpLogPage() {
               Global Visitor IP Address & Click Tracker
             </h1>
             <p className="text-xs sm:text-sm text-slate-400 mt-1">
-              Central live log of visitor IP addresses across all devices & locations for Google Ads IP Exclusions.
+              Live Supabase Database tracking all visitor IP addresses across all devices & locations for Google Ads IP Exclusions.
             </p>
           </div>
 
@@ -140,7 +158,7 @@ export default function IpLogPage() {
             </button>
 
             <button
-              onClick={fetchCentralLogs}
+              onClick={fetchSupabaseLogs}
               disabled={loading}
               className="bg-slate-900 hover:bg-slate-800 text-slate-200 text-xs font-bold px-4 py-2.5 rounded-xl border border-slate-700 flex items-center gap-2 transition-all active:scale-95"
             >
@@ -150,7 +168,7 @@ export default function IpLogPage() {
 
             {logs.length > 0 && (
               <button
-                onClick={clearGlobalLogs}
+                onClick={clearSupabaseLogs}
                 className="bg-red-950/60 hover:bg-red-900 text-red-300 border border-red-800/40 text-xs font-bold px-3 py-2.5 rounded-xl flex items-center gap-1.5 transition-all"
               >
                 <Trash2 className="w-3.5 h-3.5" />
@@ -229,8 +247,8 @@ export default function IpLogPage() {
               </thead>
               <tbody className="divide-y divide-slate-800/60 font-mono">
                 {filteredLogs.length > 0 ? (
-                  filteredLogs.map((log) => (
-                    <tr key={log.id} className="hover:bg-slate-800/40 transition-colors">
+                  filteredLogs.map((log, idx) => (
+                    <tr key={log.id || idx} className="hover:bg-slate-800/40 transition-colors">
                       <td className="py-3 px-4 font-bold text-emerald-400 flex items-center gap-2">
                         <span>{log.ip}</span>
                         {log.isAdClick && (
@@ -271,7 +289,7 @@ export default function IpLogPage() {
                 ) : (
                   <tr>
                     <td colSpan={5} className="py-8 text-center text-slate-500 font-sans text-xs">
-                      {loading ? "Syncing central cloud database..." : "No visitor IP logs recorded yet. Click 'Test My Device IP Now' above to test live!"}
+                      {loading ? "Syncing Supabase Database..." : "If you haven't created the visitor_ips table in Supabase yet, run the 1-click SQL in your Supabase SQL Editor!"}
                     </td>
                   </tr>
                 )}
