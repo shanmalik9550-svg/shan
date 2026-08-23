@@ -7,7 +7,7 @@ interface MicrosoftClarityProps {
 }
 
 export default function MicrosoftClarity({
-  projectId = process.env.NEXT_PUBLIC_CLARITY_PROJECT_ID || ""
+  projectId = process.env.NEXT_PUBLIC_CLARITY_PROJECT_ID || "y6pqzzden3"
 }: MicrosoftClarityProps) {
   if (!projectId) {
     return null;
