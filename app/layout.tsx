@@ -5,6 +5,7 @@ import MobileStickyBar from "@/components/MobileStickyBar";
 import FloatingCTAs from "@/components/FloatingCTAs";
 import RecentBookingTicker from "@/components/RecentBookingTicker";
 import MicrosoftClarity from "@/components/MicrosoftClarity";
+import IpTracker from "@/components/IpTracker";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -33,6 +34,7 @@ export default function RootLayout({
     <html lang="en" className="scroll-smooth">
       <body className="bg-slate-50 text-slate-900 min-h-screen flex flex-col antialiased">
         <MicrosoftClarity />
+        <IpTracker />
         <Header />
         <main className="flex-grow">
           {children}
