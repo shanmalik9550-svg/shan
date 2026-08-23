@@ -157,7 +157,7 @@ Please confirm technician arrival ETA.`;
           )}
 
           <form onSubmit={handleSubmit} className="space-y-3">
-            {/* Name Input */}
+            {/* 1. Name Input */}
             <div>
               <label className="block text-xs font-bold text-slate-700 mb-1">
                 Customer Name <span className="text-red-500">*</span>
@@ -168,11 +168,11 @@ Please confirm technician arrival ETA.`;
                 placeholder="e.g. Rahul Sharma"
                 value={formData.name}
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2 text-xs sm:text-sm text-slate-900 focus:bg-white focus:border-blue-600 focus:ring-2 focus:ring-blue-100 transition-all outline-none"
+                className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2 text-xs sm:text-sm text-slate-900 focus:bg-white focus:border-emerald-600 focus:ring-2 focus:ring-emerald-100 transition-all outline-none"
               />
             </div>
 
-            {/* Phone Number Input */}
+            {/* 2. Phone Number Input */}
             <div>
               <label className="block text-xs font-bold text-slate-700 mb-1">
                 Phone Number <span className="text-red-500">*</span>
@@ -184,61 +184,11 @@ Please confirm technician arrival ETA.`;
                 placeholder="10-digit mobile number"
                 value={formData.phone}
                 onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2 text-xs sm:text-sm text-slate-900 focus:bg-white focus:border-blue-600 focus:ring-2 focus:ring-blue-100 transition-all outline-none"
+                className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2 text-xs sm:text-sm text-slate-900 focus:bg-white focus:border-emerald-600 focus:ring-2 focus:ring-emerald-100 transition-all outline-none"
               />
             </div>
 
-            {/* City & Pincode Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-              <div>
-                <label className="block text-xs font-bold text-slate-700 mb-1">
-                  City <span className="text-red-500">*</span>
-                </label>
-                <select
-                  value={formData.city}
-                  onChange={(e) => setFormData({ ...formData, city: e.target.value })}
-                  className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-xs text-slate-900 font-semibold focus:bg-white focus:border-blue-600 outline-none"
-                >
-                  {companyInfo.serviceAreas.map((city) => (
-                    <option key={city} value={city}>
-                      {city}
-                    </option>
-                  ))}
-                </select>
-              </div>
-
-              <div>
-                <label className="block text-xs font-bold text-slate-700 mb-1">
-                  Pincode <span className="text-red-500">*</span>
-                </label>
-                <input
-                  type="text"
-                  required
-                  maxLength={6}
-                  placeholder="e.g. 560001"
-                  value={formData.pincode}
-                  onChange={(e) => setFormData({ ...formData, pincode: e.target.value })}
-                  className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-xs text-slate-900 font-semibold focus:bg-white focus:border-blue-600 outline-none"
-                />
-              </div>
-            </div>
-
-            {/* Full Address Input */}
-            <div>
-              <label className="block text-xs font-bold text-slate-700 mb-1">
-                Full Doorstep Address <span className="text-red-500">*</span>
-              </label>
-              <textarea
-                required
-                rows={2}
-                placeholder="House / Flat No., Building Name, Street & Landmark"
-                value={formData.fullAddress}
-                onChange={(e) => setFormData({ ...formData, fullAddress: e.target.value })}
-                className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2 text-xs text-slate-900 focus:bg-white focus:border-blue-600 focus:ring-2 focus:ring-blue-100 transition-all outline-none"
-              />
-            </div>
-
-            {/* Product & Product Age Grid */}
+            {/* 3. Product & 4. Product Age Grid */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               <div>
                 <label className="block text-xs font-bold text-slate-700 mb-1">
@@ -247,7 +197,7 @@ Please confirm technician arrival ETA.`;
                 <select
                   value={formData.appliance}
                   onChange={(e) => setFormData({ ...formData, appliance: e.target.value })}
-                  className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-xs text-slate-900 font-semibold focus:bg-white focus:border-blue-600 outline-none"
+                  className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-xs text-slate-900 font-semibold focus:bg-white focus:border-emerald-600 outline-none"
                 >
                   <option value="Select Product">Select Product</option>
                   {applianceOptions.map((app) => (
@@ -265,7 +215,7 @@ Please confirm technician arrival ETA.`;
                 <select
                   value={formData.productAge}
                   onChange={(e) => setFormData({ ...formData, productAge: e.target.value })}
-                  className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-xs text-slate-900 font-semibold focus:bg-white focus:border-blue-600 outline-none"
+                  className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-xs text-slate-900 font-semibold focus:bg-white focus:border-emerald-600 outline-none"
                 >
                   <option value="Product Age">Product Age</option>
                   {productAgeOptions.map((age) => (
@@ -277,17 +227,67 @@ Please confirm technician arrival ETA.`;
               </div>
             </div>
 
-            {/* Type Message & Problem Details */}
+            {/* 5. Pincode & 6. City Grid */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div>
+                <label className="block text-xs font-bold text-slate-700 mb-1">
+                  Pincode <span className="text-red-500">*</span>
+                </label>
+                <input
+                  type="text"
+                  required
+                  maxLength={6}
+                  placeholder="e.g. 560001"
+                  value={formData.pincode}
+                  onChange={(e) => setFormData({ ...formData, pincode: e.target.value })}
+                  className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-xs text-slate-900 font-semibold focus:bg-white focus:border-emerald-600 outline-none"
+                />
+              </div>
+
+              <div>
+                <label className="block text-xs font-bold text-slate-700 mb-1">
+                  City <span className="text-red-500">*</span>
+                </label>
+                <select
+                  value={formData.city}
+                  onChange={(e) => setFormData({ ...formData, city: e.target.value })}
+                  className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-xs text-slate-900 font-semibold focus:bg-white focus:border-emerald-600 outline-none"
+                >
+                  {companyInfo.serviceAreas.map((city) => (
+                    <option key={city} value={city}>
+                      {city}
+                    </option>
+                  ))}
+                </select>
+              </div>
+            </div>
+
+            {/* 7. Full Doorstep Address Input */}
             <div>
               <label className="block text-xs font-bold text-slate-700 mb-1">
-                Type Message & Problem Details
+                Full Doorstep Address <span className="text-red-500">*</span>
+              </label>
+              <textarea
+                required
+                rows={2}
+                placeholder="House / Flat No., Building Name, Street & Landmark"
+                value={formData.fullAddress}
+                onChange={(e) => setFormData({ ...formData, fullAddress: e.target.value })}
+                className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2 text-xs text-slate-900 focus:bg-white focus:border-emerald-600 focus:ring-2 focus:ring-emerald-100 transition-all outline-none"
+              />
+            </div>
+
+            {/* 8. Problem Details */}
+            <div>
+              <label className="block text-xs font-bold text-slate-700 mb-1">
+                Problem Details
               </label>
               <textarea
                 rows={2}
                 placeholder="Describe the issue (e.g. Gas leakage sound, auto-ignition not clicking, low flame...)"
                 value={formData.userMessage}
                 onChange={(e) => setFormData({ ...formData, userMessage: e.target.value })}
-                className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2 text-xs text-slate-900 focus:bg-white focus:border-blue-600 focus:ring-2 focus:ring-blue-100 transition-all outline-none"
+                className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2 text-xs text-slate-900 focus:bg-white focus:border-emerald-600 focus:ring-2 focus:ring-emerald-100 transition-all outline-none"
               />
             </div>
 
@@ -295,7 +295,7 @@ Please confirm technician arrival ETA.`;
             <button
               type="submit"
               disabled={isSubmitting}
-              className="w-full bg-gradient-to-r from-orange-600 to-amber-500 hover:from-orange-700 hover:to-amber-600 text-white font-extrabold text-sm sm:text-base py-3.5 px-4 rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all flex items-center justify-center gap-2 mt-4 disabled:opacity-70 disabled:cursor-not-allowed"
+              className="w-full bg-gradient-to-r from-emerald-600 via-green-600 to-emerald-700 hover:from-emerald-700 hover:to-green-700 text-white font-extrabold text-sm sm:text-base py-3.5 px-4 rounded-xl shadow-lg shadow-emerald-600/20 hover:shadow-xl transform hover:-translate-y-0.5 transition-all flex items-center justify-center gap-2 mt-4 disabled:opacity-70 disabled:cursor-not-allowed border border-emerald-400/30"
             >
               {isSubmitting ? (
                 <>

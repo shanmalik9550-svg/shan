@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import MobileStickyBar from "@/components/MobileStickyBar";
 import FloatingCTAs from "@/components/FloatingCTAs";
+import RecentBookingTicker from "@/components/RecentBookingTicker";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -37,6 +38,7 @@ export default function RootLayout({
         <Footer />
         <MobileStickyBar />
         <FloatingCTAs />
+        <RecentBookingTicker />
       </body>
     </html>
   );
