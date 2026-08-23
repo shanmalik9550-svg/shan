@@ -1,42 +1,68 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { Copy, Check, RefreshCw, Search, Filter, ShieldCheck, Trash2 } from "lucide-react";
-import { ClientIpLogEntry } from "@/components/IpTracker";
+import { Copy, Check, RefreshCw, Search, Filter, ShieldCheck, Trash2, Globe } from "lucide-react";
+import { GlobalIpLogEntry, CLOUD_LOG_ENDPOINT } from "@/components/IpTracker";
 
 export default function IpLogPage() {
-  const [logs, setLogs] = useState<ClientIpLogEntry[]>([]);
+  const [logs, setLogs] = useState<GlobalIpLogEntry[]>([]);
   const [loading, setLoading] = useState(true);
   const [copiedIp, setCopiedIp] = useState<string | null>(null);
   const [searchQuery, setSearchQuery] = useState("");
   const [filterAdClicksOnly, setFilterAdClicksOnly] = useState(false);
 
-  const loadLogs = () => {
+  const fetchGlobalLogs = async () => {
     setLoading(true);
     try {
-      if (typeof window !== "undefined") {
-        const storedLogs = localStorage.getItem("visitor_ip_logs");
-        if (storedLogs) {
-          setLogs(JSON.parse(storedLogs));
-        } else {
-          setLogs([]);
+      // 1. Fetch from Central Cloud Database
+      const res = await fetch(CLOUD_LOG_ENDPOINT, { cache: "no-store" });
+      if (res.ok) {
+        const data = await res.json();
+        if (Array.isArray(data)) {
+          setLogs(data);
+          if (typeof window !== "undefined") {
+            localStorage.setItem("visitor_ip_logs", JSON.stringify(data));
+          }
+          return;
         }
       }
     } catch (err) {
-      console.error("Failed to load logs:", err);
-    } finally {
-      setLoading(false);
+      console.warn("Falling back to local storage:", err);
     }
+
+    // 2. Fallback to local storage
+    if (typeof window !== "undefined") {
+      const stored = localStorage.getItem("visitor_ip_logs");
+      if (stored) {
+        setLogs(JSON.parse(stored));
+      } else {
+        setLogs([]);
+      }
+    }
+    setLoading(false);
   };
 
   useEffect(() => {
-    loadLogs();
+    fetchGlobalLogs();
   }, []);
 
-  const clearLogs = () => {
-    if (typeof window !== "undefined") {
-      localStorage.removeItem("visitor_ip_logs");
+  const clearGlobalLogs = async () => {
+    if (!confirm("Are you sure you want to clear all central visitor IP logs?")) return;
+    setLoading(true);
+    try {
+      await fetch(CLOUD_LOG_ENDPOINT, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify([]),
+      });
+      if (typeof window !== "undefined") {
+        localStorage.removeItem("visitor_ip_logs");
+      }
       setLogs([]);
+    } catch (e) {
+      setLogs([]);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -74,36 +100,36 @@ export default function IpLogPage() {
           <div>
             <div className="flex items-center gap-2 mb-1">
               <span className="bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 text-xs font-black px-2.5 py-0.5 rounded-full uppercase tracking-wider flex items-center gap-1">
-                <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
-                Live Security Tracker
+                <Globe className="w-3.5 h-3.5 text-emerald-400 animate-pulse" />
+                Global Cloud Database Active
               </span>
               <span className="text-xs text-slate-400 font-mono">/ip-log</span>
             </div>
             <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-white">
-              Visitor IP Address & Click Tracker
+              Global Visitor IP Address & Click Tracker
             </h1>
             <p className="text-xs sm:text-sm text-slate-400 mt-1">
-              Real-time log of visitor IP addresses for Google Ads IP Exclusion & Click Fraud Monitoring.
+              Live Central Database tracking all visitor IP addresses across all devices & locations for Google Ads IP Exclusions.
             </p>
           </div>
 
           <div className="flex flex-wrap items-center gap-3">
             <button
-              onClick={loadLogs}
+              onClick={fetchGlobalLogs}
               disabled={loading}
               className="bg-slate-900 hover:bg-slate-800 text-slate-200 text-xs font-bold px-4 py-2.5 rounded-xl border border-slate-700 flex items-center gap-2 transition-all active:scale-95"
             >
               <RefreshCw className={`w-4 h-4 ${loading ? "animate-spin" : ""}`} />
-              <span>Refresh Logs</span>
+              <span>Fetch Live Logs</span>
             </button>
 
             {logs.length > 0 && (
               <button
-                onClick={clearLogs}
+                onClick={clearGlobalLogs}
                 className="bg-red-950/60 hover:bg-red-900 text-red-300 border border-red-800/40 text-xs font-bold px-3 py-2.5 rounded-xl flex items-center gap-1.5 transition-all"
               >
                 <Trash2 className="w-3.5 h-3.5" />
-                <span>Clear</span>
+                <span>Clear All Logs</span>
               </button>
             )}
 
@@ -220,7 +246,7 @@ export default function IpLogPage() {
                 ) : (
                   <tr>
                     <td colSpan={5} className="py-8 text-center text-slate-500 font-sans text-xs">
-                      {loading ? "Loading visitor logs..." : "No visitor IP logs recorded yet. Visit any page on the website to see your IP logged here live!"}
+                      {loading ? "Fetching central cloud logs..." : "No visitor IP logs recorded yet in Central Cloud Database."}
                     </td>
                   </tr>
                 )}
