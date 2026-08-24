@@ -21,7 +21,7 @@ export default function MobileStickyBar({ brandName, applianceName }: MobileStic
           <div className="w-9 h-9 rounded-xl bg-white/20 flex items-center justify-center text-white shrink-0 shadow-inner border border-white/30">
             <PhoneCall className="w-5 h-5 fill-current animate-bounce text-white" />
           </div>
-          <span className="text-2xl sm:text-3xl font-black text-amber-300 tracking-wider drop-shadow-md">
+          <span className="text-[28px] sm:text-[32px] font-black text-amber-300 tracking-wider drop-shadow-md">
             {companyInfo.phone}
           </span>
         </a>
