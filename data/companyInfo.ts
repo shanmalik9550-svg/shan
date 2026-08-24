@@ -8,7 +8,7 @@ export const companyInfo = {
   whatsappRaw: "919599339483",
   email: "support@kitchenappliancesservice.com",
   workingHours: "24/7 Emergency & Doorstep Service (8:00 AM - 10:00 PM Active Dispatch)",
-  responseWaitMinutes: "30-45 Mins",
+  responseWaitMinutes: "45 Mins",
   warrantyDays: 365,
   referenceWebsite: "https://kitchenappliancesservice.com/",
   serviceAreas: [

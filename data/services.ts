@@ -21,7 +21,7 @@ export const servicesData: ServiceItem[] = [
       "Gas Burner Orifice Jet Cleaning",
       "Gas Valve & Pressure Regulator Calibration",
       "Heavy Stainless Steel Body Servicing",
-      "Same-Day 30-Min Doorstep Service"
+      "Same-Day 45-Min Doorstep Service"
     ]
   },
   {
@@ -165,7 +165,7 @@ export const servicesData: ServiceItem[] = [
       "Unlimited Emergency Breakdown Calls",
       "100% Free Wear-and-Tear Minor Spare Parts",
       "Zero Labor & Visit Charges Year-Round",
-      "Priority Doorstep Dispatch within 30 Mins"
+      "Priority Doorstep Dispatch within 45 Mins"
     ]
   }
 ];

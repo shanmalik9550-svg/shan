@@ -8,7 +8,7 @@ export default function WhyChooseUs() {
   const pillars = [
     {
       icon: Clock,
-      title: "30-45 Min Rapid Doorstep Response",
+      title: "45-Min Rapid Doorstep Response",
       desc: "Local senior technicians deployed across all city zones for immediate same-day arrival."
     },
     {

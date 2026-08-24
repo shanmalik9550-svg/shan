@@ -14,7 +14,7 @@ export default function FAQSection({ faqs, brandName }: FAQSectionProps) {
   const defaultFaqs: FAQItem[] = [
     {
       question: "How fast can a technician reach my home for kitchen appliance repair?",
-      answer: "We offer rapid doorstep dispatch within 30 to 45 minutes of booking confirmation across all major metropolitan service areas."
+      answer: "We offer rapid doorstep dispatch within 45 minutes of booking confirmation across all major metropolitan service areas."
     },
     {
       question: "Do you provide a written warranty on repairs and spare parts?",
@@ -22,7 +22,7 @@ export default function FAQSection({ faqs, brandName }: FAQSectionProps) {
     },
     {
       question: "What should I do immediately if I smell gas near my hob or stove?",
-      answer: "Turn off the main cylinder/PNG shutoff valve immediately, open all windows, avoid switching on any electrical switches, and call our emergency hotline for a 30-minute priority visit."
+      answer: "Turn off the main cylinder/PNG shutoff valve immediately, open all windows, avoid switching on any electrical switches, and call our emergency hotline for a 45-minute priority visit."
     },
     {
       question: "Are your spare parts original and brand-compatible?",

@@ -61,7 +61,7 @@ export default function CommonProblemsSection() {
 
               <div className="pt-3 border-t border-slate-100 flex items-center justify-between">
                 <span className="text-xs text-emerald-700 font-bold flex items-center gap-1">
-                  <CheckCircle2 className="w-3.5 h-3.5" /> 30-Min Visit
+                  <CheckCircle2 className="w-3.5 h-3.5" /> 45-Min Visit
                 </span>
 
                 <a

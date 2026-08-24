@@ -18,7 +18,7 @@ interface HeroSectionProps {
 export default function HeroSection({
   h1Title = "Professional Kitchen Appliance Repair & Doorstep Service",
   heroHeadline = "Same-Day Doorstep Repair for Kitchen Hobs, Gas Stoves & Cooking Ranges",
-  heroSubheadline = "Certified Technicians for Kitchen Hobs, Gas Stoves & Cooking Ranges. Arrival in 30-45 minutes with 1-Year Written Warranty.",
+  heroSubheadline = "Certified Technicians for Kitchen Hobs, Gas Stoves & Cooking Ranges. Arrival in 45 minutes with 1-Year Written Warranty.",
   brandName,
   brandLogo,
   ctaCopy = "Book Service Today"
@@ -104,7 +104,7 @@ export default function HeroSection({
 
               <div className="flex items-center gap-1">
                 <Clock className="w-4 h-4 text-emerald-400" />
-                <span className="font-bold text-slate-200">30-Min Rapid Arrival</span>
+                <span className="font-bold text-slate-200">45-Min Rapid Arrival</span>
               </div>
             </div>
           </div>

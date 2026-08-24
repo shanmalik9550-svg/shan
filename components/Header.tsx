@@ -20,7 +20,7 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-40 bg-white shadow-md border-b border-slate-100">
       {/* Top Banner Ticker */}
-      <div className="bg-slate-900 text-white text-xs py-2 px-4">
+      <div className="hidden sm:block bg-slate-900 text-white text-xs py-2 px-4">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2">
           <div className="flex items-center gap-4 text-slate-300">
             <span className="flex items-center gap-1 text-emerald-400 font-semibold">
@@ -29,7 +29,7 @@ export default function Header() {
             </span>
             <span className="hidden md:flex items-center gap-1">
               <Clock className="w-3.5 h-3.5 text-orange-400" />
-              Arrival in 30-45 Mins
+              Arrival in 45 Mins
             </span>
             <span className="hidden lg:flex items-center gap-1">
               <ShieldCheck className="w-3.5 h-3.5 text-blue-400" />

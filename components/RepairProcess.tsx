@@ -20,7 +20,7 @@ export default function RepairProcess() {
     },
     {
       num: "03",
-      title: "30-Min Doorstep Visit",
+      title: "45-Min Doorstep Visit",
       desc: "Technician arrives at your home equipped with diagnostic tools & spares.",
       icon: Home
     },

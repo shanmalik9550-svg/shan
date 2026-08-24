@@ -108,7 +108,7 @@ export default function RecentBookingTicker() {
 
   return (
     <div
-      className={`fixed bottom-20 md:bottom-6 left-3 sm:left-6 z-40 max-w-[320px] sm:max-w-xs transition-all duration-500 transform ${
+      className={`fixed bottom-16 md:bottom-6 left-3 sm:left-6 z-40 max-w-[320px] sm:max-w-xs transition-all duration-500 transform ${
         visible
           ? "translate-y-0 opacity-100 scale-100"
           : "translate-y-6 opacity-0 scale-95 pointer-events-none"

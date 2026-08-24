@@ -48,7 +48,7 @@ export default function BrandGrid() {
                     </div>
                   )}
                   <span className="text-[10px] text-emerald-400 font-bold bg-emerald-950/80 px-2 py-0.5 rounded border border-emerald-800/60">
-                    30-Min Visit
+                    45-Min Visit
                   </span>
                 </div>
 

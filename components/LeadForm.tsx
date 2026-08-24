@@ -16,7 +16,7 @@ export default function LeadForm({
   defaultBrand = "Select Brand",
   defaultAppliance = "Select Product",
   title = "Book Doorstep Service Now",
-  subtitle = "30-Min Response • Upfront Quote • 1-Year Warranty",
+  subtitle = "45-Min Response • Upfront Quote • 1-Year Warranty",
   buttonText = "Get Free Doorstep Quote"
 }: LeadFormProps) {
   const [formData, setFormData] = useState({
@@ -139,7 +139,7 @@ Please confirm technician arrival ETA.`;
         <>
           <div className="mb-5 text-center">
             <span className="inline-flex items-center gap-1 bg-orange-100 text-orange-800 font-extrabold text-[11px] uppercase tracking-wider px-2.5 py-1 rounded-full mb-2">
-              <Clock className="w-3.5 h-3.5" /> Fast 30-Min Doorstep Dispatch
+              <Clock className="w-3.5 h-3.5" /> Fast 45-Min Doorstep Dispatch
             </span>
             <h3 className="text-xl sm:text-2xl font-black text-slate-900 tracking-tight">
               {title}
@@ -338,7 +338,7 @@ Please confirm technician arrival ETA.`;
           <div className="bg-slate-50 p-4 rounded-xl text-left border border-slate-200 mb-6 space-y-2 text-xs">
             <div className="flex justify-between border-b border-slate-200 pb-2">
               <span className="text-slate-500">Estimated Arrival:</span>
-              <span className="font-bold text-emerald-700">Within 30-45 Minutes</span>
+              <span className="font-bold text-emerald-700">Within 45 Minutes</span>
             </div>
             <div className="flex justify-between border-b border-slate-200 pb-2">
               <span className="text-slate-500">Doorstep Location:</span>

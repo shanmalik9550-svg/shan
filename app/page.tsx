@@ -21,7 +21,7 @@ export default function HomePage() {
       <HeroSection
         h1Title="Doorstep Kitchen Appliance Repair & Service"
         heroHeadline="Same-Day Doorstep Repair for Kitchen Hobs, Gas Stoves & Cooking Ranges"
-        heroSubheadline="Certified Technicians for Kitchen Hobs, Gas Stoves & Cooking Ranges. Arrival in 30-45 Mins with 1-Year Written Warranty."
+        heroSubheadline="Certified Technicians for Kitchen Hobs, Gas Stoves & Cooking Ranges. Arrival in 45 Mins with 1-Year Written Warranty."
         ctaCopy="Book Doorstep Service Today"
       />
 
