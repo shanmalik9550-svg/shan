@@ -13,7 +13,7 @@ export const companyInfo = {
   referenceWebsite: "https://kitchenappliancesservice.com/",
   serviceAreas: [
     "Mumbai", "Delhi NCR", "Bengaluru", "Hyderabad", "Chennai", 
-    "Kolkata", "Pune", "Ahmedabad", "Jaipur", "Chandigarh", "Lucknow"
+    "Kolkata"
   ],
   stats: {
     happyCustomers: "50,000+",
