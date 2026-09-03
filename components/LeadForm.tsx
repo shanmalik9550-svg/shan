@@ -40,7 +40,6 @@ export default function LeadForm({
     "Gas Stove Repair",
     "Hob Repair",
     "Cooking Range Repair",
-    "Auto-Ignition Repair",
     "Gas Stove 4,3 Burner Repair"
   ];
 
