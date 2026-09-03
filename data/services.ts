@@ -112,7 +112,7 @@ export const servicesData: ServiceItem[] = [
     ]
   },
   {
-    id: "Appliance Installation "
+    id: "Appliance Installation"
     title: "Appliance Installation",
     shortDesc: "Precision countertop fitting, gas pipe connection & safety testing.",
     fullDesc: "Get your new built-in hob or cooking appliance installed seamlessly by experienced technicians. Includes granite cutout fitting, gas line installation, and safety testing.",
@@ -123,19 +123,6 @@ export const servicesData: ServiceItem[] = [
       "Gas Supply Hose Connection & Leak Testing",
       "Burner Calibration & Flame Testing",
       "Initial Operation & User Guidance Demo"
-    ]
-  },
-  {
-    title: "Appliance Uninstallation",
-    shortDesc: "Safe removal of old hobs and stoves without damaging kitchen cabinets.",
-    fullDesc: "Relocating or upgrading your kitchen? Our technicians safely uninstall your existing gas hobs and stoves, capping off gas connections securely to prevent leaks.",
-    iconName: "Trash2",
-    features: [
-      "Safe Countertop Demounting",
-      "Gas Line Seal & Safety Cap Fitting",
-      "Electrical Isolation & Hose Retrieval",
-      "Damage-Free Removal from Granite Tops",
-      "Protective Wrapping for Transit"
     ]
   },
   {
