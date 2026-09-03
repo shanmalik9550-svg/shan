@@ -7,12 +7,12 @@ export const companyInfo = {
   whatsapp: "+91 95993 39483",
   whatsappRaw: "919599339483",
   email: "support@kitchenappliancesservice.com",
-  workingHours: "24/7 Emergency & Doorstep Service (8:00 AM - 10:00 PM Active Dispatch)",
+  workingHours: "24/7 Emergency & Doorstep Service (8:00 AM - 08:00 PM Active Dispatch)",
   responseWaitMinutes: "45 Mins",
   warrantyDays: 365,
   referenceWebsite: "https://kitchenappliancesservice.com/",
   serviceAreas: [
-    "Mumbai", "Delhi NCR", "Bengaluru", "Hyderabad", "Chennai", 
+    "Delhi NCR", "Bengaluru", "Hyderabad", "Chennai", 
     "Kolkata"
   ],
   stats: {
