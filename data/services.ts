@@ -126,7 +126,6 @@ export const servicesData: ServiceItem[] = [
     ]
   },
   {
-    id: "uninstallation",
     title: "Appliance Uninstallation",
     shortDesc: "Safe removal of old hobs and stoves without damaging kitchen cabinets.",
     fullDesc: "Relocating or upgrading your kitchen? Our technicians safely uninstall your existing gas hobs and stoves, capping off gas connections securely to prevent leaks.",
