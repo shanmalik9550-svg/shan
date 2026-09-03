@@ -112,7 +112,7 @@ export const servicesData: ServiceItem[] = [
     ]
   },
   {
-    id: "installation",
+    id:
     title: "Appliance Installation",
     shortDesc: "Precision countertop fitting, gas pipe connection & safety testing.",
     fullDesc: "Get your new built-in hob or cooking appliance installed seamlessly by experienced technicians. Includes granite cutout fitting, gas line installation, and safety testing.",
