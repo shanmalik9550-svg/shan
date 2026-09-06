@@ -41,9 +41,13 @@
   padding: 0;
 }
 
-html {
+html, body {
   scroll-behavior: smooth;
   font-size: 16px;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden !important;
+  position: relative;
 }
 
 body {
@@ -51,10 +55,9 @@ body {
   background-color: var(--color-bg);
   color: var(--color-text-dark);
   line-height: 1.6;
-  overflow-x: hidden;
 }
 
-img {
+img, svg, video, iframe {
   max-width: 100%;
   height: auto;
   display: block;
@@ -73,6 +76,7 @@ ul { list-style: none; }
   max-width: 1240px;
   margin: 0 auto;
   padding: 0 1.5rem;
+  box-sizing: border-box;
 }
 
 /* ==========================================================================
@@ -196,12 +200,12 @@ nav ul li a:hover::after {
 }
 
 .hero-logo-img {
-  max-height: 75px;
+  max-height: 90px;
   width: auto;
   object-fit: contain;
   background: #ffffff;
-  padding: 0.65rem 1.75rem;
-  border-radius: var(--radius-md);
+  padding: 0.75rem 1.85rem;
+  border-radius: 20px;
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
   display: inline-block;
 }
@@ -916,7 +920,7 @@ footer {
 }
 
 /* ==========================================================================
-   ENHANCED RESPONSIVE MEDIA QUERIES (MOBILE FRIENDLY)
+   ENHANCED RESPONSIVE MEDIA QUERIES (100% MOBILE FIT)
    ========================================================================== */
 
 /* Keyframe animations */
@@ -965,23 +969,26 @@ footer {
 @media (max-width: 768px) {
   header {
     padding: 0.65rem 0;
+    width: 100%;
   }
 
   .nav-wrapper {
     position: relative;
+    width: 100%;
   }
 
   nav {
     display: none;
     position: absolute;
     top: calc(100% + 0.65rem);
-    left: -1rem;
-    right: -1rem;
+    left: 0;
+    width: 100%;
     background: #ffffff;
     padding: 1.25rem 1.5rem;
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
     border-bottom: 3px solid var(--color-primary);
     z-index: 1000;
+    box-sizing: border-box;
   }
 
   nav.active {
@@ -993,6 +1000,7 @@ footer {
     flex-direction: column;
     align-items: stretch;
     gap: 0.5rem;
+    width: 100%;
   }
 
   nav ul li a {
@@ -1031,15 +1039,18 @@ footer {
   .cata-hero-section {
     padding: 3.5rem 0 4rem;
     text-align: center;
+    width: 100%;
   }
 
   .cata-hero-wrapper {
     margin: 0 auto;
+    width: 100%;
   }
 
   .hero-logo-img {
-    max-height: 55px;
-    padding: 0.5rem 1.25rem;
+    max-height: 75px;
+    padding: 0.6rem 1.5rem;
+    border-radius: 20px;
   }
 
   .cata-hero-content h1 {
@@ -1068,17 +1079,21 @@ footer {
     justify-content: center;
     padding: 0.9rem 1.5rem;
     font-size: 1rem;
+    box-sizing: border-box;
   }
 
   .cata-highlights {
     grid-template-columns: repeat(3, 1fr);
     gap: 0.75rem;
-    padding: 1.25rem 1rem;
+    padding: 1.25rem 0.85rem;
     margin: 0 auto;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 20px;
   }
 
   .cata-highlights h3 {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
   }
 
   .cata-highlights p {
@@ -1086,8 +1101,10 @@ footer {
   }
 
   .contact-form {
-    padding: 2rem 1.5rem;
+    padding: 2rem 1.25rem;
     border-radius: var(--radius-lg);
+    width: 100%;
+    box-sizing: border-box;
   }
 
   .contact-title {
@@ -1114,6 +1131,7 @@ footer {
     flex-direction: column;
     text-align: center;
     gap: 1.75rem;
+    width: 100%;
   }
 
   .cata-cta-buttons {
@@ -1125,6 +1143,7 @@ footer {
   .cata-whatsapp-btn {
     width: 100%;
     justify-content: center;
+    box-sizing: border-box;
   }
 
   .footer-grid {
@@ -1140,7 +1159,8 @@ footer {
 /* Small Smartphone Breakpoint (480px) */
 @media (max-width: 480px) {
   .container {
-    padding: 0 1rem;
+    padding: 0 0.85rem;
+    width: 100%;
   }
 
   .cata-hero-section {
@@ -1148,8 +1168,9 @@ footer {
   }
 
   .hero-logo-img {
-    max-height: 48px;
-    padding: 0.4rem 1rem;
+    max-height: 65px;
+    padding: 0.5rem 1.25rem;
+    border-radius: 20px;
   }
 
   .cata-hero-content h1 {
@@ -1164,6 +1185,8 @@ footer {
     grid-template-columns: 1fr;
     gap: 1rem;
     text-align: center;
+    border-radius: 20px;
+    padding: 1.25rem 1rem;
   }
 
   .contact-form {
@@ -1179,6 +1202,8 @@ footer {
   .form-field-group textarea {
     padding: 0.75rem 0.85rem;
     font-size: 16px; /* Prevents auto-zoom on iOS Safari */
+    width: 100%;
+    box-sizing: border-box;
   }
 
   .cata-about-section,
@@ -1229,4 +1254,5 @@ footer {
     width: 95%;
   }
 }
+
 
