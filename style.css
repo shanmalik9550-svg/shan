@@ -915,31 +915,318 @@ footer {
   border-color: var(--color-primary);
 }
 
-/* RESPONSIVE MEDIA QUERIES */
-@media (max-width: 1024px) {
-  .cata-model-grid { grid-template-columns: repeat(3, 1fr); }
-  .cata-about-grid { grid-template-columns: 1fr; }
-  .cata-services-section .cata-service-grid { grid-template-columns: repeat(2, 1fr); }
-  .footer-grid { grid-template-columns: 1fr 1fr; }
+/* ==========================================================================
+   ENHANCED RESPONSIVE MEDIA QUERIES (MOBILE FRIENDLY)
+   ========================================================================== */
+
+/* Keyframe animations */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
+/* Tablet Breakpoint (1024px) */
+@media (max-width: 1024px) {
+  .container {
+    padding: 0 1.25rem;
+  }
+  .cata-model-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+  .cata-about-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  .cata-about-image img {
+    height: 360px;
+  }
+  .cata-services-section .cata-service-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  .cata-why-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  .footer-grid {
+    grid-template-columns: 1.2fr 1fr;
+    gap: 2rem;
+  }
+}
+
+/* Mobile & Small Tablet Breakpoint (768px) */
 @media (max-width: 768px) {
+  header {
+    padding: 0.65rem 0;
+  }
+
+  .nav-wrapper {
+    position: relative;
+  }
+
   nav {
     display: none;
     position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
+    top: calc(100% + 0.65rem);
+    left: -1rem;
+    right: -1rem;
     background: #ffffff;
-    padding: 1.5rem;
-    box-shadow: var(--shadow-lg);
+    padding: 1.25rem 1.5rem;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+    border-bottom: 3px solid var(--color-primary);
+    z-index: 1000;
   }
-  nav.active { display: block; }
-  nav ul { flex-direction: column; align-items: flex-start; gap: 1rem; }
-  .menu-toggle { display: flex; }
-  .cata-hero-content h1 { font-size: 2.35rem; }
-  .cata-highlights { grid-template-columns: repeat(3, 1fr); }
-  .cata-model-grid { grid-template-columns: repeat(2, 1fr); }
-  .cata-why-grid, .cata-service-grid { grid-template-columns: 1fr; }
-  .footer-grid { grid-template-columns: 1fr; }
+
+  nav.active {
+    display: block;
+    animation: fadeInDown 0.25s ease-out forwards;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.5rem;
+  }
+
+  nav ul li a {
+    display: block;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: var(--radius-sm);
+    background: var(--color-bg);
+  }
+
+  nav ul li a:hover,
+  nav ul li a.active {
+    background: rgba(217, 4, 41, 0.08);
+    color: var(--color-primary);
+  }
+
+  nav ul li a::after {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 6px);
+  }
+  .menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
+  .menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -6px);
+  }
+
+  .cata-hero-section {
+    padding: 3.5rem 0 4rem;
+    text-align: center;
+  }
+
+  .cata-hero-wrapper {
+    margin: 0 auto;
+  }
+
+  .hero-logo-img {
+    max-height: 55px;
+    padding: 0.5rem 1.25rem;
+  }
+
+  .cata-hero-content h1 {
+    font-size: clamp(2rem, 6vw, 2.75rem);
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+
+  .cata-hero-content p {
+    font-size: 1rem;
+    margin-bottom: 1.75rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .cata-hero-btns {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.85rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .primary-btn,
+  .secondary-btn {
+    width: 100%;
+    justify-content: center;
+    padding: 0.9rem 1.5rem;
+    font-size: 1rem;
+  }
+
+  .cata-highlights {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.75rem;
+    padding: 1.25rem 1rem;
+    margin: 0 auto;
+  }
+
+  .cata-highlights h3 {
+    font-size: 1.5rem;
+  }
+
+  .cata-highlights p {
+    font-size: 0.75rem;
+  }
+
+  .contact-form {
+    padding: 2rem 1.5rem;
+    border-radius: var(--radius-lg);
+  }
+
+  .contact-title {
+    font-size: 1.65rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .cata-section-heading h2 {
+    font-size: 1.85rem;
+  }
+
+  .cata-model-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .cata-service-grid,
+  .cata-why-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .cata-cta-wrapper {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.75rem;
+  }
+
+  .cata-cta-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .cata-call-btn,
+  .cata-whatsapp-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  body {
+    padding-bottom: 60px;
+  }
 }
+
+/* Small Smartphone Breakpoint (480px) */
+@media (max-width: 480px) {
+  .container {
+    padding: 0 1rem;
+  }
+
+  .cata-hero-section {
+    padding: 2.5rem 0 3rem;
+  }
+
+  .hero-logo-img {
+    max-height: 48px;
+    padding: 0.4rem 1rem;
+  }
+
+  .cata-hero-content h1 {
+    font-size: 1.85rem;
+  }
+
+  .cata-hero-content p {
+    font-size: 0.95rem;
+  }
+
+  .cata-highlights {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  .contact-form {
+    padding: 1.5rem 1rem;
+  }
+
+  .contact-title {
+    font-size: 1.35rem;
+  }
+
+  .form-field-group input,
+  .form-field-group select,
+  .form-field-group textarea {
+    padding: 0.75rem 0.85rem;
+    font-size: 16px; /* Prevents auto-zoom on iOS Safari */
+  }
+
+  .cata-about-section,
+  .cata-model-section,
+  .cata-why-section,
+  .cata-services-section,
+  .cata-cta-section {
+    padding: 2.75rem 0;
+  }
+
+  .cata-about-image img {
+    height: 240px;
+  }
+
+  .cata-about-list {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .cata-model-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .cata-model-card {
+    padding: 1.25rem 1rem;
+  }
+
+  .footer-top-promo {
+    padding: 2rem 1.25rem;
+    border-radius: var(--radius-lg);
+  }
+
+  .footer-top-promo h2 {
+    font-size: 1.5rem;
+  }
+
+  .btn-whatsapp-pulse {
+    bottom: 75px;
+    right: 15px;
+    width: 52px;
+    height: 52px;
+    font-size: 1.3rem;
+  }
+
+  .modal-container {
+    padding: 1.75rem 1.25rem;
+    width: 95%;
+  }
+}
+
