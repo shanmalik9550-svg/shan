@@ -1,7 +1,7 @@
 /* ==========================================================================
    24x7 CUSTOMER SUPPORT - MAIN JAVASCRIPT LOGIC
    Owner: Harender Sharma | Miyapur, Hyderabad
-   Toll-Free: 1800-202-6208 | WhatsApp: +91 95993 39483
+   Toll-Free: 1800-202-6208
    Form Key: 39b83002-b632-4327-b3c9-bdc5d4508744
    ========================================================================== */
 

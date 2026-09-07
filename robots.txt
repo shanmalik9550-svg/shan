@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+Disallow: /competitor_test.html
+Disallow: /hafele_test.html
+Disallow: /hero_bg_test.html
+Disallow: /logo_test.html
+Disallow: /site_dump.html
+Disallow: /test_output.html
+Disallow: /updated_test.html
+
+Sitemap: https://appliance-repair-experts.vercel.app/sitemap.xml
