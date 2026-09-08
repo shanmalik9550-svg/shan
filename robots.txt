@@ -7,4 +7,4 @@ Disallow: /site_dump*
 Disallow: /test_output*
 Disallow: /google888ea7608ed0584e.html
 
-Sitemap: https://appliance-repair-experts.vercel.app/sitemap.xml
+Sitemap: https://kitchenappliancesservice.com/sitemap.xml
