@@ -206,4 +206,27 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  /* ------------------------------------------------------------------------
+     5. FAQ ACCORDION INTERACTION
+     ------------------------------------------------------------------------ */
+  const faqQuestions = document.querySelectorAll('.cata-faq-question');
+  if (faqQuestions.length > 0) {
+    faqQuestions.forEach(question => {
+      question.addEventListener('click', () => {
+        const item = question.closest('.cata-faq-item');
+        const isActive = item.classList.contains('active');
+
+        const parentWrapper = item.closest('.cata-faq-wrapper');
+        if (parentWrapper) {
+          parentWrapper.querySelectorAll('.cata-faq-item').forEach(other => {
+            if (other !== item) other.classList.remove('active');
+          });
+        }
+
+        item.classList.toggle('active', !isActive);
+      });
+    });
+  }
+
 });
+
