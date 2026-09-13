@@ -248,6 +248,10 @@ nav ul li a:hover::after {
   flex-wrap: wrap;
 }
 
+.cata-hero-btns:last-child {
+  margin-bottom: 0;
+}
+
 .primary-btn {
   display: inline-flex;
   align-items: center;
