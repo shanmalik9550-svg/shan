@@ -89,135 +89,79 @@
 </head>
 <body>
 
-<!-- Sticky Header (Borderless) -->
-<header>
-<div class="container nav-wrapper">
-<a href="/crompton" class="logo-link" aria-label="Crompton Appliance Repair Experts Home">
-  <div class="logo-img-wrapper">
+<!-- Header: Centered Brand Logo (Mobile Friendly) -->
+<header class="brand-competitor-header">
+  <a href="/crompton" class="header-logo-container" aria-label="Crompton Appliance Repair Experts Home">
     <img src="images/crompton-logo.png" alt="Crompton Brand Logo" class="header-logo-img">
-  </div>
-</a>
-<button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
-<span></span>
-<span></span>
-<span></span>
-</button>
-<nav id="mainNav">
-<ul>
-<li><a href="/">Home</a></li>
-<li><a href="#about">About Us</a></li>
-<li><a href="#models">Models</a></li>
-<li><a href="#why-us">Why Us</a></li>
-<li><a href="#services">Services</a></li>
-<li><a href="#faq">FAQ</a></li>
-<li><a href="#contact">Book Service</a></li>
-</ul>
-</nav>
-</div>
+  </a>
 </header>
 
-<!--================ HERO =================-->
-<section class="cata-hero-section" id="home">
-<div class="cata-hero-overlay"></div>
-<div class="container">
-<div class="cata-hero-wrapper">
-<div class="cata-hero-content">
-<p class="c-logo">
-  <img src="images/crompton-logo.png" alt="Crompton Brand Logo" class="hero-logo-img"/>
-</p>
-<h1><span>Crompton</span> Service Center</h1>
-<p>
-We specialize in Crompton gas stove repair, hob burner servicing,
-auto-ignition troubleshooting, cooking range repair,
-and kitchen chimney service.
-</p>
-<div class="cata-hero-btns">
-<a href="tel:18002026208" class="primary-btn">
-<i class="fa-solid fa-phone"></i> Book Service
-</a>
+<!-- Appliance Hero Banner -->
+<div class="brand-hero-banner-wrap">
+  <img src="images/brand-banner.jpg" alt="Crompton Kitchen Appliance Repair Service" loading="eager">
 </div>
-</div>
-</div>
-</div>
+
+<!-- Blue Service Bar -->
+<section class="brand-service-bar">
+  <div class="container">
+    <h1 class="service-title">Crompton Appliance Repair Service</h1>
+    <p class="service-subtitle">Expert Repair Support for Kitchen Appliances.</p>
+    <a href="tel:18002026208" class="brand-call-now-btn">Call Us Now - 1800 202 6208</a>
+  </div>
 </section>
 
-<!--================ CONTACT FORM SECTION =================-->
-<section style="padding:50px 0; background-color: var(--color-bg);" id="contact">
-<div class="container">
-<div class="contact-row">
-<!-- Right Side Form -->
-<div class="contact-form">
-<h2 class="contact-title">Get in Touch With Us</h2>
-<form class="space-y-6" id="bookingForm" action="https://api.web3forms.com/submit" method="POST">
-<!-- Web3Forms Access Key for Email Notifications -->
-<input type="hidden" name="access_key" value="39b83002-b632-4327-b3c9-bdc5d4508744">
-<input type="hidden" name="subject" value="New Crompton Appliance Repair Booking Request">
-<input type="hidden" name="from_name" value="Crompton 24x7 Service Portal">
+<!-- Book Technician Visit Section -->
+<section class="brand-booking-section" id="contact">
+  <div class="container brand-booking-container">
+    <div class="brand-booking-header">
+      <h2>Book Technician Visit</h2>
+      <p>Fill in your details and tell us about your appliance problem.</p>
+    </div>
+    <div class="brand-form-card">
+      <form id="bookingForm" action="https://api.web3forms.com/submit" method="POST">
+        <!-- Web3Forms Access Key for Email Notifications -->
+        <input type="hidden" name="access_key" value="39b83002-b632-4327-b3c9-bdc5d4508744">
+        <input type="hidden" name="subject" value="New Crompton Appliance Repair Booking Request">
+        <input type="hidden" name="from_name" value="Crompton 24x7 Service Portal">
 
-<!-- Name -->
-<div class="form-field-group">
-<label class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Name *</label>
-<input type="text" name="name" required="" class="w-full rounded-xl border-2 border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:border-yellow-500 focus:ring-2 focus:ring-yellow-500/20 text-base md:text-lg" placeholder="Enter your full name">
-</div>
-<!-- Mobile Number -->
-<div class="form-field-group">
-<label class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Mobile Number *</label>
-<input type="tel" inputmode="numeric" name="mobile" required="" class="w-full rounded-xl border-2 border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:border-yellow-500 focus:ring-2 focus:ring-yellow-500/20 text-base md:text-lg" placeholder="10 digit mobile number" pattern="[0-9]{10}" maxlength="10">
-</div>
-<!-- Product Select -->
-<div class="form-field-group">
-<label class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Select Product *</label>
-<select name="product" required="" class="w-full rounded-xl border-2 border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:border-yellow-500 focus:ring-2 focus:ring-yellow-500/20 text-base md:text-lg">
-<option value="">Select Product</option>
-<option value="Crompton Gas Stove Repair">Crompton Gas Stove Repair</option>
-<option value="Crompton Hob Repair">Crompton Hob Repair</option>
-<option value="Crompton Cooking Range Repair">Crompton Cooking Range Repair</option>
-<option value="Crompton Chimney Service Repair">Crompton Chimney Service Repair</option>
-<option value="Crompton Gas Stove 4 ,3 Burner Repair">Crompton Gas Stove 4 ,3 Burner Repair</option>
-<option value="Crompton Built-in Oven Repair">Crompton Built-in Oven Repair</option>
-</select>
-</div>
-<!-- Age Select -->
-<div class="form-field-group">
-<label class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Select Product Age *</label>
-<select name="age" required="" class="w-full rounded-xl border-2 border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:border-yellow-500 focus:ring-2 focus:ring-yellow-500/20 text-base md:text-lg">
-<option value="">Select Product Age</option>
-<option value="Under Warranty">Under Warranty</option>
-<option value="1 Years to 4 Years">1 Years to 4 Years</option>
-<option value="5 Years to 10 Years">5 Years to 10 Years</option>
-<option value="10++ Years">10++ Years</option>
-</select>
-</div>
-<!-- Pincode -->
-<div class="form-field-group">
-<label class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Pin Code *</label>
-<input type="tel" inputmode="numeric" name="pincode" required="" class="w-full rounded-xl border-2 border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:border-yellow-500 focus:ring-2 focus:ring-yellow-500/20 text-base md:text-lg" placeholder="6 digit pin code" pattern="[0-9]{6}" maxlength="6">
-</div>
-<div class="form-field-group">
-<label class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">City Name*</label>
-<input type="text" name="city" required="" class="w-full rounded-xl border-2 border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:border-yellow-500 focus:ring-2 focus:ring-yellow-500/20 text-base md:text-lg" placeholder="City Name">
-</div>
-<!-- Address -->
-<div class="form-field-group">
-<label class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Full Address *</label>
-<textarea name="address" required="" rows="3" class="w-full rounded-xl border-2 border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:border-yellow-500 focus:ring-2 focus:ring-yellow-500/20 text-base md:text-lg resize-none" placeholder="Enter your complete address"></textarea>
-</div>
-<!-- Message -->
-<div class="form-field-group">
-<label class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Type Message &amp; Problem *</label>
-<textarea name="message" required="" rows="5" class="w-full rounded-xl border-2 border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:border-yellow-500 focus:ring-2 focus:ring-yellow-500/20 text-base md:text-lg resize-none" placeholder="Describe your problem or any specific requirements..."></textarea>
-</div>
-<!-- Submit Button -->
-<div>
-<button type="submit" name="Send" class="w-full text-lg font-semibold text-white bg-gradient-to-r from-yellow-500 to-orange-500 rounded-xl shadow-lg hover:from-yellow-400 hover:to-orange-400 transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500 relative overflow-hidden">
-<span class="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/20 to-transparent"></span>
-<span class="relative z-10">Book Now</span>
-</button>
-</div>
-</form>
-</div>
-</div>
-</div>
+        <!-- Name -->
+        <div class="brand-form-group">
+          <input type="text" name="name" required class="brand-form-control" placeholder="Your Name">
+        </div>
+        <!-- Phone Number -->
+        <div class="brand-form-group">
+          <input type="tel" inputmode="numeric" name="mobile" required class="brand-form-control" placeholder="Phone Number" pattern="[0-9]{10}" maxlength="10">
+        </div>
+        <!-- Select Appliance -->
+        <div class="brand-form-group">
+          <select name="product" required class="brand-form-control">
+            <option value="" disabled selected>Select Appliance</option>
+            <option value="Crompton Chimney Repair">Crompton Chimney Repair</option>
+            <option value="Crompton Hob Repair">Crompton Hob Repair</option>
+            <option value="Crompton Gas Stove Repair">Crompton Gas Stove Repair</option>
+            <option value="Crompton Cooking Range Repair">Crompton Cooking Range Repair</option>
+            <option value="Crompton Built-in Oven Repair">Crompton Built-in Oven Repair</option>
+          </select>
+        </div>
+        <!-- City -->
+        <div class="brand-form-group">
+          <input type="text" name="city" required class="brand-form-control" placeholder="City">
+        </div>
+        <!-- Area / Pincode -->
+        <div class="brand-form-group">
+          <input type="text" name="pincode" required class="brand-form-control" placeholder="Area / Pincode">
+        </div>
+        <!-- Describe your appliance problem -->
+        <div class="brand-form-group">
+          <textarea name="message" required class="brand-form-control" placeholder="Describe your appliance problem" rows="3"></textarea>
+        </div>
+        <!-- Submit Button -->
+        <div>
+          <button type="submit" class="brand-submit-btn">Book Technician Visit</button>
+        </div>
+      </form>
+    </div>
+  </div>
 </section>
 
 <!--========================

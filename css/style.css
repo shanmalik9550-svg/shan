@@ -1489,3 +1489,245 @@ footer {
   max-height: 250px;
   padding: 0 1.5rem 1.35rem 1.5rem;
 }
+
+/* ==========================================================================
+   COMPETITOR BRAND LANDING PAGE LAYOUT STYLES
+   ========================================================================== */
+.brand-competitor-header {
+  background: #ffffff;
+  padding: 0.85rem 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid #e5e7eb;
+  position: relative;
+  z-index: 100;
+  width: 100%;
+}
+
+.brand-competitor-header .header-logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+}
+
+.brand-competitor-header .header-logo-img {
+  max-height: 52px;
+  width: auto;
+  max-width: 240px;
+  object-fit: contain;
+  display: block;
+}
+
+/* Full Width Appliance Banner */
+.brand-hero-banner-wrap {
+  width: 100%;
+  overflow: hidden;
+  background: #1a1a1a;
+  line-height: 0;
+}
+
+.brand-hero-banner-wrap img {
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* Blue Service Information Banner */
+.brand-service-bar {
+  background-color: #0060AA;
+  color: #ffffff;
+  text-align: center;
+  padding: 1.85rem 1.25rem;
+}
+
+.brand-service-bar h1,
+.brand-service-bar .service-title {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 2.1rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0 0 0.45rem 0;
+  letter-spacing: -0.5px;
+  line-height: 1.2;
+}
+
+.brand-service-bar p,
+.brand-service-bar .service-subtitle {
+  font-size: 1.05rem;
+  color: #ffffff;
+  margin: 0 0 1.25rem 0;
+  font-weight: 400;
+  opacity: 0.95;
+}
+
+.brand-call-now-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #D90429;
+  color: #ffffff !important;
+  font-size: 1.1rem;
+  font-weight: 700;
+  padding: 0.75rem 2rem;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  box-shadow: 0 4px 14px rgba(217, 4, 41, 0.35);
+}
+
+.brand-call-now-btn:hover {
+  background-color: #b80323;
+  transform: translateY(-2px);
+  color: #ffffff !important;
+}
+
+/* "Book Technician Visit" Light Form Section */
+.brand-booking-section {
+  background-color: #F0F6FA;
+  padding: 3.5rem 1.25rem 4.5rem;
+}
+
+.brand-booking-container {
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+.brand-booking-header {
+  text-align: center;
+  margin-bottom: 1.75rem;
+}
+
+.brand-booking-header h2 {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #111827;
+  margin-bottom: 0.5rem;
+  line-height: 1.25;
+}
+
+.brand-booking-header p {
+  font-size: 1.05rem;
+  color: #4B5563;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* White Form Card */
+.brand-form-card {
+  background: #ffffff;
+  border: 1px solid #D1D5DB;
+  border-radius: 12px;
+  padding: 2rem 1.75rem;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+}
+
+.brand-form-group {
+  margin-bottom: 1.15rem;
+}
+
+.brand-form-control {
+  width: 100%;
+  padding: 0.85rem 1.15rem;
+  font-size: 1rem;
+  font-family: 'Poppins', sans-serif;
+  color: #1F2937;
+  background-color: #ffffff;
+  border: 1.5px solid #CBD5E1;
+  border-radius: 8px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  box-sizing: border-box;
+}
+
+.brand-form-control:focus {
+  outline: none;
+  border-color: #0060AA;
+  box-shadow: 0 0 0 3px rgba(0, 96, 170, 0.15);
+}
+
+.brand-form-control::placeholder {
+  color: #9CA3AF;
+  font-weight: 400;
+}
+
+select.brand-form-control {
+  appearance: auto;
+  cursor: pointer;
+}
+
+textarea.brand-form-control {
+  resize: vertical;
+  min-height: 85px;
+}
+
+.brand-submit-btn {
+  width: 100%;
+  background-color: #D90429;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.95rem 1.5rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  box-shadow: 0 4px 12px rgba(217, 4, 41, 0.3);
+}
+
+.brand-submit-btn:hover {
+  background-color: #b80323;
+  transform: translateY(-2px);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .brand-competitor-header {
+    padding: 0.75rem 1rem;
+  }
+  .brand-competitor-header .header-logo-img {
+    max-height: 44px;
+    max-width: 200px;
+  }
+  .brand-hero-banner-wrap img {
+    height: 210px;
+  }
+  .brand-service-bar {
+    padding: 1.5rem 1rem;
+  }
+  .brand-service-bar h1,
+  .brand-service-bar .service-title {
+    font-size: 1.55rem;
+  }
+  .brand-service-bar p,
+  .brand-service-bar .service-subtitle {
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+  }
+  .brand-call-now-btn {
+    font-size: 1rem;
+    padding: 0.65rem 1.4rem;
+    width: 90%;
+    max-width: 320px;
+  }
+  .brand-booking-section {
+    padding: 2.25rem 1rem 3.5rem;
+  }
+  .brand-booking-header h2 {
+    font-size: 1.65rem;
+  }
+  .brand-booking-header p {
+    font-size: 0.95rem;
+  }
+  .brand-form-card {
+    padding: 1.4rem 1.1rem;
+  }
+  .brand-form-control {
+    padding: 0.75rem 1rem;
+    font-size: 0.95rem;
+  }
+}
