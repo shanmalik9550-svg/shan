@@ -1495,7 +1495,7 @@ footer {
    ========================================================================== */
 .brand-competitor-header {
   background: #ffffff;
-  padding: 0.85rem 1rem;
+  padding: 1.15rem 1rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1513,9 +1513,9 @@ footer {
 }
 
 .brand-competitor-header .header-logo-img {
-  max-height: 52px;
+  max-height: 85px;
   width: auto;
-  max-width: 240px;
+  max-width: 320px;
   object-fit: contain;
   display: block;
 }
@@ -1687,11 +1687,11 @@ textarea.brand-form-control {
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
   .brand-competitor-header {
-    padding: 0.75rem 1rem;
+    padding: 0.95rem 1rem;
   }
   .brand-competitor-header .header-logo-img {
-    max-height: 44px;
-    max-width: 200px;
+    max-height: 65px;
+    max-width: 260px;
   }
   .brand-hero-banner-wrap img {
     height: 210px;
