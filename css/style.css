@@ -11,7 +11,10 @@
   --color-white: #FFFFFF;
   --color-bg: #F8FAFC;
   --color-card-bg: #FFFFFF;
+  --color-card: #FFFFFF;
+  --color-surface: #F8FAFC;
   --color-text-dark: #1F2937;
+  --color-text-body: #4B5563;
   --color-text-muted: #6B7280;
   --color-border: #E5E7EB;
   
@@ -1466,13 +1469,15 @@ footer {
 /* ==========================================================================
    FAQ ACCORDION SECTION
    ========================================================================== */
-.cata-faq-section {
+.cata-faq-section,
+.faq-section {
   padding: 5rem 0;
   background-color: var(--color-bg);
   position: relative;
 }
 
-.cata-faq-wrapper {
+.cata-faq-wrapper,
+.faq-wrapper {
   max-width: 860px;
   margin: 2.5rem auto 0 auto;
   display: flex;
@@ -1480,7 +1485,8 @@ footer {
   gap: 1rem;
 }
 
-.cata-faq-item {
+.cata-faq-item,
+.faq-item {
   background: var(--color-white);
   border-radius: var(--radius-md);
   border: 1px solid var(--color-border);
@@ -1489,17 +1495,20 @@ footer {
   transition: all var(--transition-normal);
 }
 
-.cata-faq-item:hover {
+.cata-faq-item:hover,
+.faq-item:hover {
   border-color: rgba(217, 4, 41, 0.3);
   box-shadow: var(--shadow-md);
 }
 
-.cata-faq-item.active {
+.cata-faq-item.active,
+.faq-item.active {
   border-color: var(--color-primary);
   box-shadow: 0 4px 20px rgba(217, 4, 41, 0.12);
 }
 
-.cata-faq-question {
+.cata-faq-question,
+.faq-question {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -1512,38 +1521,54 @@ footer {
   transition: color var(--transition-fast);
 }
 
-.cata-faq-question:hover {
+.cata-faq-question span,
+.faq-question span {
+  flex: 1;
+  pointer-events: none;
+}
+
+.cata-faq-question:hover,
+.faq-question:hover {
   color: var(--color-primary);
 }
 
-.cata-faq-question i {
+.cata-faq-question i,
+.faq-question i {
   font-size: 0.95rem;
   color: var(--color-text-muted);
   transition: transform var(--transition-normal), color var(--transition-fast);
+  margin-left: 1rem;
+  pointer-events: none;
 }
 
-.cata-faq-item.active .cata-faq-question {
+.cata-faq-item.active .cata-faq-question,
+.faq-item.active .faq-question {
   color: var(--color-primary);
 }
 
-.cata-faq-item.active .cata-faq-question i {
+.cata-faq-item.active .cata-faq-question i,
+.faq-item.active .faq-question i {
   transform: rotate(180deg);
   color: var(--color-primary);
 }
 
-.cata-faq-answer {
+.cata-faq-answer,
+.faq-answer {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.35s ease, padding 0.35s ease;
+  transition: max-height 0.4s ease, padding 0.35s ease, opacity 0.3s ease;
   padding: 0 1.5rem;
   color: var(--color-text-body);
   font-size: 0.96rem;
   line-height: 1.65;
+  opacity: 0;
 }
 
-.cata-faq-item.active .cata-faq-answer {
-  max-height: 250px;
-  padding: 0 1.5rem 1.35rem 1.5rem;
+.cata-faq-item.active .cata-faq-answer,
+.faq-item.active .faq-answer {
+  max-height: 600px;
+  padding: 0.5rem 1.5rem 1.35rem 1.5rem;
+  opacity: 1;
 }
 
 /* ==========================================================================
@@ -1574,6 +1599,33 @@ footer {
   max-width: 320px;
   object-fit: contain;
   display: block;
+}
+
+.brand-competitor-header .header-text-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #0f172a;
+  letter-spacing: -0.02em;
+  text-decoration: none;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.brand-competitor-header .header-text-brand:hover {
+  transform: translateY(-1px);
+  opacity: 0.95;
+}
+
+.brand-competitor-header .header-text-brand i {
+  font-size: 1.6rem;
+  color: var(--color-primary, #d90429);
+}
+
+.brand-competitor-header .header-text-brand .brand-highlight {
+  color: var(--color-primary, #d90429);
 }
 
 /* Full Width Appliance Banner */
@@ -1748,6 +1800,13 @@ textarea.brand-form-control {
   .brand-competitor-header .header-logo-img {
     max-height: 65px;
     max-width: 260px;
+  }
+  .brand-competitor-header .header-text-brand {
+    font-size: 1.25rem;
+    gap: 8px;
+  }
+  .brand-competitor-header .header-text-brand i {
+    font-size: 1.35rem;
   }
   .brand-hero-banner-wrap img {
     height: 210px;

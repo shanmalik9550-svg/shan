@@ -209,16 +209,19 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ------------------------------------------------------------------------
      5. FAQ ACCORDION INTERACTION
      ------------------------------------------------------------------------ */
-  const faqQuestions = document.querySelectorAll('.cata-faq-question');
+  const faqQuestions = document.querySelectorAll('.cata-faq-question, .faq-question');
   if (faqQuestions.length > 0) {
     faqQuestions.forEach(question => {
-      question.addEventListener('click', () => {
-        const item = question.closest('.cata-faq-item');
+      question.style.cursor = 'pointer';
+      question.addEventListener('click', (e) => {
+        e.preventDefault();
+        const item = question.closest('.cata-faq-item, .faq-item');
+        if (!item) return;
         const isActive = item.classList.contains('active');
 
-        const parentWrapper = item.closest('.cata-faq-wrapper');
+        const parentWrapper = item.closest('.cata-faq-wrapper, .faq-wrapper');
         if (parentWrapper) {
-          parentWrapper.querySelectorAll('.cata-faq-item').forEach(other => {
+          parentWrapper.querySelectorAll('.cata-faq-item, .faq-item').forEach(other => {
             if (other !== item) other.classList.remove('active');
           });
         }
