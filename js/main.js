@@ -1,5 +1,5 @@
 /* ==========================================================================
-   24x7 CUSTOMER SUPPORT - MAIN JAVASCRIPT LOGIC
+   INDEPENDENT REPAIR BOOKING - MAIN JAVASCRIPT LOGIC
    Owner: Harender Sharma | Miyapur, Hyderabad
    Toll-Free: 1800-202-6208
    Form Key: 39b83002-b632-4327-b3c9-bdc5d4508744
@@ -91,7 +91,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
       // 2. Construct WhatsApp Message text
-      const waText = `*New 24x7 Service Booking Request*%0A` +
+      const waText = `*New Doorstep Repair Booking - Independent Service*%0A` +
+                     `*Kitchen Appliance Repair Experts (Out-of-Warranty)*%0A` +
                      `-----------------------------------%0A` +
                      `*Customer Name:* ${encodeURIComponent(name)}%0A` +
                      `*Mobile:* ${encodeURIComponent(mobile)}%0A` +
@@ -173,7 +174,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
       // 2. Construct WhatsApp text
-      const waText = `*Service Inquiry - 24x7 Support*%0A` +
+      const waText = `*Service Inquiry - Kitchen Appliance Repair Experts*%0A` +
+                     `*(Independent Out-of-Warranty Doorstep Repair)*%0A` +
                      `*Customer Name:* ${encodeURIComponent(fullName)}%0A` +
                      `*Mobile:* ${encodeURIComponent(phoneNumber)}%0A` +
                      `*Appliance Category:* ${encodeURIComponent(applianceType)}%0A` +
