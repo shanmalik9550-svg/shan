@@ -1,6 +1,6 @@
 /* ==========================================================================
    INDEPENDENT REPAIR BOOKING - MAIN JAVASCRIPT LOGIC
-   Owner: Harender Sharma | Miyapur, Hyderabad
+   Miyapur, Hyderabad
    Toll-Free: 1800-202-6208
    Form Key: 39b83002-b632-4327-b3c9-bdc5d4508744
    ========================================================================== */
